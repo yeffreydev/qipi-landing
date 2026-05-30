@@ -1,9 +1,60 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import "../styles/globals.css";
+
+const SITE = "https://qipi.aquinace.com";
+const homeJsonLd = [
+	{
+		"@context": "https://schema.org",
+		"@type": "SoftwareApplication",
+		name: "Qipi",
+		applicationCategory: "FinanceApplication",
+		operatingSystem: "Android, iOS",
+		description:
+			"App de finanzas comunitarias para gestionar UNICAs, bancas comunales y asociaciones en Perú: aportes, ahorros, préstamos e inversiones.",
+		url: SITE,
+		offers: { "@type": "Offer", price: "0", priceCurrency: "PEN" },
+	},
+	{
+		"@context": "https://schema.org",
+		"@type": "FAQPage",
+		mainEntity: [
+			{
+				"@type": "Question",
+				name: "¿Qué es una UNICA?",
+				acceptedAnswer: {
+					"@type": "Answer",
+					text: "Una UNICA (Unión de Crédito y Ahorro) es un grupo autogestionado de personas que ahorra en conjunto y se otorga préstamos entre sí con reglas claras, sin intermediarios bancarios.",
+				},
+			},
+			{
+				"@type": "Question",
+				name: "¿Qué es una banca comunal?",
+				acceptedAnswer: {
+					"@type": "Answer",
+					text: "Una banca comunal es un grupo de personas que ahorra y accede a créditos de forma colectiva, respaldándose con una garantía solidaria entre todos sus miembros.",
+				},
+			},
+			{
+				"@type": "Question",
+				name: "¿Para qué sirve Qipi?",
+				acceptedAnswer: {
+					"@type": "Answer",
+					text: "Qipi es una herramienta de finanzas comunitarias en Perú que digitaliza aportes, préstamos, ahorros e inversiones de tu UNICA, banca comunal o asociación en una sola app.",
+				},
+			},
+		],
+	},
+];
 ---
 
-<Layout>
+<Layout
+	title="Qipi — Finanzas comunitarias en Perú | UNICAs y banca comunal"
+	description="Qipi es la herramienta de finanzas comunitarias en Perú para gestionar UNICAs, bancas comunales y asociaciones: controla aportes, ahorros, préstamos e inversiones desde una sola app."
+	keywords="Qipi, finanzas comunitarias, herramientas de finanzas Perú, qué es una UNICA, qué es una banca comunal, app de ahorro grupal, préstamos comunitarios, gestión de aportes, asociaciones Perú, inclusión financiera"
+	canonicalPath="/"
+	jsonLd={homeJsonLd}
+>
 	<!-- Background decorative elements -->
 	<div class="bg-blobs">
 		<div class="blob blob-1"></div>
@@ -18,12 +69,14 @@ import "../styles/globals.css";
 				<img src="/logo-icon.svg" alt="Qipi" width="40" height="40" />
 				<span>Qipi</span>
 			</a>
-			<a
-				href="https://wa.me/51916913623?text=%F0%9F%92%9A%20Hola%2C%20quiero%20dar%20el%20primer%20paso%20con%20Qipi%20%F0%9F%9A%80%E2%9C%A8"
-				target="_blank"
-				rel="noopener noreferrer"
-				class="btn-wa-nav"
-			>
+			<div class="navbar-actions">
+				<a href="/blog" class="navbar-link">Blog</a>
+				<a
+					href="https://wa.me/51916913623?text=%F0%9F%92%9A%20Hola%2C%20quiero%20dar%20el%20primer%20paso%20con%20Qipi%20%F0%9F%9A%80%E2%9C%A8"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="btn-wa-nav"
+				>
 				<svg class="wa-icon-sm" fill="currentColor" viewBox="0 0 24 24"
 					><path
 						d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
@@ -31,6 +84,7 @@ import "../styles/globals.css";
 				>
 				Iniciar ahora
 			</a>
+			</div>
 		</div>
 	</nav>
 
@@ -91,6 +145,75 @@ import "../styles/globals.css";
 						>
 						Iniciar ahora
 					</a>
+				</div>
+
+				<!-- Custom hero illustration -->
+				<div class="hero-illustration" aria-hidden="true">
+					<svg viewBox="0 0 640 380" fill="none" xmlns="http://www.w3.org/2000/svg" role="img">
+						<defs>
+							<linearGradient id="gPhone" x1="0" y1="0" x2="1" y2="1">
+								<stop offset="0" stop-color="#1b325f" />
+								<stop offset="0.55" stop-color="#00599a" />
+								<stop offset="1" stop-color="#00877a" />
+							</linearGradient>
+							<linearGradient id="gCard" x1="0" y1="0" x2="1" y2="1">
+								<stop offset="0" stop-color="#00a894" />
+								<stop offset="1" stop-color="#00877a" />
+							</linearGradient>
+							<linearGradient id="gCoin" x1="0" y1="0" x2="1" y2="1">
+								<stop offset="0" stop-color="#ffd66b" />
+								<stop offset="1" stop-color="#f0a93c" />
+							</linearGradient>
+							<filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+								<feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#1b325f" flood-opacity="0.18"></feDropShadow>
+							</filter>
+						</defs>
+
+						<circle cx="120" cy="110" r="90" fill="#00877a" opacity="0.08"></circle>
+						<circle cx="540" cy="270" r="110" fill="#00599a" opacity="0.07"></circle>
+
+						<g class="il-nodes" stroke="#00a894" stroke-width="2.5" opacity="0.5">
+							<line x1="92" y1="92" x2="180" y2="200"></line>
+							<line x1="180" y1="200" x2="92" y2="300"></line>
+							<line x1="180" y1="200" x2="300" y2="120"></line>
+						</g>
+						<g class="il-people">
+							<circle cx="92" cy="92" r="20" fill="#00599a"></circle>
+							<circle cx="92" cy="300" r="18" fill="#00a894"></circle>
+							<circle cx="300" cy="120" r="16" fill="#1b325f"></circle>
+							<text x="92" y="98" text-anchor="middle" fill="#fff" font-size="18" font-weight="700" font-family="Inter, sans-serif">A</text>
+							<text x="92" y="306" text-anchor="middle" fill="#fff" font-size="16" font-weight="700" font-family="Inter, sans-serif">M</text>
+							<text x="300" y="125" text-anchor="middle" fill="#fff" font-size="14" font-weight="700" font-family="Inter, sans-serif">J</text>
+						</g>
+
+						<g class="il-phone" filter="url(#softShadow)">
+							<rect x="210" y="70" width="220" height="280" rx="32" fill="url(#gPhone)"></rect>
+							<rect x="222" y="82" width="196" height="256" rx="24" fill="#0f223f"></rect>
+							<rect x="238" y="100" width="164" height="92" rx="16" fill="url(#gCard)"></rect>
+							<text x="254" y="128" fill="#eafff8" font-size="12" font-family="Inter, sans-serif" font-weight="600">Total invertido</text>
+							<text x="254" y="160" fill="#ffffff" font-size="26" font-family="Inter, sans-serif" font-weight="800">S/ 38,510</text>
+							<rect x="346" y="108" width="42" height="20" rx="10" fill="#ffffff" opacity="0.22"></rect>
+							<text x="367" y="122" text-anchor="middle" fill="#ffffff" font-size="11" font-family="Inter, sans-serif" font-weight="700">+12%</text>
+							<g class="il-bars">
+								<rect x="250" y="280" width="20" height="34" rx="5" fill="#00a894"></rect>
+								<rect x="282" y="262" width="20" height="52" rx="5" fill="#00877a"></rect>
+								<rect x="314" y="240" width="20" height="74" rx="5" fill="#00599a"></rect>
+								<rect x="346" y="216" width="20" height="98" rx="5" fill="#1b325f"></rect>
+							</g>
+							<path class="il-line" d="M250 250 L284 234 L316 214 L356 188" stroke="#ffd66b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+							<circle cx="356" cy="188" r="6" fill="#ffd66b"></circle>
+						</g>
+
+						<g class="il-coin il-coin-a">
+							<circle cx="470" cy="120" r="34" fill="url(#gCoin)"></circle>
+							<circle cx="470" cy="120" r="34" fill="none" stroke="#fff" stroke-opacity="0.4" stroke-width="2"></circle>
+							<text x="470" y="128" text-anchor="middle" fill="#7a4a00" font-size="22" font-weight="800" font-family="Inter, sans-serif">S/</text>
+						</g>
+						<g class="il-coin il-coin-b">
+							<circle cx="510" cy="240" r="24" fill="url(#gCoin)"></circle>
+							<text x="510" y="247" text-anchor="middle" fill="#7a4a00" font-size="15" font-weight="800" font-family="Inter, sans-serif">S/</text>
+						</g>
+					</svg>
 				</div>
 			</div>
 
@@ -276,6 +399,128 @@ import "../styles/globals.css";
 			</div>
 		</section>
 
+		<!-- App Showcase Section -->
+		<section class="app-section" id="app">
+			<div class="section-container">
+				<div class="section-header">
+					<div class="badge badge-static">
+						<span class="badge-dot"></span>
+						La app de Qipi
+					</div>
+					<h2>
+						Todo tu grupo en <span class="gradient-text-2"
+							>una sola app</span
+						>
+					</h2>
+					<p>
+						Inversiones, billetera, marketplace, noticias y foro.
+						Diseñada para que tu organización funcione desde el
+						celular.
+					</p>
+				</div>
+
+				<div class="app-grid">
+					<!-- 1. Inversión -->
+					<div class="app-card app-card-feature">
+						<div class="app-card-text">
+							<span class="app-tag app-tag-teal">Inversión</span>
+							<h3>Tu inversión, clara y en tiempo real</h3>
+							<p>
+								Total invertido, acciones, ahorros y préstamos.
+								Cada miembro ve cuánto aporta y cuánto crece su
+								capital, sin hojas de cálculo.
+							</p>
+						</div>
+						<div class="app-phone">
+							<img
+								src="/app/inversion-resumen.png"
+								alt="Resumen de inversión en la app Qipi"
+								loading="lazy"
+							/>
+						</div>
+					</div>
+
+					<!-- 2. Billetera -->
+					<div class="app-card">
+						<div class="app-phone app-phone-sm">
+							<img
+								src="/app/billetera-acciones.png"
+								alt="Billetera y movimientos de acciones en Qipi"
+								loading="lazy"
+							/>
+						</div>
+						<div class="app-card-text">
+							<span class="app-tag app-tag-blue">Billetera</span>
+							<h3>Cada aporte, registrado</h3>
+							<p>
+								Acciones, ahorros, préstamos y utilidades con el
+								historial completo de movimientos.
+							</p>
+						</div>
+					</div>
+
+					<!-- 3. Marketplace -->
+					<div class="app-card">
+						<div class="app-phone app-phone-sm">
+							<img
+								src="/app/marketplace.png"
+								alt="Marketplace de la comunidad Qipi"
+								loading="lazy"
+							/>
+						</div>
+						<div class="app-card-text">
+							<span class="app-tag app-tag-teal-light"
+								>Marketplace</span
+							>
+							<h3>Compra y vende en tu comunidad</h3>
+							<p>
+								Un espacio seguro para negociar entre miembros
+								verificados, con pagos protegidos.
+							</p>
+						</div>
+					</div>
+
+					<!-- 4. Noticias -->
+					<div class="app-card">
+						<div class="app-phone app-phone-sm">
+							<img
+								src="/app/noticias.png"
+								alt="Noticias de tu comunidad financiera en Qipi"
+								loading="lazy"
+							/>
+						</div>
+						<div class="app-card-text">
+							<span class="app-tag app-tag-navy">Noticias</span>
+							<h3>Lo último de tu comunidad</h3>
+							<p>
+								Educación financiera y novedades de tu UNICA,
+								directo en el inicio.
+							</p>
+						</div>
+					</div>
+
+					<!-- 5. Foro -->
+					<div class="app-card">
+						<div class="app-phone app-phone-sm">
+							<img
+								src="/app/foro-chat.png"
+								alt="Foro y chat grupal en la app Qipi"
+								loading="lazy"
+							/>
+						</div>
+						<div class="app-card-text">
+							<span class="app-tag app-tag-teal">Foro</span>
+							<h3>Conversa con todo el grupo</h3>
+							<p>
+								Coordina reuniones, resuelve dudas y mantén a
+								todos en línea desde un solo chat.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
 		<!-- Transformation Section -->
 		<section class="transformation-section">
 			<div class="transformation-bg"></div>
@@ -417,14 +662,17 @@ import "../styles/globals.css";
 				<img src="/logo-icon.svg" alt="Qipi" width="24" height="24" />
 				<span>© 2025 Qipi. Todos los derechos reservados.</span>
 			</div>
-			<a
-				href="https://wa.me/51916913623?text=%F0%9F%92%9A%20Hola%2C%20quiero%20dar%20el%20primer%20paso%20con%20Qipi%20%F0%9F%9A%80%E2%9C%A8"
-				target="_blank"
-				rel="noopener noreferrer"
-				class="footer-link"
-			>
-				Contactar por WhatsApp →
-			</a>
+			<div class="footer-links">
+				<a href="/privacidad" class="footer-link">Política de Privacidad</a>
+				<a
+					href="https://wa.me/51916913623?text=%F0%9F%92%9A%20Hola%2C%20quiero%20dar%20el%20primer%20paso%20con%20Qipi%20%F0%9F%9A%80%E2%9C%A8"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="footer-link"
+				>
+					Contactar por WhatsApp →
+				</a>
+			</div>
 		</div>
 	</footer>
 </Layout>
@@ -449,6 +697,7 @@ import "../styles/globals.css";
 		width: 600px;
 		height: 600px;
 		background: rgba(0, 135, 122, 0.07);
+		animation: blob-drift 22s ease-in-out infinite;
 	}
 	.blob-2 {
 		bottom: 20%;
@@ -456,6 +705,7 @@ import "../styles/globals.css";
 		width: 500px;
 		height: 500px;
 		background: rgba(0, 89, 154, 0.06);
+		animation: blob-drift 28s ease-in-out infinite reverse;
 	}
 	.blob-3 {
 		top: 50%;
@@ -463,6 +713,7 @@ import "../styles/globals.css";
 		width: 400px;
 		height: 400px;
 		background: rgba(27, 50, 95, 0.05);
+		animation: blob-drift 25s ease-in-out infinite;
 	}
 
 	/* ===== NAVBAR ===== */
@@ -503,6 +754,21 @@ import "../styles/globals.css";
 		font-weight: 700;
 		color: #1b325f;
 		letter-spacing: -0.025em;
+	}
+	.navbar-actions {
+		display: flex;
+		align-items: center;
+		gap: 20px;
+	}
+	.navbar-link {
+		color: #1b325f;
+		font-weight: 600;
+		font-size: 0.9rem;
+		text-decoration: none;
+		transition: color 0.25s;
+	}
+	.navbar-link:hover {
+		color: #00877a;
 	}
 	.btn-wa-nav {
 		display: none;
@@ -579,17 +845,35 @@ import "../styles/globals.css";
 		animation: fadeInUp 0.8s ease-out 0.1s forwards;
 		opacity: 0;
 	}
-	.gradient-text-1 {
-		background: linear-gradient(to right, #00877a, #00a894, #00599a);
+	.gradient-text-1,
+	.gradient-text-2 {
+		display: inline-block;
+		padding-bottom: 0.08em;
+		background-size: 220% auto;
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 		background-clip: text;
+		color: #00877a; /* fallback if clip unsupported */
+		animation: gradient-shift 6s ease infinite;
+	}
+	.gradient-text-1 {
+		background-image: linear-gradient(
+			110deg,
+			#00877a,
+			#00a894,
+			#00599a,
+			#00a894,
+			#00877a
+		);
 	}
 	.gradient-text-2 {
-		background: linear-gradient(to right, #00599a, #00877a);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
+		background-image: linear-gradient(
+			110deg,
+			#00599a,
+			#00877a,
+			#00a894,
+			#00599a
+		);
 	}
 
 	/* Subtitle */
@@ -684,6 +968,49 @@ import "../styles/globals.css";
 		animation: bounce 2s infinite;
 	}
 
+	/* ===== HERO ILLUSTRATION ===== */
+	.hero-illustration {
+		max-width: 560px;
+		margin: 56px auto 0;
+		animation: fadeInUp 0.8s ease-out 0.55s forwards;
+		opacity: 0;
+	}
+	.hero-illustration svg {
+		width: 100%;
+		height: auto;
+		overflow: visible;
+	}
+	.il-phone {
+		transform-box: fill-box;
+		transform-origin: center;
+		animation: float 6s ease-in-out infinite;
+	}
+	.il-coin {
+		transform-box: fill-box;
+		transform-origin: center;
+	}
+	.il-coin-a {
+		animation: float 4.5s ease-in-out infinite;
+	}
+	.il-coin-b {
+		animation: float 3.6s ease-in-out 0.4s infinite reverse;
+	}
+	.il-people circle {
+		transform-box: fill-box;
+		transform-origin: center;
+		animation: pulse 3s ease-in-out infinite;
+	}
+	.il-line {
+		stroke-dasharray: 240;
+		stroke-dashoffset: 240;
+		animation: draw-line 2s ease-out 0.8s forwards;
+	}
+	@keyframes draw-line {
+		to {
+			stroke-dashoffset: 0;
+		}
+	}
+
 	/* ===== FEATURES SECTION ===== */
 	.features-section {
 		padding: 96px 16px;
@@ -773,6 +1100,146 @@ import "../styles/globals.css";
 	.feature-card p {
 		color: #64748b;
 		line-height: 1.7;
+	}
+
+	/* ===== APP SHOWCASE SECTION ===== */
+	.app-section {
+		padding: 96px 16px;
+		background: linear-gradient(to bottom, #ffffff, #f8fafc);
+		overflow: hidden;
+	}
+	.badge-static {
+		animation: none !important;
+		opacity: 1;
+		margin-bottom: 20px;
+	}
+	.app-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 24px;
+	}
+	@media (min-width: 768px) {
+		.app-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	.app-card {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		gap: 28px;
+		padding: 40px 32px;
+		border-radius: 24px;
+		background: #ffffff;
+		border: 1px solid #e2e8f0;
+		box-shadow: 0 4px 24px rgba(27, 50, 95, 0.04);
+		transition: all 0.4s;
+	}
+	.app-card:hover {
+		transform: translateY(-6px);
+		border-color: rgba(0, 135, 122, 0.3);
+		box-shadow: 0 28px 56px rgba(0, 135, 122, 0.12);
+	}
+
+	/* Featured card spans full width on desktop, horizontal layout */
+	.app-card-feature {
+		grid-column: 1 / -1;
+		background: linear-gradient(135deg, #1b325f 0%, #00599a 60%, #00877a 100%);
+		border: none;
+	}
+	@media (min-width: 768px) {
+		.app-card-feature {
+			flex-direction: row;
+			text-align: left;
+			gap: 56px;
+			padding: 56px;
+		}
+	}
+	.app-card-feature .app-card-text {
+		flex: 1;
+	}
+	.app-card-feature .app-card-text h3 {
+		color: #ffffff;
+		font-size: clamp(1.5rem, 3vw, 2.25rem);
+	}
+	.app-card-feature .app-card-text p {
+		color: rgba(255, 255, 255, 0.85);
+		font-size: 1.0625rem;
+	}
+
+	.app-card-text h3 {
+		font-size: 1.375rem;
+		font-weight: 700;
+		color: #1b325f;
+		margin: 14px 0 10px;
+		line-height: 1.25;
+	}
+	.app-card-text p {
+		color: #64748b;
+		line-height: 1.65;
+		font-size: 0.95rem;
+	}
+
+	/* Tags */
+	.app-tag {
+		display: inline-block;
+		padding: 5px 14px;
+		border-radius: 9999px;
+		font-size: 0.75rem;
+		font-weight: 700;
+		letter-spacing: 0.03em;
+		text-transform: uppercase;
+	}
+	.app-tag-teal {
+		background: rgba(0, 135, 122, 0.1);
+		color: #00877a;
+	}
+	.app-tag-blue {
+		background: rgba(0, 89, 154, 0.1);
+		color: #00599a;
+	}
+	.app-tag-navy {
+		background: rgba(27, 50, 95, 0.1);
+		color: #1b325f;
+	}
+	.app-tag-teal-light {
+		background: rgba(0, 168, 148, 0.12);
+		color: #00a894;
+	}
+	.app-card-feature .app-tag {
+		background: rgba(255, 255, 255, 0.15);
+		color: #ffffff;
+	}
+
+	/* Phone frame */
+	.app-phone {
+		flex-shrink: 0;
+		width: 240px;
+		max-width: 100%;
+		border-radius: 36px;
+		padding: 10px;
+		background: #0f172a;
+		border: 1px solid rgba(255, 255, 255, 0.12);
+		box-shadow:
+			0 30px 60px rgba(0, 0, 0, 0.25),
+			0 10px 20px rgba(0, 0, 0, 0.12);
+	}
+	.app-phone img {
+		display: block;
+		width: 100%;
+		height: auto;
+		border-radius: 28px;
+	}
+	.app-phone-sm {
+		width: 220px;
+	}
+	.app-card:hover .app-phone {
+		transform: scale(1.02);
+	}
+	.app-phone {
+		transition: transform 0.4s;
 	}
 
 	/* ===== TRANSFORMATION SECTION ===== */
@@ -959,6 +1426,13 @@ import "../styles/globals.css";
 		color: #94a3b8;
 		font-size: 0.875rem;
 	}
+	.footer-links {
+		display: flex;
+		align-items: center;
+		gap: 24px;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
 	.footer-link {
 		color: #64748b;
 		font-size: 0.875rem;
@@ -1027,6 +1501,64 @@ import "../styles/globals.css";
 		}
 	}
 
+	@keyframes gradient-shift {
+		0% {
+			background-position: 0% 50%;
+		}
+		50% {
+			background-position: 100% 50%;
+		}
+		100% {
+			background-position: 0% 50%;
+		}
+	}
+
+	@keyframes blob-drift {
+		0%,
+		100% {
+			transform: translate(0, 0) scale(1);
+		}
+		33% {
+			transform: translate(40px, -30px) scale(1.08);
+		}
+		66% {
+			transform: translate(-30px, 20px) scale(0.95);
+		}
+	}
+
+	/* ===== SCROLL REVEAL ===== */
+	.reveal-init {
+		opacity: 0;
+		transform: translateY(32px);
+		transition:
+			opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+			transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+		will-change: opacity, transform;
+	}
+	.reveal-in {
+		opacity: 1;
+		transform: none;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.reveal-init {
+			opacity: 1;
+			transform: none;
+			transition: none;
+		}
+		.gradient-text-1,
+		.gradient-text-2,
+		.blob {
+			animation: none !important;
+		}
+	}
+
+	/* ===== NAVBAR SCROLLED ===== */
+	.navbar.scrolled {
+		background: rgba(255, 255, 255, 0.95);
+		box-shadow: 0 4px 20px rgba(27, 50, 95, 0.08);
+	}
+
 	/* ===== RESPONSIVE ===== */
 	@media (min-width: 640px) {
 		.hero-section {
@@ -1042,3 +1574,55 @@ import "../styles/globals.css";
 		}
 	}
 </style>
+
+<script>
+	// ===== Scroll reveal =====
+	const revealTargets = [
+		".section-header",
+		".feature-card",
+		".app-card",
+		".stat-item",
+		".quote-box",
+		".cta-content > *",
+		".video-wrapper",
+	];
+
+	const els = document.querySelectorAll(revealTargets.join(","));
+	const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+	if (reduce) {
+		// leave visible
+	} else {
+		els.forEach((el) => el.classList.add("reveal-init"));
+
+		const io = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry, i) => {
+					if (entry.isIntersecting) {
+						const t = entry.target as HTMLElement;
+						// stagger siblings for a nicer cascade
+						const delay = Math.min(
+							i * 60,
+							240,
+						);
+						t.style.transitionDelay = delay + "ms";
+						t.classList.add("reveal-in");
+						io.unobserve(t);
+					}
+				});
+			},
+			{ threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
+		);
+
+		els.forEach((el) => io.observe(el));
+	}
+
+	// ===== Navbar shadow on scroll =====
+	const navbar = document.querySelector(".navbar");
+	const onScroll = () => {
+		if (window.scrollY > 12) navbar?.classList.add("scrolled");
+		else navbar?.classList.remove("scrolled");
+	};
+	onScroll();
+	window.addEventListener("scroll", onScroll, { passive: true });
+</script>

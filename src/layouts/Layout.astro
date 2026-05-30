@@ -2,12 +2,46 @@
 interface Props {
 	title?: string;
 	description?: string;
+	keywords?: string;
+	image?: string;
+	type?: "website" | "article";
+	publishedTime?: string;
+	canonicalPath?: string;
+	jsonLd?: Record<string, any> | Record<string, any>[];
 }
 
+const SITE_URL = "https://qipi.aquinace.com";
+
 const {
-	title = "Qipi — Transforma tu organización financiera",
-	description = "Qipi te permite crear una organización desde cero o transformar la que ya tienes en algo más sólido, más profesional y más poderoso.",
+	title = "Qipi — Finanzas comunitarias, UNICAs y banca comunal en Perú",
+	description = "Qipi es la herramienta de finanzas comunitarias en Perú para gestionar UNICAs, bancas comunales y asociaciones: aportes, ahorros, préstamos e inversiones en una sola app.",
+	keywords = "Qipi, finanzas comunitarias, herramientas de finanzas Perú, qué es una UNICA, qué es una banca comunal, app de ahorro grupal, préstamos comunitarios, gestión de aportes, asociaciones Perú",
+	image = "/og-image.svg",
+	type = "website",
+	publishedTime,
+	canonicalPath = "/",
+	jsonLd,
 } = Astro.props;
+
+const canonical = SITE_URL + canonicalPath;
+const ogImage = image.startsWith("http") ? image : SITE_URL + image;
+
+const baseJsonLd = {
+	"@context": "https://schema.org",
+	"@type": "Organization",
+	name: "Qipi",
+	url: SITE_URL,
+	logo: SITE_URL + "/logo-icon.svg",
+	description,
+	areaServed: "PE",
+	sameAs: [],
+};
+
+const schemas = jsonLd
+	? Array.isArray(jsonLd)
+		? jsonLd
+		: [jsonLd]
+	: [baseJsonLd];
 ---
 
 <!doctype html>
@@ -17,14 +51,53 @@ const {
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/logo-icon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<meta name="description" content={description} />
+
+		<!-- Primary SEO -->
 		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta name="keywords" content={keywords} />
+		<meta name="author" content="Qipi" />
+		<meta name="robots" content="index, follow, max-image-preview:large" />
+		<meta name="language" content="Spanish" />
+		<meta name="geo.region" content="PE" />
+		<meta name="geo.placename" content="Perú" />
+		<link rel="canonical" href={canonical} />
+
+		<!-- Open Graph -->
+		<meta property="og:type" content={type} />
+		<meta property="og:site_name" content="Qipi" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={canonical} />
+		<meta property="og:image" content={ogImage} />
+		<meta property="og:locale" content="es_PE" />
+		{publishedTime && (
+			<meta property="article:published_time" content={publishedTime} />
+		)}
+
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImage} />
+
+		<!-- Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
 			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
 			rel="stylesheet"
 		/>
+
+		<!-- Structured data -->
+		{
+			schemas.map((s) => (
+				<script
+					type="application/ld+json"
+					set:html={JSON.stringify(s)}
+				/>
+			))
+		}
 	</head>
 	<body>
 		<slot />

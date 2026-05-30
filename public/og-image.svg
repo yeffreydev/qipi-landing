@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+	<defs>
+		<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+			<stop offset="0" stop-color="#0f223f"/>
+			<stop offset="0.55" stop-color="#00599a"/>
+			<stop offset="1" stop-color="#00877a"/>
+		</linearGradient>
+		<linearGradient id="coin" x1="0" y1="0" x2="1" y2="1">
+			<stop offset="0" stop-color="#ffd66b"/>
+			<stop offset="1" stop-color="#f0a93c"/>
+		</linearGradient>
+	</defs>
+	<rect width="1200" height="630" fill="url(#bg)"/>
+	<circle cx="180" cy="140" r="160" fill="#00a894" opacity="0.18"/>
+	<circle cx="1040" cy="520" r="200" fill="#00599a" opacity="0.22"/>
+
+	<g transform="translate(96,150)">
+		<rect width="56" height="56" rx="16" fill="#ffffff" opacity="0.12"/>
+		<text x="28" y="38" text-anchor="middle" fill="#ffffff" font-size="30" font-weight="800" font-family="Inter, Arial, sans-serif">Q</text>
+		<text x="78" y="38" fill="#ffffff" font-size="34" font-weight="800" font-family="Inter, Arial, sans-serif">Qipi</text>
+	</g>
+
+	<text x="96" y="320" fill="#ffffff" font-size="72" font-weight="800" font-family="Inter, Arial, sans-serif">Finanzas comunitarias</text>
+	<text x="96" y="405" fill="#9fe9d8" font-size="72" font-weight="800" font-family="Inter, Arial, sans-serif">para el Perú</text>
+	<text x="96" y="470" fill="#d6e4f5" font-size="30" font-weight="500" font-family="Inter, Arial, sans-serif">UNICAs · Bancas comunales · Aportes · Préstamos · Ahorros</text>
+
+	<g transform="translate(940,180)">
+		<circle cx="0" cy="0" r="64" fill="url(#coin)"/>
+		<circle cx="0" cy="0" r="64" fill="none" stroke="#ffffff" stroke-opacity="0.4" stroke-width="3"/>
+		<text x="0" y="16" text-anchor="middle" fill="#7a4a00" font-size="44" font-weight="800" font-family="Inter, Arial, sans-serif">S/</text>
+	</g>
+</svg>

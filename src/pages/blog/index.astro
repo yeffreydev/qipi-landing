@@ -1,0 +1,250 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import "../../styles/globals.css";
+import { posts } from "../../data/posts.js";
+
+const sorted = [...posts].sort((a, b) => (a.date < b.date ? 1 : -1));
+
+const ICONS = {
+	users: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z",
+	bank: "M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11m4-11v11m4-11v11m4-11v11m4-11v11",
+	tools: "M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z",
+	chart: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z",
+	growth: "M13 7h8m0 0v8m0-8l-8 8-4-4-6 6",
+};
+
+const jsonLd = {
+	"@context": "https://schema.org",
+	"@type": "Blog",
+	name: "Blog de Qipi — Finanzas comunitarias en Perú",
+	description:
+		"Artículos sobre UNICAs, bancas comunales, ahorro grupal y herramientas de finanzas en Perú.",
+	url: "https://qipi.aquinace.com/blog",
+	blogPost: sorted.map((p) => ({
+		"@type": "BlogPosting",
+		headline: p.title,
+		description: p.description,
+		datePublished: p.date,
+		url: "https://qipi.aquinace.com/blog/" + p.slug,
+	})),
+};
+---
+
+<Layout
+	title="Blog de Qipi — Finanzas comunitarias, UNICAs y banca comunal en Perú"
+	description="Aprende sobre UNICAs, bancas comunales, ahorro grupal y las mejores herramientas de finanzas en Perú. Guías prácticas para tu asociación o comunidad."
+	keywords="blog finanzas comunitarias, qué es una UNICA, qué es una banca comunal, herramientas de finanzas Perú, ahorro grupal, educación financiera Perú"
+	canonicalPath="/blog"
+	jsonLd={jsonLd}
+>
+	<div class="bg-blobs">
+		<div class="blob blob-1"></div>
+		<div class="blob blob-2"></div>
+		<div class="blob blob-3"></div>
+	</div>
+
+	<nav class="navbar">
+		<div class="navbar-inner">
+			<a href="/" class="navbar-brand">
+				<img src="/logo-icon.svg" alt="Qipi" width="40" height="40" />
+				<span>Qipi</span>
+			</a>
+			<a href="/" class="btn-back">← Inicio</a>
+		</div>
+	</nav>
+
+	<main class="blog-main">
+		<header class="blog-hero">
+			<div class="badge badge-static">
+				<span class="badge-dot"></span>
+				Blog Qipi
+			</div>
+			<h1>
+				Finanzas comunitarias <span class="grad">para el Perú</span>
+			</h1>
+			<p>
+				Todo sobre UNICAs, bancas comunales, ahorro grupal y las mejores
+				herramientas de finanzas para tu organización.
+			</p>
+		</header>
+
+		<div class="blog-grid">
+			{
+				sorted.map((p) => (
+					<a href={`/blog/${p.slug}`} class="blog-card">
+						<div class="blog-cover" style={`background:${p.gradient}`}>
+							<svg
+								width="40"
+								height="40"
+								fill="none"
+								stroke="currentColor"
+								viewBox="0 0 24 24"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="1.8"
+									d={ICONS[p.icon]}
+								/>
+							</svg>
+							<span class="blog-cover-cat">{p.category}</span>
+						</div>
+						<div class="blog-card-body">
+							<div class="blog-meta">
+								<span>{p.readingTime} de lectura</span>
+							</div>
+							<h2>{p.title}</h2>
+							<p>{p.description}</p>
+							<span class="blog-read">Leer artículo →</span>
+						</div>
+					</a>
+				))
+			}
+		</div>
+	</main>
+
+	<footer class="site-footer">
+		<div class="footer-inner">
+			<div class="footer-brand">
+				<img src="/logo-icon.svg" alt="Qipi" width="24" height="24" />
+				<span>© 2025 Qipi. Todos los derechos reservados.</span>
+			</div>
+			<div class="footer-links">
+				<a href="/blog" class="footer-link">Blog</a>
+				<a href="/privacidad" class="footer-link">Privacidad</a>
+			</div>
+		</div>
+	</footer>
+</Layout>
+
+<style>
+	@import "../../styles/legal-shared.css";
+
+	.blog-main {
+		padding: 128px 16px 80px;
+		max-width: 1152px;
+		margin: 0 auto;
+	}
+	.blog-hero {
+		text-align: center;
+		margin-bottom: 56px;
+	}
+	.blog-hero h1 {
+		font-size: clamp(2rem, 5vw, 3.25rem);
+		font-weight: 800;
+		color: #1b325f;
+		letter-spacing: -0.02em;
+		line-height: 1.1;
+		margin-bottom: 16px;
+	}
+	.grad {
+		background: linear-gradient(110deg, #00877a, #00a894, #00599a);
+		background-size: 200% auto;
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+		animation: gradient-shift 6s ease infinite;
+	}
+	.blog-hero p {
+		color: #64748b;
+		font-size: 1.0625rem;
+		max-width: 600px;
+		margin: 0 auto;
+		line-height: 1.7;
+	}
+
+	.blog-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 28px;
+	}
+	@media (min-width: 640px) {
+		.blog-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+	@media (min-width: 1024px) {
+		.blog-grid {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+
+	.blog-card {
+		display: flex;
+		flex-direction: column;
+		border-radius: 20px;
+		overflow: hidden;
+		background: #fff;
+		border: 1px solid #e2e8f0;
+		text-decoration: none;
+		box-shadow: 0 4px 20px rgba(27, 50, 95, 0.04);
+		transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+	}
+	.blog-card:hover {
+		transform: translateY(-6px);
+		border-color: rgba(0, 135, 122, 0.3);
+		box-shadow: 0 26px 50px rgba(0, 135, 122, 0.13);
+	}
+	.blog-cover {
+		position: relative;
+		height: 150px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: #fff;
+	}
+	.blog-cover-cat {
+		position: absolute;
+		bottom: 12px;
+		left: 16px;
+		font-size: 0.7rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+		background: rgba(255, 255, 255, 0.18);
+		padding: 4px 10px;
+		border-radius: 9999px;
+	}
+	.blog-card-body {
+		padding: 22px 22px 26px;
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+	}
+	.blog-meta {
+		font-size: 0.75rem;
+		color: #94a3b8;
+		margin-bottom: 10px;
+	}
+	.blog-card h2 {
+		font-size: 1.1rem;
+		font-weight: 700;
+		color: #1b325f;
+		line-height: 1.3;
+		margin-bottom: 10px;
+	}
+	.blog-card-body p {
+		color: #64748b;
+		font-size: 0.9rem;
+		line-height: 1.6;
+		flex: 1;
+		margin-bottom: 16px;
+	}
+	.blog-read {
+		color: #00877a;
+		font-weight: 700;
+		font-size: 0.875rem;
+	}
+
+	@keyframes gradient-shift {
+		0% {
+			background-position: 0% 50%;
+		}
+		50% {
+			background-position: 100% 50%;
+		}
+		100% {
+			background-position: 0% 50%;
+		}
+	}
+</style>

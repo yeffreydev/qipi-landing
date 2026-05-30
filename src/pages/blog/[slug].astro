@@ -1,0 +1,395 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import "../../styles/globals.css";
+import { posts } from "../../data/posts.js";
+
+export function getStaticPaths() {
+	return posts.map((post) => ({
+		params: { slug: post.slug },
+		props: { post },
+	}));
+}
+
+const { post } = Astro.props;
+const SITE = "https://qipi.aquinace.com";
+const url = `${SITE}/blog/${post.slug}`;
+
+const related = posts.filter((p) => p.slug !== post.slug).slice(0, 3);
+
+const articleSchema = {
+	"@context": "https://schema.org",
+	"@type": "BlogPosting",
+	headline: post.title,
+	description: post.description,
+	datePublished: post.date,
+	dateModified: post.date,
+	author: { "@type": "Organization", name: "Qipi", url: SITE },
+	publisher: {
+		"@type": "Organization",
+		name: "Qipi",
+		logo: { "@type": "ImageObject", url: SITE + "/logo-icon.svg" },
+	},
+	mainEntityOfPage: { "@type": "WebPage", "@id": url },
+	inLanguage: "es-PE",
+	keywords: post.keywords,
+};
+
+const breadcrumbSchema = {
+	"@context": "https://schema.org",
+	"@type": "BreadcrumbList",
+	itemListElement: [
+		{ "@type": "ListItem", position: 1, name: "Inicio", item: SITE },
+		{ "@type": "ListItem", position: 2, name: "Blog", item: SITE + "/blog" },
+		{ "@type": "ListItem", position: 3, name: post.title, item: url },
+	],
+};
+
+const dateLabel = new Date(post.date + "T00:00:00").toLocaleDateString("es-PE", {
+	year: "numeric",
+	month: "long",
+	day: "numeric",
+});
+---
+
+<Layout
+	title={`${post.title} | Qipi`}
+	description={post.description}
+	keywords={post.keywords}
+	type="article"
+	publishedTime={post.date}
+	canonicalPath={`/blog/${post.slug}`}
+	jsonLd={[articleSchema, breadcrumbSchema]}
+>
+	<div class="bg-blobs">
+		<div class="blob blob-1"></div>
+		<div class="blob blob-2"></div>
+		<div class="blob blob-3"></div>
+	</div>
+
+	<nav class="navbar">
+		<div class="navbar-inner">
+			<a href="/" class="navbar-brand">
+				<img src="/logo-icon.svg" alt="Qipi" width="40" height="40" />
+				<span>Qipi</span>
+			</a>
+			<a href="/blog" class="btn-back">← Blog</a>
+		</div>
+	</nav>
+
+	<main class="post-main">
+		<article class="post-container">
+			<nav class="breadcrumb" aria-label="Ruta de navegación">
+				<a href="/">Inicio</a>
+				<span>/</span>
+				<a href="/blog">Blog</a>
+				<span>/</span>
+				<span class="crumb-current">{post.category}</span>
+			</nav>
+
+			<header class="post-header">
+				<span class="post-cat" style={`background:${post.gradient}`}
+					>{post.category}</span
+				>
+				<h1>{post.title}</h1>
+				<p class="post-lead">{post.description}</p>
+				<div class="post-meta">
+					<img src="/logo-icon.svg" alt="Qipi" width="28" height="28" />
+					<span>Equipo Qipi</span>
+					<span class="dot">·</span>
+					<time datetime={post.date}>{dateLabel}</time>
+					<span class="dot">·</span>
+					<span>{post.readingTime} de lectura</span>
+				</div>
+			</header>
+
+			<div class="post-cover" style={`background:${post.gradient}`}></div>
+
+			<div class="post-body" set:html={post.body} />
+
+			<!-- CTA -->
+			<aside class="post-cta">
+				<h3>Lleva tu organización al siguiente nivel</h3>
+				<p>
+					Qipi digitaliza aportes, préstamos, ahorros e inversiones de
+					tu UNICA, banca comunal o asociación. Todo claro, en una sola
+					app.
+				</p>
+				<a
+					href="https://wa.me/51916913623?text=%F0%9F%92%9A%20Hola%2C%20quiero%20conocer%20Qipi%20%F0%9F%9A%80"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="post-cta-btn"
+				>
+					Empezar con Qipi →
+				</a>
+			</aside>
+		</article>
+
+		<!-- Related -->
+		<section class="related">
+			<h2>Sigue leyendo</h2>
+			<div class="related-grid">
+				{
+					related.map((p) => (
+						<a href={`/blog/${p.slug}`} class="related-card">
+							<span
+								class="related-bar"
+								style={`background:${p.gradient}`}
+							/>
+							<div class="related-body">
+								<span class="related-cat">{p.category}</span>
+								<h3>{p.title}</h3>
+								<span class="related-read">Leer →</span>
+							</div>
+						</a>
+					))
+				}
+			</div>
+		</section>
+	</main>
+
+	<footer class="site-footer">
+		<div class="footer-inner">
+			<div class="footer-brand">
+				<img src="/logo-icon.svg" alt="Qipi" width="24" height="24" />
+				<span>© 2025 Qipi. Todos los derechos reservados.</span>
+			</div>
+			<div class="footer-links">
+				<a href="/blog" class="footer-link">Blog</a>
+				<a href="/privacidad" class="footer-link">Privacidad</a>
+			</div>
+		</div>
+	</footer>
+</Layout>
+
+<style>
+	@import "../../styles/legal-shared.css";
+
+	.post-main {
+		padding: 120px 16px 72px;
+	}
+	.post-container {
+		max-width: 760px;
+		margin: 0 auto;
+	}
+
+	.breadcrumb {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 8px;
+		font-size: 0.8rem;
+		color: #94a3b8;
+		margin-bottom: 28px;
+	}
+	.breadcrumb a {
+		color: #00877a;
+		text-decoration: none;
+	}
+	.breadcrumb a:hover {
+		text-decoration: underline;
+	}
+	.crumb-current {
+		color: #64748b;
+	}
+
+	.post-header {
+		margin-bottom: 28px;
+	}
+	.post-cat {
+		display: inline-block;
+		color: #fff;
+		font-size: 0.72rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+		padding: 5px 14px;
+		border-radius: 9999px;
+		margin-bottom: 18px;
+	}
+	.post-header h1 {
+		font-size: clamp(1.75rem, 4.5vw, 2.75rem);
+		font-weight: 800;
+		color: #1b325f;
+		line-height: 1.15;
+		letter-spacing: -0.02em;
+		margin-bottom: 18px;
+	}
+	.post-lead {
+		font-size: 1.125rem;
+		color: #475569;
+		line-height: 1.7;
+		margin-bottom: 22px;
+	}
+	.post-meta {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		font-size: 0.875rem;
+		color: #94a3b8;
+		flex-wrap: wrap;
+	}
+	.post-meta span:nth-child(2) {
+		color: #1b325f;
+		font-weight: 600;
+	}
+	.post-meta .dot {
+		color: #cbd5e1;
+	}
+
+	.post-cover {
+		height: 200px;
+		border-radius: 20px;
+		margin-bottom: 40px;
+		box-shadow: 0 20px 45px rgba(0, 135, 122, 0.18);
+	}
+	@media (min-width: 640px) {
+		.post-cover {
+			height: 280px;
+		}
+	}
+
+	/* Article body */
+	.post-body :global(h2) {
+		font-size: 1.5rem;
+		font-weight: 700;
+		color: #1b325f;
+		margin: 36px 0 14px;
+		line-height: 1.25;
+	}
+	.post-body :global(h3) {
+		font-size: 1.15rem;
+		font-weight: 700;
+		color: #00599a;
+		margin: 26px 0 10px;
+	}
+	.post-body :global(p) {
+		color: #374151;
+		font-size: 1.0625rem;
+		line-height: 1.8;
+		margin-bottom: 18px;
+	}
+	.post-body :global(ul),
+	.post-body :global(ol) {
+		margin: 0 0 20px;
+		padding-left: 24px;
+	}
+	.post-body :global(li) {
+		color: #374151;
+		font-size: 1.0625rem;
+		line-height: 1.75;
+		margin-bottom: 10px;
+	}
+	.post-body :global(strong) {
+		color: #1b325f;
+		font-weight: 700;
+	}
+	.post-body :global(a) {
+		color: #00877a;
+		font-weight: 600;
+		text-decoration: underline;
+		text-underline-offset: 2px;
+	}
+	.post-body :global(a:hover) {
+		color: #00599a;
+	}
+
+	/* CTA */
+	.post-cta {
+		margin-top: 48px;
+		padding: 36px;
+		border-radius: 20px;
+		background: linear-gradient(135deg, #1b325f, #00599a 70%, #00877a);
+		color: #fff;
+		text-align: center;
+	}
+	.post-cta h3 {
+		font-size: 1.4rem;
+		font-weight: 700;
+		margin-bottom: 12px;
+	}
+	.post-cta p {
+		color: rgba(255, 255, 255, 0.82);
+		line-height: 1.7;
+		max-width: 520px;
+		margin: 0 auto 24px;
+	}
+	.post-cta-btn {
+		display: inline-block;
+		background: #25d366;
+		color: #fff;
+		font-weight: 700;
+		padding: 14px 30px;
+		border-radius: 9999px;
+		text-decoration: none;
+		transition: all 0.3s;
+	}
+	.post-cta-btn:hover {
+		background: #20bd5a;
+		transform: scale(1.04);
+		box-shadow: 0 16px 34px rgba(37, 211, 102, 0.3);
+	}
+
+	/* Related */
+	.related {
+		max-width: 1100px;
+		margin: 72px auto 0;
+	}
+	.related h2 {
+		text-align: center;
+		font-size: 1.6rem;
+		font-weight: 700;
+		color: #1b325f;
+		margin-bottom: 28px;
+	}
+	.related-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 20px;
+	}
+	@media (min-width: 768px) {
+		.related-grid {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+	.related-card {
+		display: flex;
+		flex-direction: column;
+		border-radius: 16px;
+		overflow: hidden;
+		background: #fff;
+		border: 1px solid #e2e8f0;
+		text-decoration: none;
+		transition: all 0.35s;
+	}
+	.related-card:hover {
+		transform: translateY(-4px);
+		border-color: rgba(0, 135, 122, 0.3);
+		box-shadow: 0 18px 36px rgba(0, 135, 122, 0.1);
+	}
+	.related-bar {
+		height: 8px;
+	}
+	.related-body {
+		padding: 20px;
+	}
+	.related-cat {
+		font-size: 0.7rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		color: #00877a;
+	}
+	.related-body h3 {
+		font-size: 1rem;
+		font-weight: 700;
+		color: #1b325f;
+		line-height: 1.35;
+		margin: 8px 0 14px;
+	}
+	.related-read {
+		color: #00599a;
+		font-weight: 700;
+		font-size: 0.85rem;
+	}
+</style>
