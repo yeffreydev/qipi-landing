@@ -1,0 +1,462 @@
+---
+import Layout from "../layouts/Layout.astro";
+import "../styles/globals.css";
+
+const lastUpdate = "29 de mayo de 2026";
+const contactEmail = "soporteqipi@aquinace.com";
+const whatsapp =
+	"https://wa.me/51916913623?text=%F0%9F%92%9A%20Hola%2C%20quiero%20solicitar%20la%20eliminaci%C3%B3n%20de%20mi%20cuenta%20en%20Qipi";
+const deletionMailto = `mailto:${contactEmail}?subject=Solicitud%20de%20eliminaci%C3%B3n%20de%20cuenta%20Qipi&body=Hola%2C%20solicito%20la%20eliminaci%C3%B3n%20de%20mi%20cuenta%20y%20datos%20asociados%20en%20Qipi.%0A%0ANombre%3A%20%0ACorreo%20o%20tel%C3%A9fono%20registrado%3A%20%0AOrganizaci%C3%B3n%2FUNICA%3A%20`;
+---
+
+<Layout
+	title="Eliminar cuenta y datos — Qipi"
+	description="Solicita la eliminación de tu cuenta de Qipi y de los datos asociados. Pasos a seguir, datos que se borran, datos que se conservan y plazos de retención."
+>
+	<!-- Background decorative elements -->
+	<div class="bg-blobs">
+		<div class="blob blob-1"></div>
+		<div class="blob blob-2"></div>
+		<div class="blob blob-3"></div>
+	</div>
+
+	<!-- Navigation -->
+	<nav class="navbar">
+		<div class="navbar-inner">
+			<a href="/" class="navbar-brand">
+				<img src="/logo-icon.svg" alt="Qipi" width="40" height="40" />
+				<span>Qipi</span>
+			</a>
+			<a href="/" class="btn-back">← Volver al inicio</a>
+		</div>
+	</nav>
+
+	<main class="legal-main">
+		<div class="legal-container">
+			<header class="legal-header">
+				<div class="badge badge-static">
+					<span class="badge-dot"></span>
+					Eliminación de cuenta
+				</div>
+				<h1>Eliminar tu cuenta y tus datos</h1>
+				<p class="legal-sub">
+					En <strong>Qipi</strong> (desarrollada por el equipo de Qipi)
+					puedes solicitar en cualquier momento que borremos tu cuenta y
+					los datos personales asociados. Aquí te explicamos cómo
+					hacerlo y qué ocurre con tu información.
+				</p>
+				<p class="legal-date">Última actualización: {lastUpdate}</p>
+			</header>
+
+			<article class="legal-body">
+				<section id="app">
+					<h2>1. Aplicación y desarrollador</h2>
+					<p>
+						Esta página corresponde a la app <strong>Qipi</strong>,
+						publicada en Google Play Store por el equipo de
+						<strong>Qipi</strong>. Si tienes una cuenta en Qipi puedes
+						pedir que la eliminemos junto con los datos asociados,
+						siguiendo los pasos descritos a continuación.
+					</p>
+				</section>
+
+				<section id="pasos">
+					<h2>2. Pasos para solicitar la eliminación</h2>
+					<p>
+						Para solicitar que borremos tu cuenta y tus datos, sigue
+						estos pasos:
+					</p>
+					<ol>
+						<li>
+							Envíanos una solicitud por uno de estos medios:
+							<ul>
+								<li>
+									Correo a <a href={deletionMailto}
+										>{contactEmail}</a
+									> con el asunto "Solicitud de eliminación de
+									cuenta".
+								</li>
+								<li>
+									<a href={whatsapp} target="_blank" rel="noopener noreferrer"
+										>WhatsApp</a
+									> al +51 916 913 623.
+								</li>
+							</ul>
+						</li>
+						<li>
+							Indica el <strong>nombre</strong> y el
+							<strong>correo o número de teléfono</strong> con el que
+							te registraste, para verificar tu identidad.
+						</li>
+						<li>
+							Confirmaremos la recepción y verificaremos que la
+							solicitud proviene del titular de la cuenta.
+						</li>
+						<li>
+							Procesaremos el borrado y te notificaremos cuando se
+							haya completado.
+						</li>
+					</ol>
+					<p>
+						Tiempo estimado: tramitamos las solicitudes en un plazo
+						máximo de <strong>30 días</strong> desde su verificación.
+					</p>
+				</section>
+
+				<section id="borramos">
+					<h2>3. Datos que se eliminan</h2>
+					<p>
+						Cuando se completa la solicitud, eliminamos o anonimizamos
+						de forma permanente los siguientes datos personales:
+					</p>
+					<ul>
+						<li>
+							Datos de cuenta e identidad: nombre, apellidos,
+							teléfono, correo electrónico y foto de perfil.
+						</li>
+						<li>
+							Tu pertenencia y rol dentro de organizaciones, UNICAs o
+							grupos.
+						</li>
+						<li>
+							Contenido que generaste: mensajes del foro o chat
+							grupal y publicaciones en el marketplace.
+						</li>
+						<li>
+							Identificadores de dispositivo y tokens de
+							notificaciones push asociados a tu cuenta.
+						</li>
+					</ul>
+				</section>
+
+				<section id="conservamos">
+					<h2>4. Datos que se conservan y plazos de retención</h2>
+					<p>
+						Algunos datos pueden conservarse, total o parcialmente,
+						después de eliminar tu cuenta, por motivos legales,
+						contables o de integridad de tu organización:
+					</p>
+					<ul>
+						<li>
+							<strong>Registros financieros de tu organización:</strong>
+							los movimientos contables del grupo (aportes,
+							préstamos, cuotas) pueden conservarse de forma
+							desvinculada de tu identidad para mantener la
+							integridad de las cuentas del grupo y cumplir
+							obligaciones legales, durante el plazo que exija la
+							normativa aplicable (hasta <strong>5 años</strong>).
+						</li>
+						<li>
+							<strong>Datos exigidos por ley:</strong> información que
+							debamos conservar para cumplir obligaciones legales,
+							fiscales o resolver disputas, durante el plazo legal
+							correspondiente.
+						</li>
+						<li>
+							<strong>Copias de seguridad:</strong> tus datos pueden
+							permanecer en copias de respaldo cifradas por un máximo
+							de <strong>90 días</strong> adicionales, tras los cuales
+							se eliminan en el ciclo normal de rotación de backups.
+						</li>
+					</ul>
+					<p>
+						Transcurridos esos plazos, los datos se eliminan o se
+						mantienen únicamente de forma anónima, sin posibilidad de
+						vincularlos contigo.
+					</p>
+				</section>
+
+				<section id="contacto">
+					<h2>5. Contacto</h2>
+					<p>
+						Si tienes dudas sobre la eliminación de tu cuenta o sobre
+						el tratamiento de tus datos, contáctanos:
+					</p>
+					<ul>
+						<li>
+							Correo: <a href={`mailto:${contactEmail}`}
+								>{contactEmail}</a
+							>
+						</li>
+						<li>
+							WhatsApp: <a href={whatsapp} target="_blank" rel="noopener noreferrer"
+								>+51 916 913 623</a
+							>
+						</li>
+					</ul>
+					<p>
+						Para más información sobre cómo tratamos tus datos, revisa
+						nuestra <a href="/privacidad">Política de Privacidad</a>.
+					</p>
+				</section>
+			</article>
+
+			<div class="legal-cta">
+				<a href="/" class="btn-back btn-back-lg">← Volver al inicio</a>
+			</div>
+		</div>
+	</main>
+
+	<!-- Footer -->
+	<footer class="site-footer">
+		<div class="footer-inner">
+			<div class="footer-brand">
+				<img src="/logo-icon.svg" alt="Qipi" width="24" height="24" />
+				<span>© 2025 Qipi. Todos los derechos reservados.</span>
+			</div>
+			<div class="footer-links">
+				<a href="/privacidad" class="footer-link">Política de Privacidad</a>
+				<a href="/eliminar-cuenta" class="footer-link">Eliminar cuenta</a>
+			</div>
+		</div>
+	</footer>
+</Layout>
+
+<style>
+	/* reuse blobs/navbar/footer from globals via inline below */
+	.bg-blobs {
+		position: fixed;
+		inset: 0;
+		pointer-events: none;
+		overflow: hidden;
+		z-index: -1;
+	}
+	.blob {
+		position: absolute;
+		border-radius: 50%;
+		filter: blur(140px);
+	}
+	.blob-1 {
+		top: -10%;
+		left: 20%;
+		width: 600px;
+		height: 600px;
+		background: rgba(0, 135, 122, 0.07);
+	}
+	.blob-2 {
+		bottom: 20%;
+		right: -5%;
+		width: 500px;
+		height: 500px;
+		background: rgba(0, 89, 154, 0.06);
+	}
+	.blob-3 {
+		top: 50%;
+		left: -5%;
+		width: 400px;
+		height: 400px;
+		background: rgba(27, 50, 95, 0.05);
+	}
+
+	.navbar {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 50;
+		backdrop-filter: blur(20px);
+		-webkit-backdrop-filter: blur(20px);
+		background: rgba(255, 255, 255, 0.85);
+		border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+	}
+	.navbar-inner {
+		max-width: 1152px;
+		margin: 0 auto;
+		padding: 16px 24px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	.navbar-brand {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		text-decoration: none;
+	}
+	.navbar-brand span {
+		font-size: 1.25rem;
+		font-weight: 700;
+		color: #1b325f;
+		letter-spacing: -0.025em;
+	}
+	.btn-back {
+		color: #00599a;
+		font-weight: 600;
+		font-size: 0.9rem;
+		text-decoration: none;
+		padding: 8px 16px;
+		border-radius: 9999px;
+		transition: all 0.25s;
+	}
+	.btn-back:hover {
+		background: rgba(0, 89, 154, 0.08);
+	}
+
+	/* Badge */
+	.badge {
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		padding: 8px 16px;
+		border-radius: 9999px;
+		background: rgba(0, 135, 122, 0.08);
+		border: 1px solid rgba(0, 135, 122, 0.2);
+		color: #00877a;
+		font-size: 0.875rem;
+		font-weight: 500;
+		margin-bottom: 20px;
+	}
+	.badge-dot {
+		width: 8px;
+		height: 8px;
+		border-radius: 50%;
+		background: #00877a;
+	}
+
+	/* Layout */
+	.legal-main {
+		padding: 128px 16px 80px;
+	}
+	.legal-container {
+		max-width: 820px;
+		margin: 0 auto;
+	}
+	.legal-header {
+		text-align: center;
+		margin-bottom: 48px;
+	}
+	.legal-header h1 {
+		font-size: clamp(2rem, 5vw, 3rem);
+		font-weight: 800;
+		color: #1b325f;
+		margin-bottom: 16px;
+		letter-spacing: -0.02em;
+	}
+	.legal-sub {
+		color: #64748b;
+		font-size: 1.0625rem;
+		line-height: 1.7;
+		max-width: 600px;
+		margin: 0 auto 16px;
+	}
+	.legal-sub strong {
+		color: #1b325f;
+	}
+	.legal-date {
+		color: #94a3b8;
+		font-size: 0.875rem;
+	}
+
+	/* Body */
+	.legal-body section {
+		margin-bottom: 40px;
+		scroll-margin-top: 96px;
+	}
+	.legal-body h2 {
+		font-size: 1.5rem;
+		font-weight: 700;
+		color: #1b325f;
+		margin-bottom: 14px;
+		padding-bottom: 10px;
+		border-bottom: 2px solid rgba(0, 135, 122, 0.15);
+	}
+	.legal-body h3 {
+		font-size: 1.0625rem;
+		font-weight: 700;
+		color: #00599a;
+		margin: 22px 0 10px;
+	}
+	.legal-body p {
+		color: #475569;
+		line-height: 1.75;
+		margin-bottom: 14px;
+	}
+	.legal-body ul,
+	.legal-body ol {
+		margin: 0 0 16px;
+		padding-left: 22px;
+	}
+	.legal-body li {
+		color: #475569;
+		line-height: 1.7;
+		margin-bottom: 8px;
+	}
+	.legal-body ol > li {
+		margin-bottom: 12px;
+	}
+	.legal-body strong {
+		color: #1b325f;
+	}
+	.legal-body a {
+		color: #00877a;
+		font-weight: 600;
+		text-decoration: underline;
+		text-underline-offset: 2px;
+	}
+	.legal-body a:hover {
+		color: #00599a;
+	}
+
+	.legal-cta {
+		text-align: center;
+		margin-top: 48px;
+	}
+	.btn-back-lg {
+		display: inline-block;
+		background: #1b325f;
+		color: #ffffff;
+		padding: 14px 28px;
+		font-size: 1rem;
+	}
+	.btn-back-lg:hover {
+		background: #00599a;
+		color: #ffffff;
+	}
+
+	/* Footer */
+	.site-footer {
+		padding: 40px 16px;
+		border-top: 1px solid #e2e8f0;
+	}
+	.footer-inner {
+		max-width: 1152px;
+		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+		gap: 16px;
+	}
+	@media (min-width: 640px) {
+		.footer-inner {
+			flex-direction: row;
+		}
+	}
+	.footer-brand {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+	}
+	.footer-brand span {
+		color: #94a3b8;
+		font-size: 0.875rem;
+	}
+	.footer-links {
+		display: flex;
+		gap: 20px;
+	}
+	.footer-link {
+		color: #64748b;
+		font-size: 0.875rem;
+		text-decoration: none;
+		transition: color 0.3s;
+	}
+	.footer-link:hover {
+		color: #00877a;
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+</style>

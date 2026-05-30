@@ -340,7 +340,10 @@ const whatsapp =
 				<img src="/logo-icon.svg" alt="Qipi" width="24" height="24" />
 				<span>© 2025 Qipi. Todos los derechos reservados.</span>
 			</div>
-			<a href="/privacidad" class="footer-link">Política de Privacidad</a>
+			<div class="footer-links">
+				<a href="/privacidad" class="footer-link">Política de Privacidad</a>
+				<a href="/eliminar-cuenta" class="footer-link">Eliminar cuenta</a>
+			</div>
 		</div>
 	</footer>
 </Layout>
@@ -608,6 +611,10 @@ const whatsapp =
 	.footer-brand span {
 		color: #94a3b8;
 		font-size: 0.875rem;
+	}
+	.footer-links {
+		display: flex;
+		gap: 20px;
 	}
 	.footer-link {
 		color: #64748b;
