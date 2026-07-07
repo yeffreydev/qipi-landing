@@ -5,33 +5,25 @@ import { posts } from "../../data/posts.js";
 
 const sorted = [...posts].sort((a, b) => (a.date < b.date ? 1 : -1));
 
-const ICONS = {
-	users: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z",
-	bank: "M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11m4-11v11m4-11v11m4-11v11m4-11v11",
-	tools: "M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z",
-	chart: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z",
-	growth: "M13 7h8m0 0v8m0-8l-8 8-4-4-6 6",
-};
-
 const jsonLd = {
 	"@context": "https://schema.org",
 	"@type": "Blog",
-	name: "Blog de Qipi — Finanzas comunitarias en Perú",
+	name: "Blog de aquí nace — Finanzas comunitarias en Perú",
 	description:
 		"Artículos sobre UNICAs, bancas comunales, ahorro grupal y herramientas de finanzas en Perú.",
-	url: "https://qipi.aquinace.com/blog",
+	url: "https://aquinace.com/blog",
 	blogPost: sorted.map((p) => ({
 		"@type": "BlogPosting",
 		headline: p.title,
 		description: p.description,
 		datePublished: p.date,
-		url: "https://qipi.aquinace.com/blog/" + p.slug,
+		url: "https://aquinace.com/blog/" + p.slug,
 	})),
 };
 ---
 
 <Layout
-	title="Blog de Qipi — Finanzas comunitarias, UNICAs y banca comunal en Perú"
+	title="Blog de aquí nace — Finanzas comunitarias, UNICAs y banca comunal en Perú"
 	description="Aprende sobre UNICAs, bancas comunales, ahorro grupal y las mejores herramientas de finanzas en Perú. Guías prácticas para tu asociación o comunidad."
 	keywords="blog finanzas comunitarias, qué es una UNICA, qué es una banca comunal, herramientas de finanzas Perú, ahorro grupal, educación financiera Perú"
 	canonicalPath="/blog"
@@ -46,8 +38,7 @@ const jsonLd = {
 	<nav class="navbar">
 		<div class="navbar-inner">
 			<a href="/" class="navbar-brand">
-				<img src="/logo-icon.svg" alt="Qipi" width="40" height="40" />
-				<span>Qipi</span>
+				<span class="wordmark"><span class="wm-a">aquí</span><span class="wm-n">nace</span></span>
 			</a>
 			<a href="/" class="btn-back">← Inicio</a>
 		</div>
@@ -55,10 +46,6 @@ const jsonLd = {
 
 	<main class="blog-main">
 		<header class="blog-hero">
-			<div class="badge badge-static">
-				<span class="badge-dot"></span>
-				Blog Qipi
-			</div>
 			<h1>
 				Finanzas comunitarias <span class="grad">para el Perú</span>
 			</h1>
@@ -72,25 +59,10 @@ const jsonLd = {
 			{
 				sorted.map((p) => (
 					<a href={`/blog/${p.slug}`} class="blog-card">
-						<div class="blog-cover" style={`background:${p.gradient}`}>
-							<svg
-								width="40"
-								height="40"
-								fill="none"
-								stroke="currentColor"
-								viewBox="0 0 24 24"
-							>
-								<path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									stroke-width="1.8"
-									d={ICONS[p.icon]}
-								/>
-							</svg>
-							<span class="blog-cover-cat">{p.category}</span>
-						</div>
 						<div class="blog-card-body">
 							<div class="blog-meta">
+								<span class="blog-cat">{p.category}</span>
+								<span class="dot">·</span>
 								<span>{p.readingTime} de lectura</span>
 							</div>
 							<h2>{p.title}</h2>
@@ -106,8 +78,8 @@ const jsonLd = {
 	<footer class="site-footer">
 		<div class="footer-inner">
 			<div class="footer-brand">
-				<img src="/logo-icon.svg" alt="Qipi" width="24" height="24" />
-				<span>© 2025 Qipi. Todos los derechos reservados.</span>
+				<span class="wordmark"><span class="wm-a">aquí</span><span class="wm-n">nace</span></span>
+				<span class="footer-copy">© 2026 aquí nace. Todos los derechos reservados.</span>
 			</div>
 			<div class="footer-links">
 				<a href="/blog" class="footer-link">Blog</a>
@@ -119,6 +91,14 @@ const jsonLd = {
 
 <style>
 	@import "../../styles/legal-shared.css";
+
+	/* Brand wordmark (match homepage) */
+	.navbar-brand .wordmark { font-size: 1.5rem; }
+	.footer-brand .wordmark { font-size: 1.2rem; }
+	.navbar-brand .wordmark .wm-a,
+	.footer-brand .wordmark .wm-a { color: var(--green-forest); }
+	.navbar-brand .wordmark .wm-n,
+	.footer-brand .wordmark .wm-n { color: var(--green-bright); }
 
 	.blog-main {
 		padding: 128px 16px 80px;
@@ -132,13 +112,13 @@ const jsonLd = {
 	.blog-hero h1 {
 		font-size: clamp(2rem, 5vw, 3.25rem);
 		font-weight: 800;
-		color: #1b325f;
+		color: #16281c;
 		letter-spacing: -0.02em;
 		line-height: 1.1;
 		margin-bottom: 16px;
 	}
 	.grad {
-		background: linear-gradient(110deg, #00877a, #00a894, #00599a);
+		background: linear-gradient(110deg, #2f9e44, #52c06a, #226a38);
 		background-size: 200% auto;
 		-webkit-background-clip: text;
 		background-clip: text;
@@ -185,41 +165,33 @@ const jsonLd = {
 		border-color: rgba(0, 135, 122, 0.3);
 		box-shadow: 0 26px 50px rgba(0, 135, 122, 0.13);
 	}
-	.blog-cover {
-		position: relative;
-		height: 150px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		color: #fff;
-	}
-	.blog-cover-cat {
-		position: absolute;
-		bottom: 12px;
-		left: 16px;
-		font-size: 0.7rem;
-		font-weight: 700;
-		text-transform: uppercase;
-		letter-spacing: 0.06em;
-		background: rgba(255, 255, 255, 0.18);
-		padding: 4px 10px;
-		border-radius: 9999px;
-	}
 	.blog-card-body {
-		padding: 22px 22px 26px;
+		padding: 26px 24px 28px;
 		display: flex;
 		flex-direction: column;
 		flex: 1;
 	}
 	.blog-meta {
+		display: flex;
+		align-items: center;
+		gap: 8px;
 		font-size: 0.75rem;
 		color: #94a3b8;
-		margin-bottom: 10px;
+		margin-bottom: 12px;
+	}
+	.blog-cat {
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		color: #2f9e44;
+	}
+	.blog-meta .dot {
+		color: #cbd5e1;
 	}
 	.blog-card h2 {
 		font-size: 1.1rem;
 		font-weight: 700;
-		color: #1b325f;
+		color: #16281c;
 		line-height: 1.3;
 		margin-bottom: 10px;
 	}
@@ -231,7 +203,7 @@ const jsonLd = {
 		margin-bottom: 16px;
 	}
 	.blog-read {
-		color: #00877a;
+		color: #2f9e44;
 		font-weight: 700;
 		font-size: 0.875rem;
 	}

@@ -1,4 +1,4 @@
-// Blog posts — SEO-focused content for Qipi (finanzas comunitarias Perú)
+// Blog posts — SEO-focused content for aquí nace (finanzas comunitarias Perú)
 // Each post: slug, title, description, keywords, date, readingTime, category, cover gradient, body (HTML)
 
 export const posts = [
@@ -6,7 +6,7 @@ export const posts = [
 		slug: "que-es-una-unica",
 		title: "¿Qué es una UNICA? Guía completa de las Uniones de Crédito y Ahorro en Perú",
 		description:
-			"Descubre qué es una UNICA, cómo funciona una Unión de Crédito y Ahorro en Perú, sus beneficios, reglas y cómo gestionarla con herramientas digitales como Qipi.",
+			"Descubre qué es una UNICA, cómo funciona una Unión de Crédito y Ahorro en Perú, sus beneficios, reglas y cómo gestionarla con herramientas digitales como aquí nace.",
 		keywords:
 			"qué es una UNICA, UNICA Perú, Unión de Crédito y Ahorro, finanzas comunitarias, ahorro grupal Perú, préstamos comunitarios",
 		date: "2026-05-20",
@@ -40,20 +40,20 @@ export const posts = [
 
 <h2>El reto de las UNICAs: el control del dinero</h2>
 <p>El mayor desafío de toda UNICA es la <strong>transparencia</strong>. Cuando los aportes, préstamos e intereses se anotan en cuadernos, es fácil cometer errores, perder información o generar desconfianza. Las reuniones se vuelven largas y la contabilidad, un dolor de cabeza.</p>
-<p>Aquí es donde una <strong>herramienta de finanzas comunitarias</strong> como <a href="/">Qipi</a> marca la diferencia: digitaliza los aportes, calcula los intereses automáticamente, registra cada movimiento y muestra a cada socio cuánto ha aportado y cuánto le corresponde, en tiempo real.</p>
+<p>Aquí es donde una <strong>herramienta de finanzas comunitarias</strong> como <a href="/">aquí nace</a> marca la diferencia: digitaliza los aportes, calcula los intereses automáticamente, registra cada movimiento y muestra a cada socio cuánto ha aportado y cuánto le corresponde, en tiempo real.</p>
 
 <h2>UNICA vs. banca comunal: ¿son lo mismo?</h2>
 <p>Aunque comparten el mismo espíritu de <strong>ahorro grupal</strong>, una UNICA y una banca comunal tienen diferencias en su organización y reglas. Si quieres profundizar, lee nuestra guía sobre <a href="/blog/que-es-una-banca-comunal">qué es una banca comunal</a>.</p>
 
 <h2>Conclusión</h2>
-<p>Una UNICA es mucho más que un grupo de ahorro: es una forma de democratizar las finanzas en el Perú. Y con la tecnología adecuada, puede ser tan ordenada y profesional como cualquier institución financiera. Si tu grupo quiere dar ese salto, <a href="/">conoce Qipi</a> y transforma la manera en que tu comunidad maneja su dinero.</p>
+<p>Una UNICA es mucho más que un grupo de ahorro: es una forma de democratizar las finanzas en el Perú. Y con la tecnología adecuada, puede ser tan ordenada y profesional como cualquier institución financiera. Si tu grupo quiere dar ese salto, <a href="/">conoce aquí nace</a> y transforma la manera en que tu comunidad maneja su dinero.</p>
 `,
 	},
 	{
 		slug: "que-es-una-banca-comunal",
 		title: "¿Qué es una banca comunal? Cómo funciona y cómo gestionarla en Perú",
 		description:
-			"Aprende qué es una banca comunal, cómo se diferencia de una UNICA, sus ventajas para el ahorro y crédito grupal en Perú, y cómo administrarla con Qipi.",
+			"Aprende qué es una banca comunal, cómo se diferencia de una UNICA, sus ventajas para el ahorro y crédito grupal en Perú, y cómo administrarla con aquí nace.",
 		keywords:
 			"qué es una banca comunal, banca comunal Perú, ahorro y crédito grupal, finanzas comunitarias, microfinanzas Perú, herramientas de finanzas",
 		date: "2026-05-18",
@@ -93,10 +93,10 @@ export const posts = [
 
 <h2>El problema de gestionar todo a mano</h2>
 <p>Llevar la contabilidad de una banca comunal en papel es propenso a errores: aportes mal anotados, intereses calculados a mano, actas perdidas. Esto genera desconfianza y reuniones eternas.</p>
-<p>Con una <strong>herramienta de finanzas digital</strong> como <a href="/">Qipi</a>, cada aporte, préstamo y pago queda registrado automáticamente, los cálculos son exactos y todos los miembros ven la información clara desde su celular.</p>
+<p>Con una <strong>herramienta de finanzas digital</strong> como <a href="/">aquí nace</a>, cada aporte, préstamo y pago queda registrado automáticamente, los cálculos son exactos y todos los miembros ven la información clara desde su celular.</p>
 
 <h2>Conclusión</h2>
-<p>La banca comunal demuestra que, cuando una comunidad se organiza, puede construir su propio sistema financiero. Y con la tecnología correcta, ese sistema puede ser tan transparente y eficiente como el de cualquier banco. <a href="/">Descubre cómo Qipi</a> moderniza tu banca comunal.</p>
+<p>La banca comunal demuestra que, cuando una comunidad se organiza, puede construir su propio sistema financiero. Y con la tecnología correcta, ese sistema puede ser tan transparente y eficiente como el de cualquier banco. <a href="/">Descubre cómo aquí nace</a> moderniza tu banca comunal.</p>
 `,
 	},
 	{
@@ -136,8 +136,8 @@ export const posts = [
 <h3>5. Comunicación integrada</h3>
 <p>Un foro o chat grupal evita malentendidos y mantiene a todos coordinados.</p>
 
-<h2>Qipi: la herramienta de finanzas comunitarias hecha para el Perú</h2>
-<p><a href="/">Qipi</a> reúne todo lo anterior en una sola app pensada para las realidades peruanas: UNICAs, bancas comunales, juntas y asociaciones. Con Qipi puedes:</p>
+<h2>aquí nace: la herramienta de finanzas comunitarias hecha para el Perú</h2>
+<p><a href="/">aquí nace</a> reúne todo lo anterior en una sola app pensada para las realidades peruanas: UNICAs, bancas comunales, juntas y asociaciones. Con aquí nace puedes:</p>
 <ul>
 	<li>Registrar aportes y acciones de cada socio.</li>
 	<li>Administrar préstamos con cuotas e intereses automáticos.</li>
@@ -147,10 +147,10 @@ export const posts = [
 </ul>
 
 <h2>Excel vs. app especializada: ¿cuál conviene?</h2>
-<p>Excel es gratis, pero exige conocimiento técnico, no evita errores y no da acceso en tiempo real a los socios. Una app especializada como Qipi está diseñada específicamente para el <strong>ahorro y crédito grupal</strong>, automatiza los cálculos y pone la información en el bolsillo de cada miembro.</p>
+<p>Excel es gratis, pero exige conocimiento técnico, no evita errores y no da acceso en tiempo real a los socios. Una app especializada como aquí nace está diseñada específicamente para el <strong>ahorro y crédito grupal</strong>, automatiza los cálculos y pone la información en el bolsillo de cada miembro.</p>
 
 <h2>Conclusión</h2>
-<p>La mejor herramienta de finanzas en Perú es la que tu grupo realmente usa y entiende. Si buscas orden, transparencia y crecimiento para tu organización, <a href="/">prueba Qipi</a> y deja atrás el cuaderno para siempre.</p>
+<p>La mejor herramienta de finanzas en Perú es la que tu grupo realmente usa y entiende. Si buscas orden, transparencia y crecimiento para tu organización, <a href="/">prueba aquí nace</a> y deja atrás el cuaderno para siempre.</p>
 `,
 	},
 	{
@@ -179,7 +179,7 @@ export const posts = [
 <p>Reglas claras evitan el 90% de los conflictos futuros.</p>
 
 <h2>2. Registra cada movimiento al instante</h2>
-<p>El error más común es "lo anoto después". Cada aporte, préstamo o pago debe registrarse <strong>en el momento</strong>. Si usas una <a href="/">herramienta digital como Qipi</a>, el registro queda guardado automáticamente y nadie puede dudar de las cuentas.</p>
+<p>El error más común es "lo anoto después". Cada aporte, préstamo o pago debe registrarse <strong>en el momento</strong>. Si usas una <a href="/">herramienta digital como aquí nace</a>, el registro queda guardado automáticamente y nadie puede dudar de las cuentas.</p>
 
 <h2>3. Automatiza el cálculo de intereses</h2>
 <p>Calcular intereses a mano es la principal fuente de errores y discusiones. Una buena herramienta calcula cuotas, intereses y saldos automáticamente, mostrando a cada socio exactamente cuánto debe y cuándo.</p>
@@ -194,7 +194,7 @@ export const posts = [
 <p>Al final del ciclo, repartir el capital y las ganancias debe ser sencillo y verificable. Un sistema que calcula automáticamente cuánto le toca a cada socio según sus aportes evita reclamos.</p>
 
 <h2>Conclusión</h2>
-<p>Gestionar aportes y préstamos no tiene por qué ser estresante. Con reglas claras y la <a href="/">herramienta de finanzas adecuada</a>, tu asociación puede operar con la transparencia de un banco y el corazón de una comunidad. <a href="/">Empieza con Qipi</a>.</p>
+<p>Gestionar aportes y préstamos no tiene por qué ser estresante. Con reglas claras y la <a href="/">herramienta de finanzas adecuada</a>, tu asociación puede operar con la transparencia de un banco y el corazón de una comunidad. <a href="/">Empieza con aquí nace</a>.</p>
 `,
 	},
 	{
@@ -228,13 +228,13 @@ export const posts = [
 <p>Gran parte de la población peruana, especialmente en zonas rurales, no tiene cuenta bancaria ni historial crediticio. Las <strong>finanzas comunitarias</strong> ofrecen una puerta de entrada: permiten ahorrar, construir confianza y, con el tiempo, acceder a servicios financieros formales.</p>
 
 <h2>El rol de la tecnología</h2>
-<p>La tecnología potencia la educación financiera comunitaria. Cuando un socio ve en su celular cuánto ha aportado, cuánto ha ganado y cómo crece el capital del grupo, <strong>aprende mirando datos reales</strong>. Herramientas como <a href="/">Qipi</a> convierten cada aporte en una lección de finanzas.</p>
+<p>La tecnología potencia la educación financiera comunitaria. Cuando un socio ve en su celular cuánto ha aportado, cuánto ha ganado y cómo crece el capital del grupo, <strong>aprende mirando datos reales</strong>. Herramientas como <a href="/">aquí nace</a> convierten cada aporte en una lección de finanzas.</p>
 
 <h2>Mujeres al frente de las finanzas comunitarias</h2>
 <p>En muchas comunidades del Perú, son las mujeres quienes lideran las UNICAs y bancas comunales. El ahorro grupal se ha convertido en una herramienta de empoderamiento económico, dándoles voz, autonomía y capacidad de decisión.</p>
 
 <h2>Conclusión</h2>
-<p>La educación financiera comunitaria demuestra que el conocimiento más valioso se construye haciendo. Cuando una comunidad ahorra junta, no solo multiplica su dinero: multiplica su confianza y su futuro. <a href="/">Con Qipi</a>, tu grupo puede dar ese paso con orden, transparencia y tecnología hecha para el Perú.</p>
+<p>La educación financiera comunitaria demuestra que el conocimiento más valioso se construye haciendo. Cuando una comunidad ahorra junta, no solo multiplica su dinero: multiplica su confianza y su futuro. <a href="/">Con aquí nace</a>, tu grupo puede dar ese paso con orden, transparencia y tecnología hecha para el Perú.</p>
 `,
 	},
 ];

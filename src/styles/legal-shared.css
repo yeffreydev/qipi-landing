@@ -63,11 +63,11 @@
 .navbar-brand span {
 	font-size: 1.25rem;
 	font-weight: 700;
-	color: #1b325f;
+	color: #16281c;
 	letter-spacing: -0.025em;
 }
 .btn-back {
-	color: #00599a;
+	color: #226a38;
 	font-weight: 600;
 	font-size: 0.9rem;
 	text-decoration: none;
@@ -87,7 +87,7 @@
 	border-radius: 9999px;
 	background: rgba(0, 135, 122, 0.08);
 	border: 1px solid rgba(0, 135, 122, 0.2);
-	color: #00877a;
+	color: #2f9e44;
 	font-size: 0.875rem;
 	font-weight: 500;
 	margin-bottom: 20px;
@@ -96,7 +96,7 @@
 	width: 8px;
 	height: 8px;
 	border-radius: 50%;
-	background: #00877a;
+	background: #2f9e44;
 	animation: pulse 2s infinite;
 }
 
@@ -141,7 +141,7 @@
 	transition: color 0.3s;
 }
 .footer-link:hover {
-	color: #00877a;
+	color: #2f9e44;
 }
 
 @keyframes pulse {

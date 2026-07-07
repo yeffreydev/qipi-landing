@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://qipi.aquinace.com/sitemap.xml
+Sitemap: https://aquinace.com/sitemap.xml

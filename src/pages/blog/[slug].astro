@@ -11,7 +11,7 @@ export function getStaticPaths() {
 }
 
 const { post } = Astro.props;
-const SITE = "https://qipi.aquinace.com";
+const SITE = "https://aquinace.com";
 const url = `${SITE}/blog/${post.slug}`;
 
 const related = posts.filter((p) => p.slug !== post.slug).slice(0, 3);
@@ -23,10 +23,10 @@ const articleSchema = {
 	description: post.description,
 	datePublished: post.date,
 	dateModified: post.date,
-	author: { "@type": "Organization", name: "Qipi", url: SITE },
+	author: { "@type": "Organization", name: "aquí nace", url: SITE },
 	publisher: {
 		"@type": "Organization",
-		name: "Qipi",
+		name: "aquí nace",
 		logo: { "@type": "ImageObject", url: SITE + "/logo-icon.svg" },
 	},
 	mainEntityOfPage: { "@type": "WebPage", "@id": url },
@@ -52,7 +52,7 @@ const dateLabel = new Date(post.date + "T00:00:00").toLocaleDateString("es-PE", 
 ---
 
 <Layout
-	title={`${post.title} | Qipi`}
+	title={`${post.title} | aquí nace`}
 	description={post.description}
 	keywords={post.keywords}
 	type="article"
@@ -69,8 +69,7 @@ const dateLabel = new Date(post.date + "T00:00:00").toLocaleDateString("es-PE", 
 	<nav class="navbar">
 		<div class="navbar-inner">
 			<a href="/" class="navbar-brand">
-				<img src="/logo-icon.svg" alt="Qipi" width="40" height="40" />
-				<span>Qipi</span>
+				<span class="wordmark"><span class="wm-a">aquí</span><span class="wm-n">nace</span></span>
 			</a>
 			<a href="/blog" class="btn-back">← Blog</a>
 		</div>
@@ -93,8 +92,7 @@ const dateLabel = new Date(post.date + "T00:00:00").toLocaleDateString("es-PE", 
 				<h1>{post.title}</h1>
 				<p class="post-lead">{post.description}</p>
 				<div class="post-meta">
-					<img src="/logo-icon.svg" alt="Qipi" width="28" height="28" />
-					<span>Equipo Qipi</span>
+					<span>Equipo aquí nace</span>
 					<span class="dot">·</span>
 					<time datetime={post.date}>{dateLabel}</time>
 					<span class="dot">·</span>
@@ -102,25 +100,23 @@ const dateLabel = new Date(post.date + "T00:00:00").toLocaleDateString("es-PE", 
 				</div>
 			</header>
 
-			<div class="post-cover" style={`background:${post.gradient}`}></div>
-
 			<div class="post-body" set:html={post.body} />
 
 			<!-- CTA -->
 			<aside class="post-cta">
 				<h3>Lleva tu organización al siguiente nivel</h3>
 				<p>
-					Qipi digitaliza aportes, préstamos, ahorros e inversiones de
+					aquí nace digitaliza aportes, préstamos, ahorros e inversiones de
 					tu UNICA, banca comunal o asociación. Todo claro, en una sola
 					app.
 				</p>
 				<a
-					href="https://wa.me/51916913623?text=%F0%9F%92%9A%20Hola%2C%20quiero%20conocer%20Qipi%20%F0%9F%9A%80"
+					href="https://wa.me/51916913623?text=%F0%9F%92%9A%20Hola%2C%20quiero%20conocer%20aqu%C3%AD%20nace%20%F0%9F%9A%80"
 					target="_blank"
 					rel="noopener noreferrer"
 					class="post-cta-btn"
 				>
-					Empezar con Qipi →
+					Empezar con aquí nace →
 				</a>
 			</aside>
 		</article>
@@ -151,8 +147,8 @@ const dateLabel = new Date(post.date + "T00:00:00").toLocaleDateString("es-PE", 
 	<footer class="site-footer">
 		<div class="footer-inner">
 			<div class="footer-brand">
-				<img src="/logo-icon.svg" alt="Qipi" width="24" height="24" />
-				<span>© 2025 Qipi. Todos los derechos reservados.</span>
+				<span class="wordmark"><span class="wm-a">aquí</span><span class="wm-n">nace</span></span>
+				<span class="footer-copy">© 2026 aquí nace. Todos los derechos reservados.</span>
 			</div>
 			<div class="footer-links">
 				<a href="/blog" class="footer-link">Blog</a>
@@ -164,6 +160,14 @@ const dateLabel = new Date(post.date + "T00:00:00").toLocaleDateString("es-PE", 
 
 <style>
 	@import "../../styles/legal-shared.css";
+
+	/* Brand wordmark (match homepage) */
+	.navbar-brand .wordmark { font-size: 1.5rem; }
+	.footer-brand .wordmark { font-size: 1.2rem; }
+	.navbar-brand .wordmark .wm-a,
+	.footer-brand .wordmark .wm-a { color: var(--green-forest); }
+	.navbar-brand .wordmark .wm-n,
+	.footer-brand .wordmark .wm-n { color: var(--green-bright); }
 
 	.post-main {
 		padding: 120px 16px 72px;
@@ -183,7 +187,7 @@ const dateLabel = new Date(post.date + "T00:00:00").toLocaleDateString("es-PE", 
 		margin-bottom: 28px;
 	}
 	.breadcrumb a {
-		color: #00877a;
+		color: #2f9e44;
 		text-decoration: none;
 	}
 	.breadcrumb a:hover {
@@ -210,7 +214,7 @@ const dateLabel = new Date(post.date + "T00:00:00").toLocaleDateString("es-PE", 
 	.post-header h1 {
 		font-size: clamp(1.75rem, 4.5vw, 2.75rem);
 		font-weight: 800;
-		color: #1b325f;
+		color: #16281c;
 		line-height: 1.15;
 		letter-spacing: -0.02em;
 		margin-bottom: 18px;
@@ -229,38 +233,30 @@ const dateLabel = new Date(post.date + "T00:00:00").toLocaleDateString("es-PE", 
 		color: #94a3b8;
 		flex-wrap: wrap;
 	}
-	.post-meta span:nth-child(2) {
-		color: #1b325f;
+	.post-meta span:first-child {
+		color: #16281c;
 		font-weight: 600;
 	}
 	.post-meta .dot {
 		color: #cbd5e1;
 	}
 
-	.post-cover {
-		height: 200px;
-		border-radius: 20px;
+	.post-header {
 		margin-bottom: 40px;
-		box-shadow: 0 20px 45px rgba(0, 135, 122, 0.18);
-	}
-	@media (min-width: 640px) {
-		.post-cover {
-			height: 280px;
-		}
 	}
 
 	/* Article body */
 	.post-body :global(h2) {
 		font-size: 1.5rem;
 		font-weight: 700;
-		color: #1b325f;
+		color: #16281c;
 		margin: 36px 0 14px;
 		line-height: 1.25;
 	}
 	.post-body :global(h3) {
 		font-size: 1.15rem;
 		font-weight: 700;
-		color: #00599a;
+		color: #226a38;
 		margin: 26px 0 10px;
 	}
 	.post-body :global(p) {
@@ -281,17 +277,17 @@ const dateLabel = new Date(post.date + "T00:00:00").toLocaleDateString("es-PE", 
 		margin-bottom: 10px;
 	}
 	.post-body :global(strong) {
-		color: #1b325f;
+		color: #16281c;
 		font-weight: 700;
 	}
 	.post-body :global(a) {
-		color: #00877a;
+		color: #2f9e44;
 		font-weight: 600;
 		text-decoration: underline;
 		text-underline-offset: 2px;
 	}
 	.post-body :global(a:hover) {
-		color: #00599a;
+		color: #226a38;
 	}
 
 	/* CTA */
@@ -299,7 +295,7 @@ const dateLabel = new Date(post.date + "T00:00:00").toLocaleDateString("es-PE", 
 		margin-top: 48px;
 		padding: 36px;
 		border-radius: 20px;
-		background: linear-gradient(135deg, #1b325f, #00599a 70%, #00877a);
+		background: linear-gradient(135deg, #16281c, #226a38 70%, #2f9e44);
 		color: #fff;
 		text-align: center;
 	}
@@ -339,7 +335,7 @@ const dateLabel = new Date(post.date + "T00:00:00").toLocaleDateString("es-PE", 
 		text-align: center;
 		font-size: 1.6rem;
 		font-weight: 700;
-		color: #1b325f;
+		color: #16281c;
 		margin-bottom: 28px;
 	}
 	.related-grid {
@@ -378,17 +374,17 @@ const dateLabel = new Date(post.date + "T00:00:00").toLocaleDateString("es-PE", 
 		font-weight: 700;
 		text-transform: uppercase;
 		letter-spacing: 0.05em;
-		color: #00877a;
+		color: #2f9e44;
 	}
 	.related-body h3 {
 		font-size: 1rem;
 		font-weight: 700;
-		color: #1b325f;
+		color: #16281c;
 		line-height: 1.35;
 		margin: 8px 0 14px;
 	}
 	.related-read {
-		color: #00599a;
+		color: #226a38;
 		font-weight: 700;
 		font-size: 0.85rem;
 	}

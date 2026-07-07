@@ -10,12 +10,12 @@ interface Props {
 	jsonLd?: Record<string, any> | Record<string, any>[];
 }
 
-const SITE_URL = "https://qipi.aquinace.com";
+const SITE_URL = "https://aquinace.com";
 
 const {
-	title = "Qipi — Finanzas comunitarias, UNICAs y banca comunal en Perú",
-	description = "Qipi es la herramienta de finanzas comunitarias en Perú para gestionar UNICAs, bancas comunales y asociaciones: aportes, ahorros, préstamos e inversiones en una sola app.",
-	keywords = "Qipi, finanzas comunitarias, herramientas de finanzas Perú, qué es una UNICA, qué es una banca comunal, app de ahorro grupal, préstamos comunitarios, gestión de aportes, asociaciones Perú",
+	title = "aquí nace — La plataforma que te conecta con más oportunidades financieras",
+	description = "aquí nace es la plataforma que conecta personas con oportunidades financieras reales y accesibles. No otorgamos créditos: ofrecemos la tecnología y la red para que crezcas.",
+	keywords = "aquí nace, aquinace, plataforma financiera Perú, red financiera, herramienta de finanzas, oportunidades financieras, inclusión financiera, fintech Perú",
 	image = "/og-image.svg",
 	type = "website",
 	publishedTime,
@@ -29,7 +29,7 @@ const ogImage = image.startsWith("http") ? image : SITE_URL + image;
 const baseJsonLd = {
 	"@context": "https://schema.org",
 	"@type": "Organization",
-	name: "Qipi",
+	name: "aquí nace",
 	url: SITE_URL,
 	logo: SITE_URL + "/logo-icon.svg",
 	description,
@@ -56,7 +56,8 @@ const schemas = jsonLd
 		<title>{title}</title>
 		<meta name="description" content={description} />
 		<meta name="keywords" content={keywords} />
-		<meta name="author" content="Qipi" />
+		<meta name="author" content="aquí nace" />
+		<meta name="theme-color" content="#1c5a30" />
 		<meta name="robots" content="index, follow, max-image-preview:large" />
 		<meta name="language" content="Spanish" />
 		<meta name="geo.region" content="PE" />
@@ -65,7 +66,7 @@ const schemas = jsonLd
 
 		<!-- Open Graph -->
 		<meta property="og:type" content={type} />
-		<meta property="og:site_name" content="Qipi" />
+		<meta property="og:site_name" content="aquí nace" />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:url" content={canonical} />
@@ -85,7 +86,7 @@ const schemas = jsonLd
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
-			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+			href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap"
 			rel="stylesheet"
 		/>
 

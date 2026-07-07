@@ -1,5 +1,25 @@
 @import "tailwindcss";
 
+/* ===== Design tokens — aquí nace ===== */
+:root {
+    --green-deep: #0f3d21;
+    --green-forest: #1c5a30;
+    --green-800: #226a38;
+    --green: #2f9e44;
+    --green-bright: #52c06a;
+    --green-soft: #e7f6e9;
+    --yellow: #f5c518;
+    --yellow-deep: #e0a500;
+    --yellow-soft: #fdf3cf;
+    --cream: #ffffff;
+    --cream-2: #ffffff;
+    --ink: #16281c;
+    --muted: #5c6b60;
+    --line: #ececec;
+    --font-brand: 'Fredoka', 'Inter', system-ui, sans-serif;
+    --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
 /* Base resets */
 * {
     margin: 0;
@@ -12,9 +32,9 @@ html {
 }
 
 body {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    background-color: #ffffff;
-    color: #1a202c;
+    font-family: var(--font-body);
+    background-color: var(--cream);
+    color: var(--ink);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -27,10 +47,24 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-    background: #f1f5f9;
+    background: var(--cream);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #00877A;
+    background: var(--green);
     border-radius: 3px;
 }
+
+/* ===== Brand wordmark (aquí nace) ===== */
+.wordmark {
+    font-family: var(--font-brand);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1;
+    white-space: nowrap;
+    display: inline-block;
+}
+.wordmark .wm-a { color: var(--green-forest); }
+.wordmark .wm-n { color: var(--green-bright); margin-left: 0.22em; }
+.wordmark.on-dark .wm-a { color: #dff3df; }
+.wordmark.on-dark .wm-n { color: var(--yellow); }
