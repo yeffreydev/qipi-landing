@@ -3,6 +3,69 @@
 
 export const posts = [
 	{
+		slug: "como-son-comunidades-inteligentes-aqui-nace",
+		title: "Cómo son las comunidades inteligentes de aquí nace",
+		description:
+			"Descubre qué es una comunidad inteligente de aquí nace: cómo cualquiera puede crearla sin conocimientos previos, con una economía propia que prospera, herramientas, academia y una red que la acompaña.",
+		keywords:
+			"comunidades inteligentes, comunidad inteligente aquí nace, economía comunitaria, crear comunidad Perú, finanzas comunitarias, academia financiera, herramientas de finanzas",
+		date: "2026-07-23",
+		readingTime: "7 min",
+		category: "Comunidades inteligentes",
+		gradient: "linear-gradient(135deg, #1c5a30 0%, #2f9e44 60%, #52c06a 100%)",
+		icon: "users",
+		body: `
+<p>En <a href="/">aquí nace</a> creemos que una comunidad organizada puede lograr con su dinero lo mismo que un banco… y con mucho más corazón. Por eso creamos las <strong>comunidades inteligentes</strong>: grupos de personas que ahorran, se prestan, aprenden y crecen juntos, apoyados por tecnología que hace el trabajo difícil por ellos. Y lo mejor: <strong>cualquiera puede crear una, sin necesidad de tener mucho conocimiento.</strong></p>
+
+<h2>¿Qué es una comunidad inteligente?</h2>
+<p>Una comunidad inteligente es un grupo —una <a href="/blog/que-es-una-unica">UNICA</a>, una <a href="/blog/que-es-una-banca-comunal">banca comunal</a>, una junta o una asociación— que gestiona su economía, sus reglas y su crecimiento desde una sola plataforma. No es solo "un grupo que ahorra": es una comunidad que se vuelve inteligente porque toma decisiones con información clara, en tiempo real y al alcance de todos.</p>
+<p>Lo que antes se anotaba en un cuaderno y generaba dudas, ahora vive ordenado en el celular de cada miembro. Eso cambia todo.</p>
+
+<h2>1. Se crean sin necesidad de tener mucho conocimiento</h2>
+<p>El mayor freno para organizar una comunidad siempre fue el mismo: "no sé de finanzas", "no sé llevar las cuentas", "¿y si me equivoco?". aquí nace elimina ese miedo. La plataforma <strong>te guía paso a paso</strong>: crear la comunidad, invitar a los miembros, definir las reglas y registrar los primeros aportes.</p>
+<p>No necesitas ser contador ni experto en tecnología. Si sabes usar WhatsApp, puedes liderar una comunidad inteligente. La herramienta se encarga de los cálculos; tú te encargas de las personas.</p>
+
+<h2>2. Tienen una economía que se diferencia y prospera</h2>
+<p>Aquí está el corazón del modelo. En una comunidad inteligente, <strong>el dinero se queda y circula dentro del grupo</strong>. Los aportes forman un fondo común; de ese fondo salen los préstamos; y los intereses que se pagan <strong>regresan a los propios miembros</strong>, no a un banco externo.</p>
+<p>Eso hace que su economía se diferencie de la banca tradicional:</p>
+<ul>
+	<li><strong>El valor se queda en casa:</strong> las ganancias fortalecen a la comunidad, no a un tercero.</li>
+	<li><strong>Reglas propias y justas:</strong> el grupo decide sus tasas, plazos y condiciones.</li>
+	<li><strong>Transparencia total:</strong> cada sol está registrado y a la vista de todos, así nadie duda de las cuentas.</li>
+	<li><strong>Crecimiento sostenible:</strong> ciclo tras ciclo, el capital del grupo se multiplica.</li>
+</ul>
+<p>Una economía que se diferencia porque es de la comunidad, para la comunidad. Y que prospera porque cada decisión se toma con datos claros.</p>
+
+<h2>3. Cuentan con herramientas que hacen el trabajo pesado</h2>
+<p>Una comunidad inteligente no pierde tiempo cuadrando números. Las <a href="/blog/mejores-herramientas-finanzas-peru">herramientas de aquí nace</a> automatizan lo que antes causaba errores y discusiones:</p>
+<ul>
+	<li>Registro instantáneo de aportes y acciones de cada miembro.</li>
+	<li>Cálculo automático de préstamos, cuotas e intereses.</li>
+	<li>Ahorros, inversiones y utilidades visibles en tiempo real.</li>
+	<li>Historial completo de cada movimiento, sin riesgo de perder un cuaderno.</li>
+	<li>Un foro integrado para coordinar al grupo sin malentendidos.</li>
+</ul>
+<p>Las reuniones dejan de ser eternas y se vuelven productivas. La tecnología hace el trabajo pesado; la comunidad se dedica a crecer.</p>
+
+<h2>4. Aprenden con una academia hecha para su realidad</h2>
+<p>Una comunidad inteligente no solo maneja mejor su dinero: <strong>aprende a hacerlo crecer</strong>. La academia de aquí nace ofrece cursos y guías simples sobre ahorro, crédito e inversión, pensados para las realidades peruanas y explicados sin tecnicismos.</p>
+<p>Así, cada miembro se vuelve un poco más capaz en cada ciclo. La <a href="/blog/educacion-financiera-comunitaria-peru">educación financiera</a> deja de ser un privilegio y se convierte en parte del día a día de la comunidad.</p>
+
+<h2>5. Y más: una red que las conecta</h2>
+<p>Las comunidades inteligentes no están solas. Forman parte de una <strong>red de apoyo</strong> más grande: comparten buenas prácticas, acceden a un marketplace comunitario y se potencian con el <a href="/token">token AN</a>, la pieza que impulsa todo el ecosistema de aquí nace.</p>
+
+<h2>Cómo crear tu comunidad inteligente en 3 pasos</h2>
+<ol>
+	<li><strong>Crea tu comunidad:</strong> ponle nombre, invita a los miembros y define las reglas con la ayuda de la plataforma.</li>
+	<li><strong>Activa su economía:</strong> registra aportes y préstamos; aquí nace calcula todo y mantiene las cuentas claras.</li>
+	<li><strong>Aprende y prospera:</strong> usa la academia y las herramientas para hacer crecer el capital del grupo.</li>
+</ol>
+
+<h2>Conclusión</h2>
+<p>Las comunidades inteligentes de aquí nace demuestran que no hace falta ser experto para construir una economía próspera. Solo hace falta una comunidad y la tecnología correcta para acompañarla. <a href="/comunidades-inteligentes">Conoce a fondo las comunidades inteligentes</a> o <a href="/">empieza a crear la tuya con aquí nace</a>.</p>
+`,
+	},
+	{
 		slug: "que-es-una-unica",
 		title: "¿Qué es una UNICA? Guía completa de las Uniones de Crédito y Ahorro en Perú",
 		description:
