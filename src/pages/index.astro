@@ -91,43 +91,220 @@ const homeJsonLd = [
 	<main>
 		<!-- Hero -->
 		<section class="hero" id="inicio">
-			<div class="hero-grid">
-				<div class="hero-copy">
-					<h1 class="hero-title">
-						Tu red financiera<br />
-						para <span class="grad-green">crecer</span> juntos.
-					</h1>
-					<p class="hero-sub">
-						La plataforma que conecta personas con oportunidades
-						financieras <strong>reales y accesibles.</strong> Simple,
-						cercana y hecha para ti.
-					</p>
-					<div class="hero-cta">
-						<a href={WA} target="_blank" rel="noopener noreferrer" class="btn-yellow">
-							Empieza ahora
-						</a>
-						<a href="#servicios" class="btn-ghost">Conoce más</a>
-					</div>
-					<div class="hero-trust">
-						<span>Sin complicaciones</span>
-						<span>·</span>
-						<span>Respuesta inmediata</span>
-					</div>
-				</div>
+			<div class="hero-stage">
+				<h1 class="sr-only">aquí nace — comunidades inteligentes</h1>
 
-				<!-- Hero photo -->
+				<!-- Hero illustration: comunidades inteligentes (protagonista) -->
 				<div class="hero-art">
 					<div class="art-ring"></div>
-					<div class="hero-photo">
-						<img
-							src="/hero.jpeg"
-							alt="Comunidad usando la plataforma aquí nace para gestionar sus finanzas"
-							width="1600"
-							height="900"
-							loading="eager"
-							fetchpriority="high"
-						/>
-					</div>
+					<svg
+						class="hero-illus"
+						viewBox="0 0 900 740"
+						role="img"
+						aria-label="Ilustración de comunidades inteligentes conectadas en una red financiera"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<defs>
+							<linearGradient id="hi-sky" x1="0" y1="0" x2="1" y2="1">
+								<stop offset="0" stop-color="#5b21b6"/>
+								<stop offset="0.5" stop-color="#7c3aed"/>
+								<stop offset="1" stop-color="#0ea5e9"/>
+							</linearGradient>
+							<linearGradient id="hi-purple" x1="0" y1="0" x2="0" y2="1">
+								<stop offset="0" stop-color="#a78bfa"/>
+								<stop offset="0.55" stop-color="#7c3aed"/>
+								<stop offset="1" stop-color="#5b21b6"/>
+							</linearGradient>
+							<linearGradient id="hi-silver" x1="0" y1="0" x2="0" y2="1">
+								<stop offset="0" stop-color="#ffffff"/>
+								<stop offset="1" stop-color="#cbd5e1"/>
+							</linearGradient>
+							<linearGradient id="hi-blue" x1="0" y1="0" x2="0" y2="1">
+								<stop offset="0" stop-color="#7dd3fc"/>
+								<stop offset="1" stop-color="#0284c7"/>
+							</linearGradient>
+							<radialGradient id="hi-glow" cx="0.5" cy="0.44" r="0.62">
+								<stop offset="0" stop-color="#ede9fe"/>
+								<stop offset="0.5" stop-color="#f5f3ff"/>
+								<stop offset="1" stop-color="#ffffff"/>
+							</radialGradient>
+							<radialGradient id="hi-hub" cx="0.42" cy="0.36" r="0.75">
+								<stop offset="0" stop-color="#c4b5fd"/>
+								<stop offset="0.5" stop-color="#7c3aed"/>
+								<stop offset="1" stop-color="#5b21b6"/>
+							</radialGradient>
+							<radialGradient id="hi-core" cx="0.42" cy="0.34" r="0.8">
+								<stop offset="0" stop-color="#ffffff"/>
+								<stop offset="0.7" stop-color="#f5f3ff"/>
+								<stop offset="1" stop-color="#ede9fe"/>
+							</radialGradient>
+							<linearGradient id="hi-word" x1="0" y1="0" x2="1" y2="0">
+								<stop offset="0" stop-color="#5b21b6"/>
+								<stop offset="0.32" stop-color="#7c3aed"/>
+								<stop offset="0.54" stop-color="#94a3b8"/>
+								<stop offset="0.76" stop-color="#38bdf8"/>
+								<stop offset="1" stop-color="#0ea5e9"/>
+							</linearGradient>
+							<filter id="hi-shadow" x="-30%" y="-30%" width="160%" height="160%">
+								<feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#5b21b6" flood-opacity="0.22"/>
+							</filter>
+						</defs>
+
+						<!-- soft backdrop -->
+						<rect x="30" y="24" width="840" height="684" rx="64" fill="url(#hi-glow)"/>
+						<circle cx="450" cy="300" r="278" fill="#0ea5e9" opacity="0.06"/>
+						<circle cx="450" cy="300" r="206" fill="#7c3aed" opacity="0.06"/>
+						<circle cx="450" cy="300" r="134" fill="#5b21b6" opacity="0.05"/>
+
+						<!-- orbit rings -->
+						<g fill="none" opacity="0.4">
+							<ellipse cx="450" cy="300" rx="340" ry="234" stroke="#a78bfa" stroke-width="1.5" stroke-dasharray="2 13" stroke-linecap="round"/>
+							<ellipse cx="450" cy="300" rx="236" ry="164" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="2 13" stroke-linecap="round"/>
+						</g>
+
+						<!-- connection network (with data pulses) -->
+						<g class="hi-links" stroke-linecap="round" fill="none">
+							<path d="M450 300 L200 150" stroke="url(#hi-sky)" stroke-width="4" opacity="0.5"/>
+							<path d="M450 300 L700 150" stroke="url(#hi-sky)" stroke-width="4" opacity="0.5"/>
+							<path d="M450 300 L135 340" stroke="url(#hi-sky)" stroke-width="4" opacity="0.5"/>
+							<path d="M450 300 L765 340" stroke="url(#hi-sky)" stroke-width="4" opacity="0.5"/>
+							<path d="M450 300 L280 528" stroke="url(#hi-sky)" stroke-width="4" opacity="0.5"/>
+							<path d="M450 300 L620 528" stroke="url(#hi-sky)" stroke-width="4" opacity="0.5"/>
+						</g>
+						<g class="hi-flow" fill="#ffffff">
+							<circle cx="0" cy="0" r="5"><animateMotion dur="2.6s" repeatCount="indefinite" path="M450 300 L200 150"/></circle>
+							<circle cx="0" cy="0" r="5"><animateMotion dur="2.9s" repeatCount="indefinite" path="M450 300 L700 150"/></circle>
+							<circle cx="0" cy="0" r="5"><animateMotion dur="3.1s" repeatCount="indefinite" path="M450 300 L135 340"/></circle>
+							<circle cx="0" cy="0" r="5"><animateMotion dur="2.7s" repeatCount="indefinite" path="M450 300 L765 340"/></circle>
+							<circle cx="0" cy="0" r="5"><animateMotion dur="3.3s" repeatCount="indefinite" path="M450 300 L280 528"/></circle>
+							<circle cx="0" cy="0" r="5"><animateMotion dur="3.0s" repeatCount="indefinite" path="M450 300 L620 528"/></circle>
+						</g>
+
+						<!-- central hub: núcleo con el logo "aquí nace" -->
+						<g class="hi-hub" filter="url(#hi-shadow)">
+							<circle cx="450" cy="300" r="118" fill="none" stroke="#a78bfa" stroke-width="2" opacity="0.5" class="hi-pulse-ring"/>
+							<!-- orbiting neural nodes on the ring -->
+							<g fill="#a78bfa" opacity="0.9">
+								<circle cx="450" cy="196" r="6"/>
+								<circle cx="540" cy="248" r="6"/>
+								<circle cx="540" cy="352" r="6"/>
+								<circle cx="450" cy="404" r="6"/>
+								<circle cx="360" cy="352" r="6"/>
+								<circle cx="360" cy="248" r="6"/>
+							</g>
+							<!-- glowing outer ring -->
+							<circle cx="450" cy="300" r="104" fill="url(#hi-hub)"/>
+							<!-- inner light core: logo -->
+							<circle cx="450" cy="300" r="90" fill="url(#hi-core)"/>
+							<circle cx="450" cy="300" r="90" fill="none" stroke="url(#hi-sky)" stroke-width="3.5" opacity="0.6"/>
+							<circle cx="450" cy="300" r="78" fill="none" stroke="#ede9fe" stroke-width="1.5"/>
+							<text x="452" y="292" text-anchor="middle" fill="url(#hi-word)" font-family="Fredoka, Arial, sans-serif" font-size="46" font-weight="700" letter-spacing="-1">aquí</text>
+							<text x="452" y="342" text-anchor="middle" fill="url(#hi-word)" font-family="Fredoka, Arial, sans-serif" font-size="46" font-weight="700" letter-spacing="-1">nace</text>
+						</g>
+
+						<!-- node: smart home (top-left) -->
+						<g filter="url(#hi-shadow)" class="hi-float">
+							<circle cx="200" cy="150" r="66" fill="url(#hi-silver)"/>
+							<!-- wifi over roof: casa inteligente -->
+							<g stroke="#38bdf8" stroke-width="3.5" fill="none" stroke-linecap="round" opacity="0.9">
+								<path d="M186 112 a20 20 0 0 1 28 0"/>
+								<path d="M193 120 a10 10 0 0 1 14 0"/>
+							</g>
+							<path d="M166 156 L200 126 L234 156 Z" fill="url(#hi-purple)"/>
+							<rect x="176" y="152" width="48" height="42" rx="8" fill="url(#hi-purple)"/>
+							<rect x="192" y="166" width="16" height="28" rx="3" fill="#ffffff" opacity="0.92"/>
+							<rect x="180" y="160" width="12" height="12" rx="3" fill="#38bdf8"/>
+						</g>
+
+						<!-- node: market / negocio (top-right) -->
+						<g filter="url(#hi-shadow)" class="hi-float2">
+							<circle cx="700" cy="150" r="66" fill="url(#hi-silver)"/>
+							<!-- storefront -->
+							<rect x="674" y="150" width="52" height="44" rx="7" fill="url(#hi-blue)"/>
+							<rect x="690" y="166" width="20" height="28" rx="3" fill="#ffffff" opacity="0.9"/>
+							<!-- awning -->
+							<path d="M666 132 h68 v10 a8 8 0 0 1 -8 8 h-52 a8 8 0 0 1 -8 -8 Z" fill="url(#hi-purple)"/>
+							<g fill="#ffffff" opacity="0.85">
+								<rect x="678" y="132" width="11" height="18"/>
+								<rect x="700" y="132" width="11" height="18"/>
+								<rect x="722" y="132" width="8" height="18"/>
+							</g>
+						</g>
+
+						<!-- node: comunidad / personas (left) -->
+						<g filter="url(#hi-shadow)" class="hi-float">
+							<circle cx="135" cy="340" r="70" fill="url(#hi-silver)"/>
+							<!-- three people -->
+							<circle cx="106" cy="324" r="15" fill="#7c3aed"/>
+							<path d="M87 372 a19 21 0 0 1 38 0 Z" fill="#7c3aed"/>
+							<circle cx="164" cy="324" r="15" fill="#a78bfa"/>
+							<path d="M145 372 a19 21 0 0 1 38 0 Z" fill="#a78bfa"/>
+							<circle cx="135" cy="316" r="17" fill="#38bdf8"/>
+							<path d="M113 368 a22 24 0 0 1 44 0 Z" fill="#38bdf8"/>
+						</g>
+
+						<!-- node: plataforma / app (right) -->
+						<g filter="url(#hi-shadow)" class="hi-float2">
+							<circle cx="765" cy="340" r="64" fill="url(#hi-silver)"/>
+							<rect x="743" y="306" width="44" height="70" rx="11" fill="url(#hi-purple)"/>
+							<rect x="749" y="314" width="32" height="54" rx="5" fill="#ffffff"/>
+							<!-- heart = comunidad en la app -->
+							<path d="M765 344 c-5 -9 -18 -6 -18 4 c0 7 10 13 18 19 c8 -6 18 -12 18 -19 c0 -10 -13 -13 -18 -4 Z" fill="url(#hi-sky)"/>
+							<g fill="#a78bfa">
+								<circle cx="757" cy="360" r="2.6"/>
+								<circle cx="765" cy="360" r="2.6"/>
+								<circle cx="773" cy="360" r="2.6"/>
+							</g>
+						</g>
+
+						<!-- node: crecimiento (bottom-left) -->
+						<g filter="url(#hi-shadow)" class="hi-float">
+							<circle cx="280" cy="528" r="60" fill="#ffffff"/>
+							<circle cx="280" cy="528" r="60" fill="none" stroke="url(#hi-sky)" stroke-width="3" opacity="0.4"/>
+							<path d="M250 550 L272 522 L288 538 L312 500" fill="none" stroke="url(#hi-sky)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+							<path d="M296 500 L312 500 L312 516" fill="none" stroke="#0ea5e9" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+						</g>
+
+						<!-- node: ahorro / coin (bottom-right) -->
+						<g filter="url(#hi-shadow)" class="hi-float2">
+							<circle cx="620" cy="528" r="60" fill="url(#hi-purple)"/>
+							<circle cx="620" cy="528" r="60" fill="none" stroke="#ffffff" stroke-width="4" opacity="0.55"/>
+							<text x="620" y="548" text-anchor="middle" fill="#ffffff" font-family="Fredoka, Arial, sans-serif" font-size="48" font-weight="700">S/</text>
+						</g>
+
+						<!-- integrated label: Comunidades inteligentes -->
+						<g filter="url(#hi-shadow)">
+							<rect x="262" y="636" width="376" height="58" rx="29" fill="#ffffff" stroke="#ece7ff" stroke-width="1.5"/>
+							<!-- emblema exclusivo: red de comunidad (3 nodos conectados) -->
+							<g transform="translate(300 665)">
+								<circle cx="0" cy="0" r="16" fill="#f5f3ff" stroke="#ece7ff" stroke-width="1.5"/>
+								<g stroke="url(#hi-sky)" stroke-width="2.4" stroke-linecap="round">
+									<path d="M0 -8 L7 5"/>
+									<path d="M0 -8 L-7 5"/>
+									<path d="M-7 5 L7 5"/>
+								</g>
+								<circle cx="0" cy="-8" r="4" fill="#7c3aed"/>
+								<circle cx="7" cy="5" r="4" fill="#0ea5e9"/>
+								<circle cx="-7" cy="5" r="4" fill="#38bdf8"/>
+							</g>
+							<text x="328" y="673" fill="url(#hi-sky)" font-family="Fredoka, Arial, sans-serif" font-size="25" font-weight="700">Comunidades inteligentes</text>
+						</g>
+
+						<!-- floating sparks -->
+						<g class="hi-spark">
+							<circle cx="330" cy="150" r="8" fill="#38bdf8"/>
+							<circle cx="575" cy="360" r="7" fill="#a78bfa"/>
+							<circle cx="345" cy="420" r="6" fill="#7dd3fc"/>
+							<circle cx="600" cy="230" r="6" fill="#5b21b6"/>
+							<circle cx="300" cy="300" r="5" fill="#0ea5e9"/>
+						</g>
+					</svg>
+				</div>
+
+				<div class="hero-cta">
+					<a href={WA} target="_blank" rel="noopener noreferrer" class="btn-yellow btn-yellow-lg">
+						Empieza ahora
+					</a>
 				</div>
 			</div>
 
@@ -328,7 +505,7 @@ const homeJsonLd = [
 		left: 15%;
 		width: 620px;
 		height: 620px;
-		background: rgba(47, 158, 68, 0.1);
+		background: rgba(124, 58, 237, 0.1);
 		animation: blob-drift 22s ease-in-out infinite;
 	}
 	.blob-2 {
@@ -336,7 +513,7 @@ const homeJsonLd = [
 		right: -8%;
 		width: 520px;
 		height: 520px;
-		background: rgba(245, 197, 24, 0.09);
+		background: rgba(56, 189, 248, 0.16);
 		animation: blob-drift 28s ease-in-out infinite reverse;
 	}
 	.blob-3 {
@@ -344,11 +521,11 @@ const homeJsonLd = [
 		left: -8%;
 		width: 420px;
 		height: 420px;
-		background: rgba(28, 90, 48, 0.07);
+		background: rgba(14, 165, 233, 0.1);
 		animation: blob-drift 25s ease-in-out infinite;
 	}
 
-	/* ===== NAVBAR ===== */
+	/* ===== NAVBAR (light) ===== */
 	.navbar {
 		position: fixed;
 		top: 0;
@@ -357,8 +534,22 @@ const homeJsonLd = [
 		z-index: 50;
 		backdrop-filter: blur(20px);
 		-webkit-backdrop-filter: blur(20px);
-		background: rgba(255, 255, 255, 0.85);
-		border-bottom: 1px solid rgba(28, 90, 48, 0.08);
+		background: rgba(255, 255, 255, 0.9);
+		border-bottom: 1px solid rgba(91, 33, 182, 0.08);
+	}
+	/* Brand wordmark in header → único gradiente sobre las dos palabras */
+	.navbar-brand .wordmark {
+		font-weight: 700;
+		background: linear-gradient(100deg, #5b21b6 0%, #7c3aed 30%, #94a3b8 54%, #38bdf8 78%, #0ea5e9 100%);
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+		color: #5b21b6;
+	}
+	.navbar-brand .wordmark .wm-a,
+	.navbar-brand .wordmark .wm-n {
+		color: inherit;
+		-webkit-text-fill-color: transparent;
 	}
 	.navbar-inner {
 		max-width: 1180px;
@@ -391,14 +582,14 @@ const homeJsonLd = [
 		gap: 30px;
 	}
 	.navbar-link {
-		color: var(--green-forest);
+		color: #6b7280;
 		font-weight: 600;
 		font-size: 0.95rem;
 		text-decoration: none;
 		transition: color 0.25s;
 	}
 	.navbar-link:hover {
-		color: var(--green-bright);
+		color: #374151;
 	}
 	@media (min-width: 900px) {
 		.navbar-links {
@@ -413,20 +604,20 @@ const homeJsonLd = [
 		justify-content: center;
 		gap: 10px;
 		padding: 14px 28px;
-		background: var(--yellow);
-		color: #3d2c00;
+		background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 45%, #0ea5e9 100%);
+		color: #ffffff;
 		font-weight: 700;
 		border-radius: 9999px;
 		font-size: 1rem;
 		text-decoration: none;
 		border: none;
 		transition: all 0.3s;
-		box-shadow: 0 8px 22px rgba(245, 197, 24, 0.35);
+		box-shadow: 0 8px 22px rgba(56, 189, 248, 0.35);
 	}
 	.btn-yellow:hover {
-		background: #ffd633;
+		background: linear-gradient(135deg, #6d28d9 0%, #5b21b6 40%, #0284c7 100%);
 		transform: translateY(-2px);
-		box-shadow: 0 14px 32px rgba(245, 197, 24, 0.45);
+		box-shadow: 0 14px 32px rgba(56, 189, 248, 0.45);
 	}
 	.btn-yellow:active {
 		transform: translateY(0) scale(0.98);
@@ -450,7 +641,7 @@ const homeJsonLd = [
 		border-radius: 9999px;
 		font-size: 1rem;
 		text-decoration: none;
-		border: 2px solid rgba(28, 90, 48, 0.2);
+		border: 2px solid rgba(91, 33, 182, 0.2);
 		transition: all 0.3s;
 	}
 	.btn-ghost:hover {
@@ -464,14 +655,14 @@ const homeJsonLd = [
 
 	/* ===== GRADIENT TEXT ===== */
 	.grad-green {
-		background: linear-gradient(110deg, #2f9e44, #52c06a, #1c5a30);
+		background: linear-gradient(110deg, #7c3aed, #a78bfa, #38bdf8, #0ea5e9);
 		-webkit-background-clip: text;
 		background-clip: text;
 		-webkit-text-fill-color: transparent;
 		color: var(--green);
 	}
 	.grad-yellow {
-		background: linear-gradient(110deg, #ffde59, #f5c518);
+		background: linear-gradient(110deg, #64748b, #94a3b8, #475569);
 		-webkit-background-clip: text;
 		background-clip: text;
 		-webkit-text-fill-color: transparent;
@@ -485,8 +676,8 @@ const homeJsonLd = [
 		gap: 8px;
 		padding: 7px 16px;
 		border-radius: 9999px;
-		background: rgba(47, 158, 68, 0.1);
-		border: 1px solid rgba(47, 158, 68, 0.22);
+		background: rgba(124, 58, 237, 0.1);
+		border: 1px solid rgba(124, 58, 237, 0.22);
 		color: var(--green-800);
 		font-size: 0.85rem;
 		font-weight: 600;
@@ -500,109 +691,107 @@ const homeJsonLd = [
 		animation: pulse 2s infinite;
 	}
 
-	/* ===== HERO ===== */
+	/* ===== HERO (illustration = protagonista) ===== */
 	.hero {
 		max-width: 1180px;
 		margin: 0 auto;
-		padding: 130px 24px 40px;
+		padding: 120px 24px 40px;
 	}
-	.hero-grid {
-		display: grid;
-		grid-template-columns: 1fr;
-		gap: 40px;
+	.hero-stage {
+		display: flex;
+		flex-direction: column;
 		align-items: center;
-	}
-	@media (min-width: 940px) {
-		.hero-grid {
-			grid-template-columns: 1.05fr 0.95fr;
-			gap: 32px;
-		}
-	}
-	.hero-copy {
 		text-align: center;
+		gap: 6px;
 	}
-	@media (min-width: 940px) {
-		.hero-copy {
-			text-align: left;
-		}
+	.sr-only {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		white-space: nowrap;
+		border: 0;
 	}
-	.hero-title {
-		font-size: clamp(2.4rem, 6vw, 4.1rem);
-		font-weight: 800;
-		line-height: 1.06;
-		letter-spacing: -0.02em;
-		color: var(--ink);
-		margin-bottom: 22px;
+
+	/* Hero art — huge, dominant */
+	.hero-art {
+		position: relative;
+		width: 100%;
+		max-width: 940px;
+		margin: 0 auto;
 	}
-	.hero-sub {
-		font-size: clamp(1.05rem, 2.2vw, 1.25rem);
-		color: var(--muted);
-		max-width: 540px;
-		margin: 0 auto 34px;
-		line-height: 1.7;
+	.art-ring {
+		position: absolute;
+		inset: -4% -2% -4% -2%;
+		border-radius: 48px;
+		background:
+			radial-gradient(circle at 26% 24%, rgba(124, 58, 237, 0.18), transparent 56%),
+			radial-gradient(circle at 76% 78%, rgba(14, 165, 233, 0.22), transparent 58%),
+			radial-gradient(circle at 50% 50%, rgba(167, 139, 250, 0.1), transparent 65%);
+		z-index: -1;
+		filter: blur(2px);
 	}
-	@media (min-width: 940px) {
-		.hero-sub {
-			margin: 0 0 34px;
-		}
+	.hero-illus {
+		position: relative;
+		display: block;
+		width: 100%;
+		height: auto;
+		filter: drop-shadow(0 40px 80px rgba(91, 33, 182, 0.28));
+		animation: float 8s ease-in-out infinite;
 	}
-	.hero-sub strong {
-		color: var(--green-800);
+	.hi-hub {
+		transform-box: fill-box;
+		transform-origin: center;
+		animation: pulse-soft 4s ease-in-out infinite;
+	}
+	.hi-pulse-ring {
+		transform-box: fill-box;
+		transform-origin: center;
+		animation: ring-pulse 3.4s ease-in-out infinite;
+	}
+	@keyframes pulse-soft {
+		0%, 100% { transform: scale(1); }
+		50% { transform: scale(1.03); }
+	}
+	@keyframes ring-pulse {
+		0% { transform: scale(0.94); opacity: 0.55; }
+		70% { transform: scale(1.14); opacity: 0; }
+		100% { transform: scale(1.14); opacity: 0; }
 	}
 	.hero-cta {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 14px;
 		justify-content: center;
+		margin-top: 10px;
 	}
-	@media (min-width: 940px) {
-		.hero-cta {
-			justify-content: flex-start;
-		}
+	.hi-float {
+		transform-box: fill-box;
+		transform-origin: center;
+		animation: float 5.5s ease-in-out infinite;
 	}
-	.hero-trust {
-		display: flex;
-		gap: 10px;
-		justify-content: center;
-		margin-top: 22px;
-		color: var(--muted);
-		font-size: 0.9rem;
-		font-weight: 500;
+	.hi-float2 {
+		transform-box: fill-box;
+		transform-origin: center;
+		animation: float 4.6s ease-in-out 0.4s infinite reverse;
 	}
-	@media (min-width: 940px) {
-		.hero-trust {
-			justify-content: flex-start;
-		}
+	.hi-spark circle {
+		transform-box: fill-box;
+		transform-origin: center;
+		animation: pulse 2.6s ease-in-out infinite;
 	}
-
-	/* Hero art */
-	.hero-art {
-		position: relative;
-		max-width: 480px;
-		margin: 0 auto;
+	.hi-links path {
+		stroke-dasharray: 260;
+		stroke-dashoffset: 260;
+		animation: draw-line 2.4s ease-out forwards;
 	}
-	.art-ring {
-		position: absolute;
-		inset: -6% -6% -6% -6%;
-		border-radius: 32px;
-		background: radial-gradient(circle at 30% 30%, rgba(245, 197, 24, 0.18), transparent 62%);
-		z-index: -1;
-	}
-	.hero-photo {
-		position: relative;
-		border-radius: 24px;
-		overflow: hidden;
-		border: 1px solid var(--line);
-		box-shadow: 0 30px 70px rgba(28, 90, 48, 0.18);
-		animation: float 6s ease-in-out infinite;
-	}
-	.hero-photo img {
-		display: block;
-		width: 100%;
-		height: auto;
-		aspect-ratio: 16 / 10;
-		object-fit: cover;
-	}
+	.hi-links path:nth-child(2) { animation-delay: 0.15s; }
+	.hi-links path:nth-child(3) { animation-delay: 0.3s; }
+	.hi-links path:nth-child(4) { animation-delay: 0.45s; }
+	.hi-links path:nth-child(5) { animation-delay: 0.6s; }
 	.art-card {
 		transform-box: fill-box;
 		transform-origin: center;
@@ -644,7 +833,7 @@ const homeJsonLd = [
 		border: 1px solid var(--line);
 		border-radius: 24px;
 		padding: 12px;
-		box-shadow: 0 20px 50px rgba(28, 90, 48, 0.07);
+		box-shadow: 0 20px 50px rgba(91, 33, 182, 0.07);
 	}
 	@media (min-width: 720px) {
 		.value-strip {
@@ -676,7 +865,7 @@ const homeJsonLd = [
 		height: 24px;
 	}
 	.ic-green {
-		background: linear-gradient(135deg, #2f9e44, #52c06a);
+		background: linear-gradient(135deg, #7c3aed, #38bdf8);
 		color: #fff;
 	}
 	.value-item h3 {
@@ -744,13 +933,13 @@ const homeJsonLd = [
 		border-radius: 20px;
 		background: var(--cream-2);
 		border: 1px solid var(--line);
-		box-shadow: 0 6px 20px rgba(28, 90, 48, 0.05);
+		box-shadow: 0 6px 20px rgba(91, 33, 182, 0.05);
 		transition: all 0.4s;
 	}
 	.card:hover {
 		transform: translateY(-5px);
-		border-color: rgba(47, 158, 68, 0.35);
-		box-shadow: 0 24px 44px rgba(47, 158, 68, 0.12);
+		border-color: rgba(124, 58, 237, 0.35);
+		box-shadow: 0 24px 44px rgba(124, 58, 237, 0.12);
 	}
 	.card-ic {
 		width: 54px;
@@ -770,7 +959,7 @@ const homeJsonLd = [
 	}
 	.card:hover .card-ic {
 		transform: scale(1.08) rotate(-4deg);
-		background: linear-gradient(135deg, #2f9e44, #52c06a);
+		background: linear-gradient(135deg, #7c3aed, #38bdf8);
 		color: #fff;
 	}
 	.card h3 {
@@ -789,8 +978,24 @@ const homeJsonLd = [
 		position: relative;
 		margin: 0;
 		padding: 84px 24px;
-		background: linear-gradient(135deg, #0f3d21 0%, #1c5a30 55%, #226a38 100%);
+		background: linear-gradient(135deg, #2e1065 0%, #5b21b6 45%, #6d28d9 72%, #0284c7 100%);
 		overflow: hidden;
+	}
+	/* On the dark band, brand accents go metallic silver for contrast */
+	.band .grad-yellow {
+		background: linear-gradient(110deg, #f1f5f9, #cbd5e1, #e2e8f0);
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+	.band .btn-yellow {
+		background: linear-gradient(135deg, #f1f5f9, #cbd5e1);
+		color: #4c1d95;
+		box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+	}
+	.band .btn-yellow:hover {
+		background: linear-gradient(135deg, #ffffff, #e2e8f0);
+		box-shadow: 0 14px 32px rgba(0, 0, 0, 0.32);
 	}
 	.band-orb {
 		position: absolute;
@@ -799,7 +1004,7 @@ const homeJsonLd = [
 		width: 560px;
 		height: 560px;
 		border-radius: 50%;
-		background: radial-gradient(circle, rgba(82, 192, 106, 0.35), transparent 62%);
+		background: radial-gradient(circle, rgba(167, 139, 250, 0.35), transparent 62%);
 		pointer-events: none;
 	}
 	.band-inner {
@@ -857,7 +1062,7 @@ const homeJsonLd = [
 		align-items: center;
 		justify-content: center;
 		background: rgba(255, 255, 255, 0.08);
-		border: 1px solid rgba(245, 197, 24, 0.4);
+		border: 1px solid rgba(148, 163, 184, 0.4);
 		color: var(--yellow);
 	}
 	.bv-ic svg {
@@ -887,7 +1092,7 @@ const homeJsonLd = [
 		border-radius: 20px;
 		background: var(--cream);
 		border: 1px solid var(--line);
-		box-shadow: 0 6px 20px rgba(28, 90, 48, 0.05);
+		box-shadow: 0 6px 20px rgba(91, 33, 182, 0.05);
 		text-align: center;
 	}
 	.step-n {
@@ -897,13 +1102,13 @@ const homeJsonLd = [
 		width: 54px;
 		height: 54px;
 		border-radius: 50%;
-		background: linear-gradient(135deg, #2f9e44, #1c5a30);
+		background: linear-gradient(135deg, #7c3aed, #38bdf8);
 		color: #fff;
 		font-family: var(--font-brand);
 		font-weight: 700;
 		font-size: 1.5rem;
 		margin-bottom: 18px;
-		box-shadow: 0 10px 22px rgba(28, 90, 48, 0.25);
+		box-shadow: 0 10px 22px rgba(56, 189, 248, 0.3);
 	}
 	.step h3 {
 		font-size: 1.2rem;
@@ -928,7 +1133,7 @@ const homeJsonLd = [
 		border-radius: 32px;
 		background: var(--cream-2);
 		border: 1px solid var(--line);
-		box-shadow: 0 30px 70px rgba(28, 90, 48, 0.1);
+		box-shadow: 0 30px 70px rgba(91, 33, 182, 0.1);
 	}
 	.cta-mark {
 		font-size: 2.4rem;
@@ -1045,7 +1250,16 @@ const homeJsonLd = [
 			transition: none;
 		}
 		.blob,
-		.hero-photo {
+		.hero-illus,
+		.hi-float,
+		.hi-float2,
+		.hi-hub,
+		.hi-pulse-ring,
+		.hi-spark circle {
+			animation: none !important;
+		}
+		.hi-links path {
+			stroke-dashoffset: 0;
 			animation: none !important;
 		}
 	}
@@ -1053,7 +1267,7 @@ const homeJsonLd = [
 	/* ===== NAVBAR SCROLLED ===== */
 	.navbar.scrolled {
 		background: rgba(255, 255, 255, 0.97);
-		box-shadow: 0 4px 20px rgba(28, 90, 48, 0.08);
+		box-shadow: 0 4px 20px rgba(91, 33, 182, 0.08);
 	}
 </style>
 

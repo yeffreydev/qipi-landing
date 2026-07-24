@@ -168,21 +168,21 @@ const tokenJsonLd = {
 		left: 15%;
 		width: 620px;
 		height: 620px;
-		background: rgba(245, 197, 24, 0.12);
+		background: rgba(148, 163, 184, 0.12);
 	}
 	.blob-2 {
 		bottom: 10%;
 		right: -8%;
 		width: 520px;
 		height: 520px;
-		background: rgba(47, 158, 68, 0.1);
+		background: rgba(124, 58, 237, 0.1);
 	}
 	.blob-3 {
 		top: 45%;
 		left: -8%;
 		width: 420px;
 		height: 420px;
-		background: rgba(245, 197, 24, 0.08);
+		background: rgba(148, 163, 184, 0.08);
 	}
 
 	/* ===== NAVBAR ===== */
@@ -195,7 +195,7 @@ const tokenJsonLd = {
 		backdrop-filter: blur(20px);
 		-webkit-backdrop-filter: blur(20px);
 		background: rgba(255, 255, 255, 0.85);
-		border-bottom: 1px solid rgba(28, 90, 48, 0.08);
+		border-bottom: 1px solid rgba(91, 33, 182, 0.08);
 	}
 	.navbar-inner {
 		max-width: 1180px;
@@ -253,20 +253,20 @@ const tokenJsonLd = {
 		justify-content: center;
 		gap: 10px;
 		padding: 14px 28px;
-		background: var(--yellow);
-		color: #3d2c00;
+		background: linear-gradient(135deg, #7c3aed, #6d28d9);
+		color: #ffffff;
 		font-weight: 700;
 		border-radius: 9999px;
 		font-size: 1rem;
 		text-decoration: none;
 		border: none;
 		transition: all 0.3s;
-		box-shadow: 0 8px 22px rgba(245, 197, 24, 0.35);
+		box-shadow: 0 8px 22px rgba(124, 58, 237, 0.35);
 	}
 	.btn-yellow:hover {
-		background: #ffd633;
+		background: linear-gradient(135deg, #6d28d9, #5b21b6);
 		transform: translateY(-2px);
-		box-shadow: 0 14px 32px rgba(245, 197, 24, 0.45);
+		box-shadow: 0 14px 32px rgba(124, 58, 237, 0.45);
 	}
 	.btn-ghost {
 		display: inline-flex;
@@ -279,7 +279,7 @@ const tokenJsonLd = {
 		border-radius: 9999px;
 		font-size: 1rem;
 		text-decoration: none;
-		border: 2px solid rgba(28, 90, 48, 0.2);
+		border: 2px solid rgba(91, 33, 182, 0.2);
 		transition: all 0.3s;
 	}
 	.btn-ghost:hover {
@@ -289,7 +289,7 @@ const tokenJsonLd = {
 
 	/* ===== GRADIENT TEXT ===== */
 	.grad-yellow {
-		background: linear-gradient(110deg, #ffde59, #f5c518);
+		background: linear-gradient(110deg, #64748b, #94a3b8, #475569);
 		-webkit-background-clip: text;
 		background-clip: text;
 		-webkit-text-fill-color: transparent;
@@ -319,7 +319,7 @@ const tokenJsonLd = {
 		position: absolute;
 		inset: -18%;
 		border-radius: 50%;
-		background: radial-gradient(circle, rgba(245, 197, 24, 0.4), transparent 65%);
+		background: radial-gradient(circle, rgba(148, 163, 184, 0.4), transparent 65%);
 		z-index: -1;
 	}
 	.token-logo {
@@ -327,7 +327,7 @@ const tokenJsonLd = {
 		height: 100%;
 		object-fit: contain;
 		border-radius: 50%;
-		box-shadow: 0 24px 55px rgba(224, 165, 0, 0.32);
+		box-shadow: 0 24px 55px rgba(100, 116, 139, 0.32);
 		animation: float 6s ease-in-out infinite;
 	}
 	.token-hero h1 {
@@ -399,14 +399,14 @@ const tokenJsonLd = {
 		border-radius: 20px;
 		background: var(--cream-2);
 		border: 1px solid var(--line);
-		box-shadow: 0 6px 20px rgba(28, 90, 48, 0.05);
+		box-shadow: 0 6px 20px rgba(91, 33, 182, 0.05);
 		transition: all 0.4s;
 		text-align: center;
 	}
 	.token-card:hover {
 		transform: translateY(-5px);
-		border-color: rgba(245, 197, 24, 0.45);
-		box-shadow: 0 24px 44px rgba(224, 165, 0, 0.12);
+		border-color: rgba(148, 163, 184, 0.45);
+		box-shadow: 0 24px 44px rgba(100, 116, 139, 0.12);
 	}
 	.token-card-ic {
 		width: 56px;
@@ -416,8 +416,8 @@ const tokenJsonLd = {
 		align-items: center;
 		justify-content: center;
 		margin: 0 auto 18px;
-		background: linear-gradient(135deg, #ffde59, #f5c518);
-		color: #7a4a00;
+		background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+		color: #4c1d95;
 	}
 	.token-card-ic svg {
 		width: 26px;
@@ -438,8 +438,24 @@ const tokenJsonLd = {
 	.token-band {
 		position: relative;
 		padding: 84px 24px;
-		background: linear-gradient(135deg, #0f3d21 0%, #1c5a30 55%, #226a38 100%);
+		background: linear-gradient(135deg, #2e1065 0%, #5b21b6 55%, #6d28d9 100%);
 		overflow: hidden;
+	}
+	/* On the dark band, brand accents go metallic silver for contrast */
+	.token-band .grad-yellow {
+		background: linear-gradient(110deg, #f1f5f9, #cbd5e1, #e2e8f0);
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+	.token-band .btn-yellow {
+		background: linear-gradient(135deg, #f1f5f9, #cbd5e1);
+		color: #4c1d95;
+		box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+	}
+	.token-band .btn-yellow:hover {
+		background: linear-gradient(135deg, #ffffff, #e2e8f0);
+		box-shadow: 0 14px 32px rgba(0, 0, 0, 0.32);
 	}
 	.band-orb {
 		position: absolute;
@@ -448,7 +464,7 @@ const tokenJsonLd = {
 		width: 560px;
 		height: 560px;
 		border-radius: 50%;
-		background: radial-gradient(circle, rgba(245, 197, 24, 0.28), transparent 62%);
+		background: radial-gradient(circle, rgba(148, 163, 184, 0.28), transparent 62%);
 		pointer-events: none;
 	}
 	.token-band-inner {

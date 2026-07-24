@@ -124,24 +124,24 @@ const jsonLd = [
 					>
 						<defs>
 							<linearGradient id="ci-g-green" x1="0" y1="0" x2="1" y2="1">
-								<stop offset="0" stop-color="#52c06a" />
-								<stop offset="1" stop-color="#1c5a30" />
+								<stop offset="0" stop-color="#a78bfa" />
+								<stop offset="1" stop-color="#5b21b6" />
 							</linearGradient>
 							<linearGradient id="ci-g-yellow" x1="0" y1="0" x2="1" y2="1">
-								<stop offset="0" stop-color="#ffde59" />
-								<stop offset="1" stop-color="#f5c518" />
+								<stop offset="0" stop-color="#e2e8f0" />
+								<stop offset="1" stop-color="#cbd5e1" />
 							</linearGradient>
 							<radialGradient id="ci-g-core" cx="0.5" cy="0.4" r="0.7">
-								<stop offset="0" stop-color="#52c06a" />
-								<stop offset="1" stop-color="#226a38" />
+								<stop offset="0" stop-color="#a78bfa" />
+								<stop offset="1" stop-color="#6d28d9" />
 							</radialGradient>
 						</defs>
 
 						<!-- soft backdrop -->
-						<circle cx="260" cy="230" r="200" fill="#e7f6e9" opacity="0.55" />
+						<circle cx="260" cy="230" r="200" fill="#f3f0ff" opacity="0.55" />
 
 						<!-- connection lines -->
-						<g class="ci-links" stroke="#2f9e44" stroke-width="2.5" opacity="0.5" fill="none">
+						<g class="ci-links" stroke="#7c3aed" stroke-width="2.5" opacity="0.5" fill="none">
 							<line x1="260" y1="230" x2="110" y2="120" />
 							<line x1="260" y1="230" x2="410" y2="120" />
 							<line x1="260" y1="230" x2="90" y2="320" />
@@ -162,7 +162,7 @@ const jsonLd = [
 							/>
 							<path
 								d="M260 224 C244 214 236 198 240 184 C256 188 264 206 260 224 Z"
-								fill="#dff3df"
+								fill="#ede9fe"
 							/>
 							<path
 								d="M260 214 C276 206 286 190 284 176 C268 178 258 196 260 214 Z"
@@ -173,36 +173,36 @@ const jsonLd = [
 						<!-- node: person -->
 						<g class="ci-node ci-float-a">
 							<circle cx="110" cy="120" r="38" fill="#fff" stroke="url(#ci-g-green)" stroke-width="4" />
-							<circle cx="110" cy="110" r="12" fill="#2f9e44" />
-							<path d="M90 140 a20 16 0 0 1 40 0 Z" fill="#2f9e44" />
+							<circle cx="110" cy="110" r="12" fill="#7c3aed" />
+							<path d="M90 140 a20 16 0 0 1 40 0 Z" fill="#7c3aed" />
 						</g>
 
 						<!-- node: coin (economy) -->
 						<g class="ci-node ci-float-b">
 							<circle cx="410" cy="120" r="38" fill="#fff" stroke="url(#ci-g-yellow)" stroke-width="4" />
 							<circle cx="410" cy="120" r="24" fill="url(#ci-g-yellow)" />
-							<text x="410" y="129" text-anchor="middle" font-family="Fredoka, sans-serif" font-weight="700" font-size="24" fill="#7a4a00">S/</text>
+							<text x="410" y="129" text-anchor="middle" font-family="Fredoka, sans-serif" font-weight="700" font-size="24" fill="#4c1d95">S/</text>
 						</g>
 
 						<!-- node: house (community) -->
 						<g class="ci-node ci-float-c">
 							<circle cx="90" cy="320" r="38" fill="#fff" stroke="url(#ci-g-green)" stroke-width="4" />
-							<path d="M72 322 L90 306 L108 322 V338 H72 Z" fill="#2f9e44" />
+							<path d="M72 322 L90 306 L108 322 V338 H72 Z" fill="#7c3aed" />
 							<rect x="85" y="326" width="10" height="12" fill="#fff" />
 						</g>
 
 						<!-- node: growth chart -->
 						<g class="ci-node ci-float-a">
 							<circle cx="430" cy="320" r="38" fill="#fff" stroke="url(#ci-g-green)" stroke-width="4" />
-							<path d="M414 332 L424 322 L432 328 L446 310" fill="none" stroke="#2f9e44" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
-							<path d="M440 310 h6 v6" fill="none" stroke="#2f9e44" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+							<path d="M414 332 L424 322 L432 328 L446 310" fill="none" stroke="#7c3aed" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+							<path d="M440 310 h6 v6" fill="none" stroke="#7c3aed" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
 						</g>
 
 						<!-- node: academy (book) -->
 						<g class="ci-node ci-float-b">
 							<circle cx="260" cy="80" r="38" fill="#fff" stroke="url(#ci-g-yellow)" stroke-width="4" />
-							<path d="M244 70 h14 v22 h-14 a2 2 0 0 1 0 -4 h10" fill="none" stroke="#e0a500" stroke-width="3.5" stroke-linejoin="round" />
-							<path d="M276 70 h-14 v22 h14 a2 2 0 0 0 0 -4 h-10" fill="none" stroke="#e0a500" stroke-width="3.5" stroke-linejoin="round" />
+							<path d="M244 70 h14 v22 h-14 a2 2 0 0 1 0 -4 h10" fill="none" stroke="#94a3b8" stroke-width="3.5" stroke-linejoin="round" />
+							<path d="M276 70 h-14 v22 h14 a2 2 0 0 0 0 -4 h-10" fill="none" stroke="#94a3b8" stroke-width="3.5" stroke-linejoin="round" />
 						</g>
 					</svg>
 				</div>
@@ -377,21 +377,21 @@ const jsonLd = [
 		left: 15%;
 		width: 620px;
 		height: 620px;
-		background: rgba(47, 158, 68, 0.1);
+		background: rgba(124, 58, 237, 0.1);
 	}
 	.blob-2 {
 		bottom: 10%;
 		right: -8%;
 		width: 520px;
 		height: 520px;
-		background: rgba(245, 197, 24, 0.09);
+		background: rgba(148, 163, 184, 0.09);
 	}
 	.blob-3 {
 		top: 45%;
 		left: -8%;
 		width: 420px;
 		height: 420px;
-		background: rgba(28, 90, 48, 0.07);
+		background: rgba(91, 33, 182, 0.07);
 	}
 
 	/* ===== NAVBAR ===== */
@@ -404,7 +404,7 @@ const jsonLd = [
 		backdrop-filter: blur(20px);
 		-webkit-backdrop-filter: blur(20px);
 		background: rgba(255, 255, 255, 0.85);
-		border-bottom: 1px solid rgba(28, 90, 48, 0.08);
+		border-bottom: 1px solid rgba(91, 33, 182, 0.08);
 	}
 	.navbar-inner {
 		max-width: 1180px;
@@ -453,20 +453,20 @@ const jsonLd = [
 		justify-content: center;
 		gap: 10px;
 		padding: 14px 28px;
-		background: var(--yellow);
-		color: #3d2c00;
+		background: linear-gradient(135deg, #7c3aed, #6d28d9);
+		color: #ffffff;
 		font-weight: 700;
 		border-radius: 9999px;
 		font-size: 1rem;
 		text-decoration: none;
 		border: none;
 		transition: all 0.3s;
-		box-shadow: 0 8px 22px rgba(245, 197, 24, 0.35);
+		box-shadow: 0 8px 22px rgba(124, 58, 237, 0.35);
 	}
 	.btn-yellow:hover {
-		background: #ffd633;
+		background: linear-gradient(135deg, #6d28d9, #5b21b6);
 		transform: translateY(-2px);
-		box-shadow: 0 14px 32px rgba(245, 197, 24, 0.45);
+		box-shadow: 0 14px 32px rgba(124, 58, 237, 0.45);
 	}
 	.btn-yellow:active {
 		transform: translateY(0) scale(0.98);
@@ -490,7 +490,7 @@ const jsonLd = [
 		border-radius: 9999px;
 		font-size: 1rem;
 		text-decoration: none;
-		border: 2px solid rgba(28, 90, 48, 0.2);
+		border: 2px solid rgba(91, 33, 182, 0.2);
 		transition: all 0.3s;
 	}
 	.btn-ghost:hover {
@@ -504,14 +504,14 @@ const jsonLd = [
 
 	/* ===== GRADIENT TEXT ===== */
 	.grad-green {
-		background: linear-gradient(110deg, #2f9e44, #52c06a, #1c5a30);
+		background: linear-gradient(110deg, #7c3aed, #a78bfa, #5b21b6);
 		-webkit-background-clip: text;
 		background-clip: text;
 		-webkit-text-fill-color: transparent;
 		color: var(--green);
 	}
 	.grad-yellow {
-		background: linear-gradient(110deg, #ffde59, #f5c518);
+		background: linear-gradient(110deg, #64748b, #94a3b8, #475569);
 		-webkit-background-clip: text;
 		background-clip: text;
 		-webkit-text-fill-color: transparent;
@@ -525,8 +525,8 @@ const jsonLd = [
 		gap: 8px;
 		padding: 7px 16px;
 		border-radius: 9999px;
-		background: rgba(47, 158, 68, 0.1);
-		border: 1px solid rgba(47, 158, 68, 0.22);
+		background: rgba(124, 58, 237, 0.1);
+		border: 1px solid rgba(124, 58, 237, 0.22);
 		color: var(--green-800);
 		font-size: 0.85rem;
 		font-weight: 600;
@@ -628,7 +628,7 @@ const jsonLd = [
 		position: absolute;
 		inset: -4%;
 		border-radius: 50%;
-		background: radial-gradient(circle at 40% 35%, rgba(245, 197, 24, 0.16), transparent 60%);
+		background: radial-gradient(circle at 40% 35%, rgba(148, 163, 184, 0.16), transparent 60%);
 		z-index: -1;
 	}
 	.ci-illustration {
@@ -705,7 +705,7 @@ const jsonLd = [
 		padding: 34px 36px;
 		border-radius: 22px;
 		background: var(--green-soft);
-		border: 1px solid rgba(47, 158, 68, 0.18);
+		border: 1px solid rgba(124, 58, 237, 0.18);
 		text-align: center;
 	}
 	.ci-quote p {
@@ -734,13 +734,13 @@ const jsonLd = [
 		border-radius: 22px;
 		background: var(--cream-2);
 		border: 1px solid var(--line);
-		box-shadow: 0 6px 20px rgba(28, 90, 48, 0.05);
+		box-shadow: 0 6px 20px rgba(91, 33, 182, 0.05);
 		transition: all 0.4s;
 	}
 	.ci-pillar:hover {
 		transform: translateY(-5px);
-		border-color: rgba(47, 158, 68, 0.35);
-		box-shadow: 0 24px 44px rgba(47, 158, 68, 0.12);
+		border-color: rgba(124, 58, 237, 0.35);
+		box-shadow: 0 24px 44px rgba(124, 58, 237, 0.12);
 	}
 	.ci-pillar-ic {
 		width: 56px;
@@ -758,11 +758,11 @@ const jsonLd = [
 		height: 28px;
 	}
 	.ic-green {
-		background: linear-gradient(135deg, #2f9e44, #1c5a30);
+		background: linear-gradient(135deg, #7c3aed, #5b21b6);
 	}
 	.ic-yellow {
-		background: linear-gradient(135deg, #ffde59, #f5c518);
-		color: #7a4a00;
+		background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+		color: #4c1d95;
 	}
 	.ci-pillar:hover .ci-pillar-ic {
 		transform: scale(1.08) rotate(-4deg);
@@ -812,7 +812,7 @@ const jsonLd = [
 		border-radius: 20px;
 		background: var(--cream);
 		border: 1px solid var(--line);
-		box-shadow: 0 6px 20px rgba(28, 90, 48, 0.05);
+		box-shadow: 0 6px 20px rgba(91, 33, 182, 0.05);
 		text-align: center;
 	}
 	.ci-step-n {
@@ -822,13 +822,13 @@ const jsonLd = [
 		width: 54px;
 		height: 54px;
 		border-radius: 50%;
-		background: linear-gradient(135deg, #2f9e44, #1c5a30);
+		background: linear-gradient(135deg, #7c3aed, #5b21b6);
 		color: #fff;
 		font-family: var(--font-brand);
 		font-weight: 700;
 		font-size: 1.5rem;
 		margin-bottom: 18px;
-		box-shadow: 0 10px 22px rgba(28, 90, 48, 0.25);
+		box-shadow: 0 10px 22px rgba(91, 33, 182, 0.25);
 	}
 	.ci-step h3 {
 		font-size: 1.2rem;
@@ -845,8 +845,24 @@ const jsonLd = [
 	.ci-band {
 		position: relative;
 		padding: 84px 24px;
-		background: linear-gradient(135deg, #0f3d21 0%, #1c5a30 55%, #226a38 100%);
+		background: linear-gradient(135deg, #2e1065 0%, #5b21b6 55%, #6d28d9 100%);
 		overflow: hidden;
+	}
+	/* On the dark band, brand accents go metallic silver for contrast */
+	.ci-band .grad-yellow {
+		background: linear-gradient(110deg, #f1f5f9, #cbd5e1, #e2e8f0);
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+	.ci-band .btn-yellow {
+		background: linear-gradient(135deg, #f1f5f9, #cbd5e1);
+		color: #4c1d95;
+		box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+	}
+	.ci-band .btn-yellow:hover {
+		background: linear-gradient(135deg, #ffffff, #e2e8f0);
+		box-shadow: 0 14px 32px rgba(0, 0, 0, 0.32);
 	}
 	.band-orb {
 		position: absolute;
@@ -855,7 +871,7 @@ const jsonLd = [
 		width: 560px;
 		height: 560px;
 		border-radius: 50%;
-		background: radial-gradient(circle, rgba(82, 192, 106, 0.35), transparent 62%);
+		background: radial-gradient(circle, rgba(167, 139, 250, 0.35), transparent 62%);
 		pointer-events: none;
 	}
 	.ci-band-inner {
@@ -989,7 +1005,7 @@ const jsonLd = [
 	/* ===== NAVBAR SCROLLED ===== */
 	.navbar.scrolled {
 		background: rgba(255, 255, 255, 0.97);
-		box-shadow: 0 4px 20px rgba(28, 90, 48, 0.08);
+		box-shadow: 0 4px 20px rgba(91, 33, 182, 0.08);
 	}
 </style>
 

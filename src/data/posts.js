@@ -12,7 +12,7 @@ export const posts = [
 		date: "2026-07-23",
 		readingTime: "7 min",
 		category: "Comunidades inteligentes",
-		gradient: "linear-gradient(135deg, #1c5a30 0%, #2f9e44 60%, #52c06a 100%)",
+		gradient: "linear-gradient(135deg, #5b21b6 0%, #7c3aed 60%, #a78bfa 100%)",
 		icon: "users",
 		body: `
 <p>En <a href="/">aquí nace</a> creemos que una comunidad organizada puede lograr con su dinero lo mismo que un banco… y con mucho más corazón. Por eso creamos las <strong>comunidades inteligentes</strong>: grupos de personas que ahorran, se prestan, aprenden y crecen juntos, apoyados por tecnología que hace el trabajo difícil por ellos. Y lo mejor: <strong>cualquiera puede crear una, sin necesidad de tener mucho conocimiento.</strong></p>
@@ -75,7 +75,7 @@ export const posts = [
 		date: "2026-05-20",
 		readingTime: "7 min",
 		category: "Educación financiera",
-		gradient: "linear-gradient(135deg, #1b325f 0%, #00599a 60%, #00877a 100%)",
+		gradient: "linear-gradient(135deg, #4c1d95 0%, #6d28d9 60%, #7c3aed 100%)",
 		icon: "users",
 		body: `
 <p>Si alguna vez escuchaste hablar de grupos de vecinos que ahorran y se prestan dinero entre sí, probablemente te hablaban de una <strong>UNICA</strong>. En Perú, las UNICAs se han convertido en una de las formas más poderosas de <strong>finanzas comunitarias</strong> para familias y emprendedores que no siempre acceden a la banca tradicional.</p>
@@ -122,7 +122,7 @@ export const posts = [
 		date: "2026-05-18",
 		readingTime: "6 min",
 		category: "Educación financiera",
-		gradient: "linear-gradient(135deg, #00599a 0%, #00877a 100%)",
+		gradient: "linear-gradient(135deg, #6d28d9 0%, #7c3aed 100%)",
 		icon: "bank",
 		body: `
 <p>La <strong>banca comunal</strong> es uno de los modelos de microfinanzas más extendidos en América Latina y, en especial, en el Perú. Nació como una respuesta a una necesidad real: dar acceso a servicios financieros a personas y comunidades que la banca tradicional dejaba de lado.</p>
@@ -172,7 +172,7 @@ export const posts = [
 		date: "2026-05-15",
 		readingTime: "8 min",
 		category: "Herramientas",
-		gradient: "linear-gradient(135deg, #00877a 0%, #00a894 100%)",
+		gradient: "linear-gradient(135deg, #7c3aed 0%, #a78bfa 100%)",
 		icon: "tools",
 		body: `
 <p>Gestionar el dinero de un grupo —ya sea una UNICA, una banca comunal o una asociación— sin las <strong>herramientas de finanzas</strong> adecuadas es una receta para el caos. En esta guía repasamos qué debe tener una buena herramienta financiera en el Perú y por qué cada vez más organizaciones digitalizan su gestión.</p>
@@ -226,7 +226,7 @@ export const posts = [
 		date: "2026-05-12",
 		readingTime: "6 min",
 		category: "Guías",
-		gradient: "linear-gradient(135deg, #1b325f 0%, #00599a 100%)",
+		gradient: "linear-gradient(135deg, #4c1d95 0%, #6d28d9 100%)",
 		icon: "chart",
 		body: `
 <p>El corazón de cualquier organización de <strong>finanzas comunitarias</strong> son sus aportes y préstamos. Gestionarlos bien marca la diferencia entre un grupo que crece con confianza y uno que se disuelve por conflictos. Aquí te dejamos una guía práctica.</p>
@@ -270,7 +270,7 @@ export const posts = [
 		date: "2026-05-08",
 		readingTime: "7 min",
 		category: "Educación financiera",
-		gradient: "linear-gradient(135deg, #00a894 0%, #00599a 100%)",
+		gradient: "linear-gradient(135deg, #a78bfa 0%, #6d28d9 100%)",
 		icon: "growth",
 		body: `
 <p>La <strong>educación financiera</strong> no debería ser un privilegio. En el Perú, millones de personas manejan su dinero sin acceso a la banca tradicional, y es ahí donde las <strong>finanzas comunitarias</strong> se convierten en una escuela viva de ahorro, inversión y confianza.</p>

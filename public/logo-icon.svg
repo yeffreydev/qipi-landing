@@ -1,10 +1,16 @@
 <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="aquí nace">
   <defs>
     <linearGradient id="an-tile" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox">
-      <stop offset="0" stop-color="#3aa757"/>
-      <stop offset="1" stop-color="#1c5a30"/>
+      <stop offset="0" stop-color="#7c3aed"/>
+      <stop offset="0.5" stop-color="#cbd5e1"/>
+      <stop offset="1" stop-color="#38bdf8"/>
+    </linearGradient>
+    <linearGradient id="an-sheen" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.35"/>
+      <stop offset="0.5" stop-color="#ffffff" stop-opacity="0"/>
     </linearGradient>
   </defs>
   <rect width="64" height="64" rx="17" fill="url(#an-tile)"/>
+  <rect width="64" height="64" rx="17" fill="url(#an-sheen)"/>
   <text x="32" y="45" text-anchor="middle" fill="#ffffff" font-family="Fredoka, 'Segoe UI', Arial, sans-serif" font-size="40" font-weight="700">a</text>
 </svg>
