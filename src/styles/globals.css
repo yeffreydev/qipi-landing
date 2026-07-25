@@ -1,17 +1,17 @@
 @import "tailwindcss";
 
 /* ===== Design tokens — aquí nace =====
-   Paleta de marca: PÚRPURA (violeta) + PLATEADO (plata metálica).
+   Paleta de marca: VERDE CYAN (turquesa) + PLATEADO (plata metálica).
    Los nombres --green-*/--yellow-* se conservan por compatibilidad,
-   pero sus valores ya son púrpura y plateado. */
+   sus valores son verde cyan y plateado. */
 :root {
-    /* Púrpura (violeta) — color principal de marca */
-    --green-deep: #2e1065;   /* violeta muy oscuro */
-    --green-forest: #5b21b6; /* violeta oscuro */
-    --green-800: #6d28d9;    /* violeta */
-    --green: #7c3aed;        /* violeta principal */
-    --green-bright: #a78bfa; /* violeta claro */
-    --green-soft: #f3f0ff;   /* lavanda muy claro */
+    /* Verde cyan (turquesa) — color principal de marca */
+    --green-deep: #063d34;   /* turquesa muy oscuro */
+    --green-forest: #06655a; /* turquesa oscuro */
+    --green-800: #087a6d;    /* turquesa */
+    --green: #0a8f80;        /* verde cyan principal */
+    --green-bright: #2bbfae; /* turquesa claro */
+    --green-soft: #e6fbf6;   /* menta muy claro */
     /* Plateado (plata) — acento metálico */
     --yellow: #cbd5e1;       /* plata */
     --yellow-deep: #94a3b8;  /* plata oscura */
@@ -22,12 +22,12 @@
     --sky-bright: #38bdf8;   /* azul cielo claro */
     --sky-light: #7dd3fc;    /* azul cielo muy claro */
     --sky-soft: #e0f2fe;     /* azul cielo pálido */
-    /* Degradado firma: púrpura → plata → azul cielo */
-    --grad-brand: linear-gradient(120deg, #7c3aed 0%, #a78bfa 30%, #cbd5e1 52%, #38bdf8 78%, #0ea5e9 100%);
+    /* Degradado firma: verde cyan → plata → azul cielo */
+    --grad-brand: linear-gradient(120deg, #0a8f80 0%, #2bbfae 30%, #cbd5e1 52%, #38bdf8 78%, #0ea5e9 100%);
     --cream: #ffffff;
     --cream-2: #ffffff;
-    --ink: #1c1830;
-    --muted: #6b6580;
+    --ink: #10201c;
+    --muted: #5a6b66;
     --line: #ececec;
     --font-brand: 'Fredoka', 'Inter', system-ui, sans-serif;
     --font-body: 'Inter', system-ui, -apple-system, sans-serif;
@@ -79,17 +79,17 @@ body {
 }
 .wordmark .wm-a { color: var(--green-forest); }
 .wordmark .wm-n { color: var(--sky); margin-left: 0.22em; }
-.wordmark.on-dark .wm-a { color: #ede9fe; }
+.wordmark.on-dark .wm-a { color: #d7faf3; }
 .wordmark.on-dark .wm-n { color: var(--sky-light); }
 
-/* ===== Shared primary button (purple → azul cielo) ===== */
+/* ===== Shared primary button (verde cyan → azul cielo) ===== */
 .btn-yellow {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
     padding: 14px 28px;
-    background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 45%, #0ea5e9 100%);
+    background: linear-gradient(135deg, #0a8f80 0%, #087a6d 45%, #0ea5e9 100%);
     color: #ffffff;
     font-weight: 700;
     border-radius: 9999px;
@@ -100,7 +100,7 @@ body {
     box-shadow: 0 8px 22px rgba(56, 189, 248, 0.35);
 }
 .btn-yellow:hover {
-    background: linear-gradient(135deg, #6d28d9 0%, #5b21b6 40%, #0284c7 100%);
+    background: linear-gradient(135deg, #087a6d 0%, #06655a 40%, #0284c7 100%);
     transform: translateY(-2px);
     box-shadow: 0 14px 32px rgba(56, 189, 248, 0.45);
 }
