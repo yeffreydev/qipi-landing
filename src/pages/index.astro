@@ -3,8 +3,22 @@ import Layout from "../layouts/Layout.astro";
 import "../styles/globals.css";
 
 const SITE = "https://aquinace.com";
+const APP = "https://app.aquinace.com";
 const WA =
-	"https://wa.me/51916913623?text=Hola%2C%20quiero%20conocer%20la%20plataforma%20de%20aqu%C3%AD%20nace%20%F0%9F%8C%B1";
+	"https://wa.me/51918796325?text=Hola%2C%20quiero%20conocer%20la%20plataforma%20de%20aqu%C3%AD%20nace%20%F0%9F%8C%B1";
+
+const galleryImages = [
+	"IMG_0221.webp",
+	"IMG_20200318_095954.webp",
+	"IMG_20201120_172316709.webp",
+	"IMG_20211215_140457.webp",
+	"IMG_2691.webp",
+	"IMG_2692.webp",
+	"IMG_2699.webp",
+	"IMG_2737.webp",
+	"IMG_2776.webp",
+	"IMG_3695.webp",
+];
 
 const homeJsonLd = [
 	{
@@ -69,20 +83,21 @@ const homeJsonLd = [
 	<nav class="navbar">
 		<div class="navbar-inner">
 			<a href="/" class="navbar-brand">
-				<span class="wordmark"><span class="wm-a">aquí</span><span class="wm-n">nace</span></span>
+				<img src="/aquinace.svg" alt="aquí nace" width="110" height="32" />
 			</a>
 			<div class="navbar-links">
 				<a href="#inicio" class="navbar-link">Inicio</a>
 				<a href="/comunidades-inteligentes" class="navbar-link">Comunidades</a>
 				<a href="#nosotros" class="navbar-link">Nosotros</a>
 				<a href="#servicios" class="navbar-link">Servicios</a>
+				<a href="#galeria" class="navbar-link">Galería</a>
 				<a href="/blog" class="navbar-link">Blog</a>
 				<a href="/token" class="navbar-link">Token</a>
 				<a href="#contacto" class="navbar-link">Contacto</a>
 			</div>
 			<div class="navbar-actions">
-				<a href={WA} target="_blank" rel="noopener noreferrer" class="btn-yellow btn-yellow-sm">
-					Empieza ahora
+				<a href={APP} target="_blank" rel="noopener noreferrer" class="btn-yellow btn-yellow-sm">
+					Iniciar ahora
 				</a>
 			</div>
 		</div>
@@ -91,10 +106,27 @@ const homeJsonLd = [
 	<main>
 		<!-- Hero -->
 		<section class="hero" id="inicio">
-			<div class="hero-stage">
-				<h1 class="sr-only">aquí nace — comunidades inteligentes</h1>
+			<div class="hero-inner">
+			<div class="hero-grid">
+				<div class="hero-copy">
+					<h1>Tu asociación de <span class="grad-green">créditos y ahorro</span> nace aquí</h1>
+					<p class="hero-lead">
+						Digitaliza los aportes, préstamos y ahorros de tu comunidad.
+						Transparente, simple y desde cualquier celular.
+					</p>
+					<div class="hero-cta">
+						<a href={APP} target="_blank" rel="noopener noreferrer" class="btn-yellow btn-yellow-lg">
+							Iniciar mi asociación de créditos y ahorro
+						</a>
+						<a href={WA} target="_blank" rel="noopener noreferrer" class="btn-ghost btn-wa">
+							<svg class="wa-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" /></svg>
+							Escríbenos
+						</a>
+					</div>
+					<span class="hero-note">Pruébala hoy en app.aquinace.com · Sin compromisos</span>
+				</div>
 
-				<!-- Hero illustration: comunidades inteligentes (protagonista) -->
+				<!-- Hero illustration: comunidades inteligentes -->
 				<div class="hero-art">
 					<div class="art-ring"></div>
 					<svg
@@ -300,12 +332,6 @@ const homeJsonLd = [
 						</g>
 					</svg>
 				</div>
-
-				<div class="hero-cta">
-					<a href={WA} target="_blank" rel="noopener noreferrer" class="btn-yellow btn-yellow-lg">
-						Empieza ahora
-					</a>
-				</div>
 			</div>
 
 			<!-- Value strip -->
@@ -337,6 +363,7 @@ const homeJsonLd = [
 						<p>Transparencia y seguridad en cada paso.</p>
 					</div>
 				</div>
+			</div>
 			</div>
 		</section>
 
@@ -400,10 +427,10 @@ const homeJsonLd = [
 			<div class="band-orb" aria-hidden="true"></div>
 			<div class="container band-inner">
 				<div class="band-copy">
-					<span class="wordmark on-dark band-mark"><span class="wm-a">aquí</span><span class="wm-n">nace</span></span>
+					<img class="band-mark" src="/aquinace-light.svg" alt="aquí nace" width="120" height="35" />
 					<h2>Juntos, hacemos crecer <span class="grad-yellow">tus sueños.</span></h2>
 					<p>La plataforma que organiza y conecta tus finanzas con lo que <strong>realmente importa.</strong></p>
-					<a href={WA} target="_blank" rel="noopener noreferrer" class="btn-yellow">Empieza ahora</a>
+					<a href={APP} target="_blank" rel="noopener noreferrer" class="btn-yellow">Probar la plataforma</a>
 				</div>
 				<div class="band-values">
 					<div class="bv">
@@ -428,6 +455,29 @@ const homeJsonLd = [
 			</div>
 		</section>
 
+		<!-- Galería: comunidad en acción -->
+		<section class="section" id="galeria">
+			<div class="container">
+				<div class="section-head">
+					<h2>Nuestra comunidad <span class="grad-green">en acción</span></h2>
+					<p>Momentos reales de las comunidades que crecen y se organizan juntas.</p>
+				</div>
+				<div class="gallery-grid">
+					{galleryImages.map((img) => (
+						<figure class="g-item">
+							<img
+								src={`/gallery/${img}`}
+								alt="Comunidad de aquí nace en actividad"
+								loading="lazy"
+								decoding="async"
+							/>
+							<figcaption class="g-cap"><span>aquí nace · Comunidad</span></figcaption>
+						</figure>
+					))}
+				</div>
+			</div>
+		</section>
+
 		<!-- Steps -->
 		<section class="section section-alt">
 			<div class="container">
@@ -438,8 +488,8 @@ const homeJsonLd = [
 				<div class="steps">
 					<div class="step">
 						<span class="step-n">1</span>
-						<h3>Escríbenos</h3>
-						<p>Contáctanos por WhatsApp y crea tu cuenta en la plataforma.</p>
+						<h3>Crea tu cuenta</h3>
+						<p>Entra a app.aquinace.com y regístrate, o escríbenos por WhatsApp y te ayudamos.</p>
 					</div>
 					<div class="step">
 						<span class="step-n">2</span>
@@ -458,23 +508,39 @@ const homeJsonLd = [
 		<!-- Final CTA -->
 		<section class="cta" id="contacto">
 			<div class="cta-card">
-				<span class="wordmark cta-mark"><span class="wm-a">aquí</span><span class="wm-n">nace</span></span>
+				<img class="cta-mark" src="/aquinace.svg" alt="aquí nace" width="150" height="44" />
 				<h2>¿Listo para dar el primer paso?</h2>
 				<p>Escríbenos y empieza a usar la plataforma hoy. <strong>Aquí nace tu próxima oportunidad.</strong></p>
-				<a href={WA} target="_blank" rel="noopener noreferrer" class="btn-yellow btn-yellow-lg">
-					<svg class="wa-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" /></svg>
-					Empieza ahora
-				</a>
-				<span class="cta-sub">Sin compromisos · Respuesta inmediata</span>
+				<div class="cta-actions">
+					<a href={APP} target="_blank" rel="noopener noreferrer" class="btn-yellow btn-yellow-lg">
+						Iniciar mi asociación de créditos y ahorro ahora
+					</a>
+					<a href={WA} target="_blank" rel="noopener noreferrer" class="btn-ghost btn-wa">
+						<svg class="wa-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" /></svg>
+						Escríbenos por WhatsApp
+					</a>
+				</div>
+				<span class="cta-sub">Sin compromisos · Respuesta inmediata · +51 918 796 325</span>
 			</div>
 		</section>
 	</main>
+
+	<!-- WhatsApp flotante -->
+	<a
+		href={WA}
+		target="_blank"
+		rel="noopener noreferrer"
+		class="wa-fab"
+		aria-label="Escríbenos por WhatsApp al +51 918 796 325"
+	>
+		<svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" /></svg>
+	</a>
 
 	<!-- Footer -->
 	<footer class="site-footer">
 		<div class="footer-inner">
 			<div class="footer-brand">
-				<span class="wordmark"><span class="wm-a">aquí</span><span class="wm-n">nace</span></span>
+				<img src="/aquinace.svg" alt="aquí nace" width="96" height="28" />
 			</div>
 			<p class="footer-copy">© 2026 aquí nace · Tu red financiera para crecer juntos</p>
 			<div class="footer-links">
@@ -505,7 +571,7 @@ const homeJsonLd = [
 		left: 15%;
 		width: 620px;
 		height: 620px;
-		background: rgba(10, 143, 128, 0.1);
+		background: rgba(10, 143, 128, 0.2);
 		animation: blob-drift 22s ease-in-out infinite;
 	}
 	.blob-2 {
@@ -513,7 +579,7 @@ const homeJsonLd = [
 		right: -8%;
 		width: 520px;
 		height: 520px;
-		background: rgba(56, 189, 248, 0.16);
+		background: rgba(43, 191, 174, 0.2);
 		animation: blob-drift 28s ease-in-out infinite reverse;
 	}
 	.blob-3 {
@@ -521,7 +587,7 @@ const homeJsonLd = [
 		left: -8%;
 		width: 420px;
 		height: 420px;
-		background: rgba(14, 165, 233, 0.1);
+		background: rgba(10, 143, 128, 0.16);
 		animation: blob-drift 25s ease-in-out infinite;
 	}
 
@@ -571,7 +637,7 @@ const homeJsonLd = [
 		transition: transform 0.3s;
 	}
 	.navbar-brand:hover img {
-		transform: rotate(-6deg) scale(1.06);
+		transform: scale(1.05);
 	}
 	.navbar-brand .wordmark {
 		font-size: 1.5rem;
@@ -652,6 +718,12 @@ const homeJsonLd = [
 		width: 22px;
 		height: 22px;
 	}
+	.btn-wa {
+		gap: 10px;
+	}
+	.btn-wa .wa-icon {
+		color: #25d366;
+	}
 
 	/* ===== GRADIENT TEXT ===== */
 	.grad-green {
@@ -693,16 +765,57 @@ const homeJsonLd = [
 
 	/* ===== HERO (illustration = protagonista) ===== */
 	.hero {
+		position: relative;
+		padding: 122px 24px 56px;
+		background:
+			radial-gradient(900px 480px at 12% 0%, rgba(10, 143, 128, 0.16), transparent 62%),
+			radial-gradient(760px 420px at 88% 22%, rgba(43, 191, 174, 0.14), transparent 60%),
+			linear-gradient(180deg, #e6fbf6 0%, #f2fdfa 55%, #ffffff 100%);
+	}
+	.hero-inner {
 		max-width: 1180px;
 		margin: 0 auto;
-		padding: 120px 24px 40px;
 	}
-	.hero-stage {
-		display: flex;
-		flex-direction: column;
+	.hero-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 44px;
 		align-items: center;
 		text-align: center;
-		gap: 6px;
+	}
+	@media (min-width: 980px) {
+		.hero-grid {
+			grid-template-columns: 1.05fr 1fr;
+			text-align: left;
+		}
+		.hero-copy .hero-cta {
+			justify-content: flex-start;
+		}
+		.hero-lead {
+			margin-left: 0;
+			margin-right: 0;
+		}
+	}
+	.hero-copy h1 {
+		font-size: clamp(2.2rem, 4.6vw, 3.4rem);
+		font-weight: 800;
+		letter-spacing: -0.025em;
+		line-height: 1.08;
+		color: var(--ink);
+		margin-bottom: 20px;
+	}
+	.hero-lead {
+		font-size: 1.15rem;
+		color: var(--muted);
+		line-height: 1.7;
+		max-width: 520px;
+		margin: 0 auto 30px;
+	}
+	.hero-note {
+		display: block;
+		margin-top: 18px;
+		font-size: 0.88rem;
+		color: var(--muted);
 	}
 	.sr-only {
 		position: absolute;
@@ -1075,6 +1188,110 @@ const homeJsonLd = [
 		font-size: 0.98rem;
 	}
 
+	/* ===== GALLERY ===== */
+	.gallery-grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-auto-rows: 150px;
+		grid-auto-flow: dense;
+		gap: 14px;
+	}
+	@media (min-width: 900px) {
+		.gallery-grid {
+			grid-template-columns: repeat(4, 1fr);
+			grid-auto-rows: 210px;
+			gap: 18px;
+		}
+	}
+	.g-item:nth-child(1) {
+		grid-column: span 2;
+		grid-row: span 2;
+	}
+	.g-item:nth-child(3),
+	.g-item:nth-child(6),
+	.g-item:nth-child(10) {
+		grid-column: span 2;
+	}
+	.g-item {
+		position: relative;
+		display: block;
+		margin: 0;
+		border-radius: 20px;
+		overflow: hidden;
+		background: var(--green-soft);
+		border: 1px solid var(--line);
+		box-shadow: 0 6px 20px rgba(6, 101, 90, 0.06);
+		transition: box-shadow 0.4s, transform 0.4s;
+	}
+	.g-item:hover {
+		transform: translateY(-4px);
+		box-shadow: 0 24px 44px rgba(10, 143, 128, 0.16);
+	}
+	.g-item img {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+	}
+	.g-item:hover img {
+		transform: scale(1.05);
+	}
+	.g-cap {
+		position: absolute;
+		inset: 0;
+		display: flex;
+		align-items: flex-end;
+		padding: 22px;
+		background: linear-gradient(to top, rgba(6, 61, 52, 0.65), transparent 55%);
+		opacity: 0;
+		transition: opacity 0.35s;
+	}
+	.g-item:hover .g-cap {
+		opacity: 1;
+	}
+	.g-cap span {
+		color: #fff;
+		font-size: 0.88rem;
+		font-weight: 600;
+		letter-spacing: 0.02em;
+	}
+
+	/* ===== WHATSAPP FAB ===== */
+	.wa-fab {
+		position: fixed;
+		right: 22px;
+		bottom: 22px;
+		z-index: 60;
+		width: 58px;
+		height: 58px;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: linear-gradient(135deg, #25d366, #1ebe5d);
+		color: #fff;
+		box-shadow: 0 12px 28px rgba(37, 211, 102, 0.42);
+		transition: transform 0.3s, box-shadow 0.3s;
+	}
+	.wa-fab::after {
+		content: "";
+		position: absolute;
+		inset: 0;
+		border-radius: 50%;
+		border: 2px solid rgba(37, 211, 102, 0.55);
+		animation: ring-pulse 2.6s ease-out infinite;
+	}
+	.wa-fab svg {
+		width: 30px;
+		height: 30px;
+	}
+	.wa-fab:hover {
+		transform: translateY(-3px) scale(1.06);
+		box-shadow: 0 18px 36px rgba(37, 211, 102, 0.5);
+	}
+
 	/* ===== STEPS ===== */
 	.steps {
 		display: grid;
@@ -1156,6 +1373,12 @@ const homeJsonLd = [
 	}
 	.cta-card > p strong {
 		color: var(--green-800);
+	}
+	.cta-actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 14px;
+		justify-content: center;
 	}
 	.cta-sub {
 		display: block;
@@ -1260,6 +1483,9 @@ const homeJsonLd = [
 		}
 		.hi-links path {
 			stroke-dashoffset: 0;
+			animation: none !important;
+		}
+		.wa-fab::after {
 			animation: none !important;
 		}
 	}
