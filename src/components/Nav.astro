@@ -1,0 +1,92 @@
+---
+interface Props {
+	/** Página actual (para marcar el link activo) */
+	current?: string;
+}
+const { current = "" } = Astro.props;
+
+const APP = "https://app.aquinace.com";
+const WA =
+	"https://wa.me/51918796325?text=Hola%2C%20quiero%20crear%20mi%20comunidad%20con%20aqu%C3%AD%20nace";
+
+const links = [
+	{ href: "/comunidades-inteligentes", label: "Comunidades", key: "comunidades" },
+	{ href: "/#servicios", label: "Servicios", key: "servicios" },
+	{ href: "/#como-funciona", label: "Cómo funciona", key: "como" },
+	{ href: "/blog", label: "Blog", key: "blog" },
+	{ href: "/token", label: "Token AN", key: "token" },
+];
+---
+
+<nav class="navbar" id="navbar">
+	<div class="navbar-inner">
+		<a href="/" class="navbar-brand" aria-label="aquí nace — inicio">
+			<img src="/aquinace.svg" alt="aquí nace" width="110" height="32" />
+		</a>
+
+		<div class="navbar-links">
+			{links.map((l) => (
+				<a href={l.href} class="navbar-link" aria-current={current === l.key ? "page" : undefined}>{l.label}</a>
+			))}
+		</div>
+
+		<div class="navbar-actions">
+			<a href={APP} target="_blank" rel="noopener noreferrer" class="btn btn-outline">Ingresar</a>
+			<a href={WA} target="_blank" rel="noopener noreferrer" class="btn btn-primary">Crear comunidad</a>
+		</div>
+
+		<button class="navbar-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMobile">
+			<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
+		</button>
+	</div>
+</nav>
+
+<div class="navbar-mobile" id="navMobile">
+	{links.map((l) => (
+		<a href={l.href} class="navbar-link">{l.label}</a>
+	))}
+	<div class="navbar-mobile-actions">
+		<a href={APP} target="_blank" rel="noopener noreferrer" class="btn btn-outline">Ingresar</a>
+		<a href={WA} target="_blank" rel="noopener noreferrer" class="btn btn-primary">Crear comunidad</a>
+	</div>
+</div>
+
+<script>
+	const nav = document.getElementById("navbar");
+	const toggle = document.getElementById("navToggle");
+	const mobile = document.getElementById("navMobile");
+
+	const onScroll = () => nav?.classList.toggle("scrolled", window.scrollY > 8);
+	onScroll();
+	window.addEventListener("scroll", onScroll, { passive: true });
+
+	toggle?.addEventListener("click", () => {
+		const open = mobile?.classList.toggle("open");
+		toggle.setAttribute("aria-expanded", String(!!open));
+	});
+	mobile?.querySelectorAll("a").forEach((a) =>
+		a.addEventListener("click", () => {
+			mobile.classList.remove("open");
+			toggle?.setAttribute("aria-expanded", "false");
+		})
+	);
+
+	// Reveal on scroll
+	const items = document.querySelectorAll(".reveal");
+	if ("IntersectionObserver" in window && items.length) {
+		const io = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((e) => {
+					if (e.isIntersecting) {
+						e.target.classList.add("in");
+						io.unobserve(e.target);
+					}
+				});
+			},
+			{ threshold: 0.12 }
+		);
+		items.forEach((el) => io.observe(el));
+	} else {
+		items.forEach((el) => el.classList.add("in"));
+	}
+</script>

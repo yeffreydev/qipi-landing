@@ -1,5 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import WaFab from "../components/WaFab.astro";
 import "../styles/globals.css";
 
 const SITE = "https://aquinace.com";
@@ -47,6 +50,13 @@ const jsonLd = [
 		],
 	},
 ];
+
+const members = [
+	{ n: "María Q.", r: "Presidenta", a: "M" },
+	{ n: "José L.", r: "Tesorero", a: "J" },
+	{ n: "Rosa H.", r: "Socia", a: "R" },
+	{ n: "Luis A.", r: "Socio", a: "L" },
+];
 ---
 
 <Layout
@@ -56,203 +66,113 @@ const jsonLd = [
 	canonicalPath="/comunidades-inteligentes"
 	jsonLd={jsonLd}
 >
-	<!-- Background decorative elements -->
-	<div class="bg-blobs" aria-hidden="true">
-		<div class="blob blob-1"></div>
-		<div class="blob blob-2"></div>
-		<div class="blob blob-3"></div>
-	</div>
-
-	<!-- Navigation -->
-	<nav class="navbar">
-		<div class="navbar-inner">
-			<a href="/" class="navbar-brand">
-				<img src="/aquinace.svg" alt="aquí nace" width="110" height="32" />
-			</a>
-			<div class="navbar-links">
-				<a href="/#inicio" class="navbar-link">Inicio</a>
-				<a href="/comunidades-inteligentes" class="navbar-link">Comunidades</a>
-				<a href="/#servicios" class="navbar-link">Servicios</a>
-				<a href="/blog" class="navbar-link">Blog</a>
-				<a href="/token" class="navbar-link">Token</a>
-			</div>
-			<div class="navbar-actions">
-				<a href={WA} target="_blank" rel="noopener noreferrer" class="btn-yellow btn-yellow-sm">
-					Crea tu comunidad
-				</a>
-			</div>
-		</div>
-	</nav>
+	<Nav current="comunidades" />
 
 	<main>
-		<!-- Hero -->
-		<section class="ci-hero">
-			<div class="ci-hero-grid">
-				<div class="ci-hero-copy">
-					<span class="badge"><span class="badge-dot"></span> Una nueva forma de crecer juntos</span>
-					<h1 class="ci-title">
-						Crea <span class="grad-green">comunidades inteligentes</span> sin ser un experto.
+		<!-- ================= HERO ================= -->
+		<section class="hero">
+			<div class="stripes" aria-hidden="true"></div>
+			<div class="container hero-grid">
+				<div class="hero-copy">
+					<span class="eyebrow">Comunidades inteligentes</span>
+					<h1 class="h-display">
+						Crea comunidades inteligentes sin ser un experto.
 					</h1>
-					<p class="ci-sub">
+					<p class="lead hero-lead">
 						Con <span class="wordmark"><span class="wm-a">aquí</span><span class="wm-n">nace</span></span>
 						cualquiera puede formar una comunidad que ahorra, presta y crece con orden.
-						<strong>Sin conocimientos previos.</strong> Con una economía propia que se diferencia
-						y prospera, herramientas, academia y una red que te acompaña.
+						Sin conocimientos previos. Con una economía propia que se diferencia y prospera,
+						herramientas, academia y una red que te acompaña.
 					</p>
-					<div class="ci-cta">
-						<a href={WA} target="_blank" rel="noopener noreferrer" class="btn-yellow">
-							Crea tu comunidad
+					<div class="hero-cta">
+						<a href={WA} target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">Crea tu comunidad</a>
+						<a href="#pilares" class="btn btn-outline btn-lg">
+							Cómo funciona
+							<svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9" /></svg>
 						</a>
-						<a href="#pilares" class="btn-ghost">Cómo funciona</a>
 					</div>
-					<div class="ci-trust">
-						<span>Sin experiencia técnica</span>
-						<span>·</span>
-						<span>Te guiamos paso a paso</span>
-					</div>
+					<p class="hero-note">Sin experiencia técnica · Te guiamos paso a paso</p>
 				</div>
 
-				<!-- Illustration -->
-				<div class="ci-hero-art">
-					<div class="ci-art-ring" aria-hidden="true"></div>
-					<svg
-						class="ci-illustration"
-						viewBox="0 0 520 480"
-						role="img"
-						aria-label="Ilustración de una comunidad inteligente conectada por aquí nace"
-						xmlns="http://www.w3.org/2000/svg"
-					>
-						<defs>
-							<linearGradient id="ci-g-green" x1="0" y1="0" x2="1" y2="1">
-								<stop offset="0" stop-color="#2bbfae" />
-								<stop offset="1" stop-color="#06655a" />
-							</linearGradient>
-							<linearGradient id="ci-g-yellow" x1="0" y1="0" x2="1" y2="1">
-								<stop offset="0" stop-color="#e2e8f0" />
-								<stop offset="1" stop-color="#cbd5e1" />
-							</linearGradient>
-							<radialGradient id="ci-g-core" cx="0.5" cy="0.4" r="0.7">
-								<stop offset="0" stop-color="#2bbfae" />
-								<stop offset="1" stop-color="#087a6d" />
-							</radialGradient>
-						</defs>
+				<div class="hero-visual" aria-hidden="true">
+					<div class="mock-members">
+						<div class="mock-title">
+							<strong>Comunidad Los Andes</strong>
+							<span>18 socios</span>
+						</div>
+						{members.map((m) => (
+							<div class="mock-member">
+								<span class="mock-av">{m.a}</span>
+								<span class="mock-name">{m.n}</span>
+								<span class="mock-role">{m.r}</span>
+								<span class="mock-ok">
+									<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10" /></svg>
+								</span>
+							</div>
+						))}
+						<div class="mock-add">+ Invitar socio</div>
+					</div>
 
-						<!-- soft backdrop -->
-						<circle cx="260" cy="230" r="200" fill="#e6fbf6" opacity="0.55" />
-
-						<!-- connection lines -->
-						<g class="ci-links" stroke="#0a8f80" stroke-width="2.5" opacity="0.5" fill="none">
-							<line x1="260" y1="230" x2="110" y2="120" />
-							<line x1="260" y1="230" x2="410" y2="120" />
-							<line x1="260" y1="230" x2="90" y2="320" />
-							<line x1="260" y1="230" x2="430" y2="320" />
-							<line x1="260" y1="230" x2="260" y2="80" />
-						</g>
-
-						<!-- central core: aquí nace hub -->
-						<g class="ci-core">
-							<circle cx="260" cy="230" r="64" fill="url(#ci-g-core)" />
-							<circle cx="260" cy="230" r="64" fill="none" stroke="#fff" stroke-width="4" opacity="0.35" />
-							<!-- sprout -->
-							<path
-								d="M260 258 V214"
-								stroke="#fff"
-								stroke-width="6"
-								stroke-linecap="round"
-							/>
-							<path
-								d="M260 224 C244 214 236 198 240 184 C256 188 264 206 260 224 Z"
-								fill="#d7faf3"
-							/>
-							<path
-								d="M260 214 C276 206 286 190 284 176 C268 178 258 196 260 214 Z"
-								fill="#fff"
-							/>
-						</g>
-
-						<!-- node: person -->
-						<g class="ci-node ci-float-a">
-							<circle cx="110" cy="120" r="38" fill="#fff" stroke="url(#ci-g-green)" stroke-width="4" />
-							<circle cx="110" cy="110" r="12" fill="#0a8f80" />
-							<path d="M90 140 a20 16 0 0 1 40 0 Z" fill="#0a8f80" />
-						</g>
-
-						<!-- node: coin (economy) -->
-						<g class="ci-node ci-float-b">
-							<circle cx="410" cy="120" r="38" fill="#fff" stroke="url(#ci-g-yellow)" stroke-width="4" />
-							<circle cx="410" cy="120" r="24" fill="url(#ci-g-yellow)" />
-							<text x="410" y="129" text-anchor="middle" font-family="Fredoka, sans-serif" font-weight="700" font-size="24" fill="#054d44">S/</text>
-						</g>
-
-						<!-- node: house (community) -->
-						<g class="ci-node ci-float-c">
-							<circle cx="90" cy="320" r="38" fill="#fff" stroke="url(#ci-g-green)" stroke-width="4" />
-							<path d="M72 322 L90 306 L108 322 V338 H72 Z" fill="#0a8f80" />
-							<rect x="85" y="326" width="10" height="12" fill="#fff" />
-						</g>
-
-						<!-- node: growth chart -->
-						<g class="ci-node ci-float-a">
-							<circle cx="430" cy="320" r="38" fill="#fff" stroke="url(#ci-g-green)" stroke-width="4" />
-							<path d="M414 332 L424 322 L432 328 L446 310" fill="none" stroke="#0a8f80" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
-							<path d="M440 310 h6 v6" fill="none" stroke="#0a8f80" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
-						</g>
-
-						<!-- node: academy (book) -->
-						<g class="ci-node ci-float-b">
-							<circle cx="260" cy="80" r="38" fill="#fff" stroke="url(#ci-g-yellow)" stroke-width="4" />
-							<path d="M244 70 h14 v22 h-14 a2 2 0 0 1 0 -4 h10" fill="none" stroke="#94a3b8" stroke-width="3.5" stroke-linejoin="round" />
-							<path d="M276 70 h-14 v22 h14 a2 2 0 0 0 0 -4 h-10" fill="none" stroke="#94a3b8" stroke-width="3.5" stroke-linejoin="round" />
-						</g>
-					</svg>
+					<div class="mock-econ">
+						<span class="mock-econ-label">Economía de la comunidad</span>
+						<strong>S/ 18,650</strong>
+						<div class="mock-econ-row">
+							<span>Aportes</span><b>S/ 12,400</b>
+						</div>
+						<div class="mock-econ-row">
+							<span>Préstamos activos</span><b>S/ 5,100</b>
+						</div>
+						<div class="mock-econ-row">
+							<span>Intereses del ciclo</span><b>S/ 1,150</b>
+						</div>
+					</div>
 				</div>
 			</div>
 		</section>
 
-		<!-- What is it -->
-		<section class="section">
-			<div class="container ci-intro">
-				<div class="section-head">
-					<h2>¿Qué es una <span class="grad-green">comunidad inteligente</span>?</h2>
-					<p>
-						Es un grupo de personas —una UNICA, banca comunal, junta o asociación— que gestiona
-						su dinero, sus reglas y su crecimiento con tecnología. Ahorra en conjunto, se presta
-						entre sí y aprende, todo desde un mismo lugar.
-					</p>
-				</div>
-				<div class="ci-quote">
-					<p>
-						“No necesitas ser contador ni experto en finanzas. Solo necesitas tu comunidad.
-						<strong>De lo demás nos encargamos juntos.</strong>”
-					</p>
-				</div>
-			</div>
-		</section>
-
-		<!-- Pillars -->
-		<section class="section section-alt" id="pilares">
+		<!-- ================= QUÉ ES ================= -->
+		<section class="section-tight">
 			<div class="container">
-				<div class="section-head">
-					<h2>Todo lo que hace inteligente a tu comunidad</h2>
+				<div class="card-raised intro reveal">
+					<div>
+						<span class="eyebrow">Qué es</span>
+						<h2 class="h-section">¿Qué es una comunidad inteligente?</h2>
+					</div>
+					<div class="intro-copy">
+						<p>
+							Es un grupo de personas —una UNICA, banca comunal, junta o asociación— que gestiona
+							su dinero, sus reglas y su crecimiento con tecnología. Ahorra en conjunto, se presta
+							entre sí y aprende, todo desde un mismo lugar.
+						</p>
+						<blockquote>
+							“No necesitas ser contador ni experto en finanzas. Solo necesitas tu comunidad.
+							<strong>De lo demás nos encargamos juntos.</strong>”
+						</blockquote>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ================= PILARES (bento) ================= -->
+		<section class="section" id="pilares">
+			<div class="container">
+				<div class="section-head reveal">
+					<span class="eyebrow">Pilares</span>
+					<h2 class="h-section">Todo lo que hace inteligente a tu comunidad</h2>
 					<p>Cuatro pilares que convierten a un grupo cualquiera en una comunidad que prospera.</p>
 				</div>
 
-				<div class="ci-pillars">
-					<article class="ci-pillar">
-						<div class="ci-pillar-ic ic-green">
-							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-						</div>
+				<div class="pillars">
+					<article class="card-tint pillar reveal">
+						<svg class="icon-line" viewBox="0 0 40 40"><path d="M20 6a6 6 0 1 1 0 12 6 6 0 0 1 0-12zM8 34a12 12 0 0 1 24 0" /><path d="m26 14 3 3 6-6" /></svg>
 						<h3>Sin conocimientos previos</h3>
 						<p>
 							La plataforma te guía en cada paso: crear la comunidad, sumar miembros, definir
 							reglas y registrar aportes. Sin tecnicismos, sin papeleo, sin miedo a equivocarte.
 						</p>
 					</article>
-
-					<article class="ci-pillar">
-						<div class="ci-pillar-ic ic-yellow">
-							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-						</div>
+					<article class="card-tint pillar reveal">
+						<svg class="icon-line" viewBox="0 0 40 40"><circle cx="20" cy="20" r="14" /><path d="M20 12v16M24 15.5c-1-1.5-2.5-2-4-2-2.5 0-4 1.3-4 3 0 4 8 2 8 6 0 1.7-1.5 3-4 3-1.5 0-3-.5-4-2" /></svg>
 						<h3>Una economía que se diferencia y prospera</h3>
 						<p>
 							El dinero se queda y circula dentro de tu comunidad. Los aportes, préstamos e
@@ -260,11 +180,8 @@ const jsonLd = [
 							transparente y hecha para crecer de forma sostenible.
 						</p>
 					</article>
-
-					<article class="ci-pillar">
-						<div class="ci-pillar-ic ic-green">
-							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-						</div>
+					<article class="card-tint pillar reveal">
+						<svg class="icon-line" viewBox="0 0 40 40"><rect x="6" y="8" width="28" height="24" rx="4" /><path d="M6 15h28M12 22h6M12 26h10M24 22h4" /></svg>
 						<h3>Herramientas que hacen el trabajo pesado</h3>
 						<p>
 							Aportes, préstamos, cuotas e intereses calculados de forma automática. Cada
@@ -272,11 +189,8 @@ const jsonLd = [
 							Adiós al cuaderno y a las cuentas que no cuadran.
 						</p>
 					</article>
-
-					<article class="ci-pillar">
-						<div class="ci-pillar-ic ic-yellow">
-							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z" /><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l6.16-3.422A12.083 12.083 0 0112 20.5 12.083 12.083 0 015.84 10.578L12 14z" /></svg>
-						</div>
+					<article class="card-tint pillar reveal">
+						<svg class="icon-line" viewBox="0 0 40 40"><path d="M6 10c4-2 8-2 14 1 6-3 10-3 14-1v20c-4-2-8-2-14 1-6-3-10-3-14-1V10zM20 11v20" /></svg>
 						<h3>Academia para crecer aprendiendo</h3>
 						<p>
 							Cursos y guías simples de ahorro, crédito e inversión, pensados para tu realidad.
@@ -285,758 +199,384 @@ const jsonLd = [
 					</article>
 				</div>
 
-				<p class="ci-more">
+				<p class="more reveal">
 					Y más: red de apoyo entre comunidades, foro integrado, marketplace comunitario y el
 					<a href="/token">token AN</a> para potenciar todo el ecosistema.
 				</p>
 			</div>
 		</section>
 
-		<!-- How it works -->
-		<section class="section">
+		<!-- ================= PASOS (banda oscura) ================= -->
+		<section class="band-dark steps">
 			<div class="container">
-				<div class="section-head">
-					<h2>Crea la tuya en <span class="grad-green">3 pasos</span></h2>
+				<div class="steps-head reveal">
+					<span class="eyebrow">Cómo funciona</span>
+					<h2 class="h-section">Crea la tuya en 3 pasos.</h2>
 					<p>Sin vueltas. Empiezas hoy y tu comunidad queda lista para crecer.</p>
 				</div>
-				<div class="ci-steps">
-					<div class="ci-step">
-						<span class="ci-step-n">1</span>
+				<div class="steps-grid">
+					<article class="step reveal">
+						<span class="step-n">1</span>
 						<h3>Crea tu comunidad</h3>
 						<p>Ponle nombre, invita a los miembros y define las reglas con la ayuda de la plataforma.</p>
-					</div>
-					<div class="ci-step">
-						<span class="ci-step-n">2</span>
+					</article>
+					<article class="step reveal">
+						<span class="step-n">2</span>
 						<h3>Activa su economía</h3>
 						<p>Registra aportes y préstamos. aquí nace calcula todo y mantiene las cuentas claras.</p>
-					</div>
-					<div class="ci-step">
-						<span class="ci-step-n">3</span>
+					</article>
+					<article class="step reveal">
+						<span class="step-n">3</span>
 						<h3>Aprende y prospera</h3>
 						<p>Usa la academia y las herramientas para hacer crecer el capital de tu comunidad.</p>
-					</div>
+					</article>
 				</div>
 			</div>
 		</section>
 
-		<!-- Dark band CTA -->
-		<section class="ci-band">
-			<div class="band-orb" aria-hidden="true"></div>
-			<div class="container ci-band-inner">
-				<img class="band-mark" src="/aquinace-light.svg" alt="aquí nace" width="120" height="35" />
-				<h2>Tu comunidad tiene todo para <span class="grad-yellow">prosperar</span>.</h2>
-				<p>
-					Solo falta dar el primer paso. Crea una comunidad inteligente y deja que la tecnología,
-					la academia y la red trabajen a tu favor.
-				</p>
-				<a href={WA} target="_blank" rel="noopener noreferrer" class="btn-yellow btn-yellow-lg">
-					<svg class="wa-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" /></svg>
-					Crea tu comunidad
-				</a>
-				<p class="ci-band-sub">
-					¿Quieres entender el modelo a fondo? Lee
-					<a href="/blog/como-son-comunidades-inteligentes-aqui-nace">cómo funcionan las comunidades inteligentes de aquí nace</a>.
-				</p>
+		<!-- ================= CTA ================= -->
+		<section class="section-tight">
+			<div class="container">
+				<div class="cta band-dark reveal">
+					<div class="cta-copy">
+						<span class="eyebrow">Empieza hoy</span>
+						<h2 class="h-section">Tu comunidad tiene todo para prosperar.</h2>
+						<p>
+							Solo falta dar el primer paso. Crea una comunidad inteligente y deja que la tecnología,
+							la academia y la red trabajen a tu favor.
+						</p>
+						<p class="cta-sub">
+							¿Quieres entender el modelo a fondo? Lee
+							<a href="/blog/como-son-comunidades-inteligentes-aqui-nace">cómo funcionan las comunidades inteligentes</a>.
+						</p>
+					</div>
+					<div class="cta-actions">
+						<a href={WA} target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">Crea tu comunidad</a>
+						<a href="/blog" class="btn btn-ghost-dark btn-lg">
+							Ir al blog
+							<svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9" /></svg>
+						</a>
+					</div>
+				</div>
 			</div>
 		</section>
 	</main>
 
-	<!-- Footer -->
-	<footer class="site-footer">
-		<div class="footer-inner">
-			<div class="footer-brand">
-				<img src="/aquinace.svg" alt="aquí nace" width="96" height="28" />
-			</div>
-			<p class="footer-copy">© 2026 aquí nace · Tu red financiera para crecer juntos</p>
-			<div class="footer-links">
-				<a href="/comunidades-inteligentes" class="footer-link">Comunidades</a>
-				<a href="/blog" class="footer-link">Blog</a>
-				<a href="/token" class="footer-link">Token</a>
-				<a href="/privacidad" class="footer-link">Privacidad</a>
-			</div>
-		</div>
-	</footer>
+	<WaFab href={WA} />
+	<Footer />
 </Layout>
 
 <style>
-	/* ===== BACKGROUND BLOBS ===== */
-	.bg-blobs {
-		position: fixed;
-		inset: 0;
-		pointer-events: none;
+	.hero {
+		position: relative;
+		padding: calc(var(--nav-h) + 64px) 0 96px;
 		overflow: hidden;
-		z-index: -1;
 	}
-	.blob {
-		position: absolute;
-		border-radius: 50%;
-		filter: blur(140px);
+	.hero .stripes {
+		left: 50%;
 	}
-	.blob-1 {
-		top: -12%;
-		left: 15%;
-		width: 620px;
-		height: 620px;
-		background: rgba(10, 143, 128, 0.1);
-	}
-	.blob-2 {
-		bottom: 10%;
-		right: -8%;
-		width: 520px;
-		height: 520px;
-		background: rgba(148, 163, 184, 0.09);
-	}
-	.blob-3 {
-		top: 45%;
-		left: -8%;
-		width: 420px;
-		height: 420px;
-		background: rgba(6, 101, 90, 0.07);
-	}
-
-	/* ===== NAVBAR ===== */
-	.navbar {
-		position: fixed;
-		top: 0;
-		left: 0;
-		right: 0;
-		z-index: 50;
-		backdrop-filter: blur(20px);
-		-webkit-backdrop-filter: blur(20px);
-		background: rgba(255, 255, 255, 0.85);
-		border-bottom: 1px solid rgba(6, 101, 90, 0.08);
-	}
-	.navbar-inner {
-		max-width: 1180px;
-		margin: 0 auto;
-		padding: 14px 24px;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		gap: 24px;
-	}
-	.navbar-brand {
-		display: flex;
-		align-items: center;
-		gap: 10px;
-		text-decoration: none;
-		flex-shrink: 0;
-	}
-	.navbar-brand .wordmark {
-		font-size: 1.5rem;
-	}
-	.navbar-links {
-		display: none;
-		align-items: center;
-		gap: 30px;
-	}
-	.navbar-link {
-		color: var(--green-forest);
-		font-weight: 600;
-		font-size: 0.95rem;
-		text-decoration: none;
-		transition: color 0.25s;
-	}
-	.navbar-link:hover {
-		color: var(--green-bright);
-	}
-	@media (min-width: 900px) {
-		.navbar-links {
-			display: flex;
-		}
-	}
-
-	/* ===== BUTTONS ===== */
-	.btn-yellow {
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		gap: 10px;
-		padding: 14px 28px;
-		background: linear-gradient(135deg, #0a8f80, #087a6d);
-		color: #ffffff;
-		font-weight: 700;
-		border-radius: 9999px;
-		font-size: 1rem;
-		text-decoration: none;
-		border: none;
-		transition: all 0.3s;
-		box-shadow: 0 8px 22px rgba(10, 143, 128, 0.35);
-	}
-	.btn-yellow:hover {
-		background: linear-gradient(135deg, #087a6d, #06655a);
-		transform: translateY(-2px);
-		box-shadow: 0 14px 32px rgba(10, 143, 128, 0.45);
-	}
-	.btn-yellow:active {
-		transform: translateY(0) scale(0.98);
-	}
-	.btn-yellow-sm {
-		padding: 10px 20px;
-		font-size: 0.9rem;
-	}
-	.btn-yellow-lg {
-		padding: 18px 38px;
-		font-size: 1.15rem;
-	}
-	.btn-ghost {
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		padding: 14px 28px;
-		background: transparent;
-		color: var(--green-forest);
-		font-weight: 700;
-		border-radius: 9999px;
-		font-size: 1rem;
-		text-decoration: none;
-		border: 2px solid rgba(6, 101, 90, 0.2);
-		transition: all 0.3s;
-	}
-	.btn-ghost:hover {
-		border-color: var(--green);
-		background: var(--green-soft);
-	}
-	.wa-icon {
-		width: 22px;
-		height: 22px;
-	}
-
-	/* ===== GRADIENT TEXT ===== */
-	.grad-green {
-		background: linear-gradient(110deg, #0a8f80, #2bbfae, #06655a);
-		-webkit-background-clip: text;
-		background-clip: text;
-		-webkit-text-fill-color: transparent;
-		color: var(--green);
-	}
-	.grad-yellow {
-		background: linear-gradient(110deg, #64748b, #94a3b8, #475569);
-		-webkit-background-clip: text;
-		background-clip: text;
-		-webkit-text-fill-color: transparent;
-		color: var(--yellow);
-	}
-
-	/* ===== BADGE ===== */
-	.badge {
-		display: inline-flex;
-		align-items: center;
-		gap: 8px;
-		padding: 7px 16px;
-		border-radius: 9999px;
-		background: rgba(10, 143, 128, 0.1);
-		border: 1px solid rgba(10, 143, 128, 0.22);
-		color: var(--green-800);
-		font-size: 0.85rem;
-		font-weight: 600;
-		margin-bottom: 22px;
-	}
-	.badge-dot {
-		width: 8px;
-		height: 8px;
-		border-radius: 50%;
-		background: var(--green);
-		animation: pulse 2s infinite;
-	}
-
-	/* ===== HERO ===== */
-	.ci-hero {
-		max-width: 1180px;
-		margin: 0 auto;
-		padding: 140px 24px 40px;
-	}
-	.ci-hero-grid {
+	.hero-grid {
+		position: relative;
 		display: grid;
 		grid-template-columns: 1fr;
-		gap: 40px;
+		gap: 64px;
 		align-items: center;
 	}
-	@media (min-width: 940px) {
-		.ci-hero-grid {
-			grid-template-columns: 1.05fr 0.95fr;
-			gap: 32px;
+	@media (min-width: 980px) {
+		.hero-grid {
+			grid-template-columns: 1.1fr 0.9fr;
+			gap: 40px;
 		}
 	}
-	.ci-hero-copy {
-		text-align: center;
+	.hero-copy h1 {
+		margin-bottom: 24px;
+		max-width: 620px;
 	}
-	@media (min-width: 940px) {
-		.ci-hero-copy {
-			text-align: left;
-		}
+	.hero-lead {
+		max-width: 540px;
+		margin-bottom: 32px;
 	}
-	.ci-title {
-		font-size: clamp(2.3rem, 5.5vw, 3.9rem);
-		font-weight: 800;
-		line-height: 1.07;
-		letter-spacing: -0.02em;
-		color: var(--ink);
-		margin-bottom: 22px;
-	}
-	.ci-sub {
-		font-size: clamp(1.05rem, 2.2vw, 1.22rem);
-		color: var(--muted);
-		max-width: 560px;
-		margin: 0 auto 34px;
-		line-height: 1.75;
-	}
-	@media (min-width: 940px) {
-		.ci-sub {
-			margin: 0 0 34px;
-		}
-	}
-	.ci-sub strong {
-		color: var(--green-800);
-	}
-	.ci-sub .wordmark {
+	.hero-lead .wordmark {
 		font-size: 1.05em;
 	}
-	.ci-cta {
+	.hero-cta {
 		display: flex;
 		flex-wrap: wrap;
-		gap: 14px;
-		justify-content: center;
+		gap: 12px;
 	}
-	@media (min-width: 940px) {
-		.ci-cta {
-			justify-content: flex-start;
-		}
-	}
-	.ci-trust {
-		display: flex;
-		gap: 10px;
-		justify-content: center;
-		margin-top: 22px;
-		color: var(--muted);
-		font-size: 0.9rem;
-		font-weight: 500;
-	}
-	@media (min-width: 940px) {
-		.ci-trust {
-			justify-content: flex-start;
-		}
+	.hero-note {
+		margin-top: 16px;
+		font-size: 0.85rem;
+		color: var(--muted-2);
 	}
 
-	/* Illustration */
-	.ci-hero-art {
+	/* Mockups */
+	.hero-visual {
 		position: relative;
+		min-height: 420px;
 		max-width: 480px;
 		margin: 0 auto;
-	}
-	.ci-art-ring {
-		position: absolute;
-		inset: -4%;
-		border-radius: 50%;
-		background: radial-gradient(circle at 40% 35%, rgba(148, 163, 184, 0.16), transparent 60%);
-		z-index: -1;
-	}
-	.ci-illustration {
 		width: 100%;
-		height: auto;
-		display: block;
 	}
-	.ci-core {
-		transform-box: fill-box;
-		transform-origin: center;
-		animation: float 6s ease-in-out infinite;
+	.mock-members {
+		position: relative;
+		width: min(340px, 80%);
+		background: var(--surface);
+		border-radius: 22px;
+		padding: 22px;
+		box-shadow: var(--shadow-float);
 	}
-	.ci-float-a {
-		transform-box: fill-box;
-		transform-origin: center;
-		animation: float 5.2s ease-in-out infinite;
-	}
-	.ci-float-b {
-		transform-box: fill-box;
-		transform-origin: center;
-		animation: float 6.4s ease-in-out 0.4s infinite reverse;
-	}
-	.ci-float-c {
-		transform-box: fill-box;
-		transform-origin: center;
-		animation: float 5.8s ease-in-out 0.2s infinite;
-	}
-	.ci-links line {
-		stroke-dasharray: 200;
-		stroke-dashoffset: 200;
-		animation: ci-draw 1.6s ease-out forwards;
-	}
-	@keyframes ci-draw {
-		to {
-			stroke-dashoffset: 0;
-		}
-	}
-
-	/* ===== SECTIONS ===== */
-	.section {
-		padding: 90px 24px;
-	}
-	.section-alt {
-		background: var(--cream-2);
-	}
-	.container {
-		max-width: 1180px;
-		margin: 0 auto;
-	}
-	.section-head {
-		text-align: center;
-		margin-bottom: 52px;
-	}
-	.section-head h2 {
-		font-size: clamp(1.9rem, 4vw, 2.9rem);
-		font-weight: 800;
-		letter-spacing: -0.02em;
-		color: var(--ink);
+	.mock-title {
+		display: flex;
+		justify-content: space-between;
+		align-items: baseline;
 		margin-bottom: 14px;
 	}
-	.section-head p {
-		color: var(--muted);
-		font-size: 1.1rem;
-		max-width: 600px;
-		margin: 0 auto;
+	.mock-title strong {
+		color: var(--ink);
+		font-weight: 500;
+	}
+	.mock-title span {
+		font-size: 0.78rem;
+		color: var(--muted-2);
+	}
+	.mock-member {
+		display: grid;
+		grid-template-columns: 34px 1fr auto 20px;
+		align-items: center;
+		gap: 10px;
+		padding: 10px 0;
+		border-top: 1px solid var(--line);
+		font-size: 0.86rem;
+	}
+	.mock-av {
+		width: 34px;
+		height: 34px;
+		border-radius: 10px;
+		background: var(--tint);
+		color: var(--brand-deep);
+		font-weight: 600;
+		display: grid;
+		place-items: center;
+	}
+	.mock-name {
+		color: var(--ink);
+		font-weight: 500;
+	}
+	.mock-role {
+		color: var(--muted-2);
+		font-size: 0.78rem;
+	}
+	.mock-ok {
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		background: var(--brand);
+		color: #fff;
+		display: grid;
+		place-items: center;
+	}
+	.mock-ok svg {
+		width: 12px;
+		height: 12px;
+	}
+	.mock-add {
+		margin-top: 12px;
+		padding: 12px;
+		border: 1px dashed var(--line-strong);
+		border-radius: 12px;
+		text-align: center;
+		font-size: 0.86rem;
+		color: var(--brand);
+		font-weight: 500;
+	}
+	.mock-econ {
+		position: absolute;
+		right: 0;
+		bottom: -24px;
+		width: min(250px, 60%);
+		background: var(--brand-deep);
+		color: #fff;
+		border-radius: 18px;
+		padding: 20px;
+		box-shadow: var(--shadow-float);
+		display: flex;
+		flex-direction: column;
+	}
+	.mock-econ-label {
+		font-size: 0.75rem;
+		opacity: 0.8;
+	}
+	.mock-econ > strong {
+		font-size: 1.7rem;
+		font-weight: 500;
+		letter-spacing: -0.03em;
+		margin: 2px 0 12px;
+	}
+	.mock-econ-row {
+		display: flex;
+		justify-content: space-between;
+		font-size: 0.8rem;
+		padding: 7px 0;
+		border-top: 1px solid rgba(255, 255, 255, 0.12);
+	}
+	.mock-econ-row span {
+		opacity: 0.8;
+	}
+	.mock-econ-row b {
+		font-weight: 500;
 	}
 
-	/* Intro quote */
-	.ci-intro {
-		max-width: 820px;
+	/* Intro card */
+	.intro {
+		padding: clamp(36px, 6vw, 72px);
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 32px;
 	}
-	.ci-quote {
-		margin-top: 8px;
-		padding: 34px 36px;
-		border-radius: 22px;
-		background: var(--green-soft);
-		border: 1px solid rgba(10, 143, 128, 0.18);
-		text-align: center;
+	@media (min-width: 900px) {
+		.intro {
+			grid-template-columns: 1fr 1fr;
+			gap: 64px;
+		}
 	}
-	.ci-quote p {
-		font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+	.intro-copy p {
+		color: var(--muted);
+		font-size: 1.05rem;
+		line-height: 1.75;
+	}
+	.intro-copy blockquote {
+		margin-top: 24px;
+		padding: 22px 26px;
+		border-left: 3px solid var(--brand);
+		background: var(--tint-2);
+		border-radius: 0 14px 14px 0;
+		color: var(--ink);
+		font-size: 1.05rem;
+		line-height: 1.6;
+	}
+	.intro-copy blockquote strong {
+		color: var(--brand-deep);
 		font-weight: 600;
-		color: var(--green-deep);
-		line-height: 1.5;
-	}
-	.ci-quote strong {
-		color: var(--green);
 	}
 
 	/* Pillars */
-	.ci-pillars {
+	.pillars {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 22px;
+	}
+	@media (min-width: 800px) {
+		.pillars {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+	.pillar {
+		padding: 40px;
+	}
+	.pillar h3 {
+		font-size: 1.4rem;
+		font-weight: 500;
+		margin: 26px 0 12px;
+		letter-spacing: -0.02em;
+	}
+	.pillar p {
+		color: var(--muted);
+		line-height: 1.7;
+		font-size: 0.96rem;
+	}
+	.more {
+		text-align: center;
+		margin-top: 40px;
+		color: var(--muted);
+		max-width: 620px;
+		margin-inline: auto;
+	}
+	.more a {
+		color: var(--brand);
+		font-weight: 500;
+	}
+
+	/* Steps */
+	.steps {
+		padding: 104px 0;
+	}
+	.steps-head {
+		max-width: 640px;
+		margin-bottom: 56px;
+	}
+	.steps-head p {
+		margin-top: 14px;
+	}
+	.steps-grid {
 		display: grid;
 		grid-template-columns: 1fr;
 		gap: 22px;
 	}
 	@media (min-width: 760px) {
-		.ci-pillars {
-			grid-template-columns: repeat(2, 1fr);
-		}
-	}
-	.ci-pillar {
-		padding: 32px;
-		border-radius: 22px;
-		background: var(--cream-2);
-		border: 1px solid var(--line);
-		box-shadow: 0 6px 20px rgba(6, 101, 90, 0.05);
-		transition: all 0.4s;
-	}
-	.ci-pillar:hover {
-		transform: translateY(-5px);
-		border-color: rgba(10, 143, 128, 0.35);
-		box-shadow: 0 24px 44px rgba(10, 143, 128, 0.12);
-	}
-	.ci-pillar-ic {
-		width: 56px;
-		height: 56px;
-		border-radius: 16px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		margin-bottom: 20px;
-		color: #fff;
-		transition: transform 0.3s;
-	}
-	.ci-pillar-ic svg {
-		width: 28px;
-		height: 28px;
-	}
-	.ic-green {
-		background: linear-gradient(135deg, #0a8f80, #06655a);
-	}
-	.ic-yellow {
-		background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
-		color: #054d44;
-	}
-	.ci-pillar:hover .ci-pillar-ic {
-		transform: scale(1.08) rotate(-4deg);
-	}
-	.ci-pillar h3 {
-		font-size: 1.25rem;
-		font-weight: 700;
-		color: var(--ink);
-		margin-bottom: 10px;
-	}
-	.ci-pillar p {
-		color: var(--muted);
-		line-height: 1.7;
-	}
-	.ci-more {
-		text-align: center;
-		margin-top: 34px;
-		color: var(--muted);
-		font-size: 1.02rem;
-		max-width: 640px;
-		margin-left: auto;
-		margin-right: auto;
-	}
-	.ci-more a {
-		color: var(--green);
-		font-weight: 700;
-		text-decoration: none;
-	}
-	.ci-more a:hover {
-		text-decoration: underline;
-	}
-
-	/* Steps */
-	.ci-steps {
-		display: grid;
-		grid-template-columns: 1fr;
-		gap: 24px;
-	}
-	@media (min-width: 800px) {
-		.ci-steps {
+		.steps-grid {
 			grid-template-columns: repeat(3, 1fr);
 		}
 	}
-	.ci-step {
-		position: relative;
-		padding: 34px 28px;
-		border-radius: 20px;
-		background: var(--cream);
-		border: 1px solid var(--line);
-		box-shadow: 0 6px 20px rgba(6, 101, 90, 0.05);
-		text-align: center;
+	.step {
+		padding: 36px 32px 32px;
+		border-radius: 18px;
+		background: rgba(255, 255, 255, 0.05);
+		border: 1px solid rgba(255, 255, 255, 0.08);
 	}
-	.ci-step-n {
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		width: 54px;
-		height: 54px;
-		border-radius: 50%;
-		background: linear-gradient(135deg, #0a8f80, #06655a);
-		color: #fff;
-		font-family: var(--font-brand);
-		font-weight: 700;
-		font-size: 1.5rem;
-		margin-bottom: 18px;
-		box-shadow: 0 10px 22px rgba(6, 101, 90, 0.25);
-	}
-	.ci-step h3 {
-		font-size: 1.2rem;
-		font-weight: 700;
-		color: var(--ink);
-		margin-bottom: 8px;
-	}
-	.ci-step p {
-		color: var(--muted);
-		line-height: 1.6;
-	}
-
-	/* Dark band */
-	.ci-band {
-		position: relative;
-		padding: 84px 24px;
-		background: linear-gradient(135deg, #063d34 0%, #06655a 55%, #087a6d 100%);
-		overflow: hidden;
-	}
-	/* On the dark band, brand accents go metallic silver for contrast */
-	.ci-band .grad-yellow {
-		background: linear-gradient(110deg, #f1f5f9, #cbd5e1, #e2e8f0);
+	.step-n {
+		display: block;
+		font-size: 4rem;
+		font-weight: 500;
+		line-height: 1;
+		letter-spacing: -0.05em;
+		margin-bottom: 26px;
+		background: linear-gradient(180deg, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.05));
 		-webkit-background-clip: text;
 		background-clip: text;
 		-webkit-text-fill-color: transparent;
 	}
-	.ci-band .btn-yellow {
-		background: linear-gradient(135deg, #f1f5f9, #cbd5e1);
-		color: #054d44;
-		box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+	.step h3 {
+		font-size: 1.25rem;
+		font-weight: 500;
+		margin-bottom: 10px;
 	}
-	.ci-band .btn-yellow:hover {
-		background: linear-gradient(135deg, #ffffff, #e2e8f0);
-		box-shadow: 0 14px 32px rgba(0, 0, 0, 0.32);
-	}
-	.band-orb {
-		position: absolute;
-		right: -12%;
-		top: -20%;
-		width: 560px;
-		height: 560px;
-		border-radius: 50%;
-		background: radial-gradient(circle, rgba(43, 191, 174, 0.35), transparent 62%);
-		pointer-events: none;
-	}
-	.ci-band-inner {
-		position: relative;
-		max-width: 680px;
-		text-align: center;
-	}
-	.band-mark {
-		font-size: 1.9rem;
-		display: inline-block;
-		margin-bottom: 18px;
-	}
-	.ci-band-inner h2 {
-		font-size: clamp(1.9rem, 4vw, 3rem);
-		font-weight: 800;
-		letter-spacing: -0.02em;
-		color: #fff;
-		line-height: 1.12;
-		margin-bottom: 18px;
-	}
-	.ci-band-inner > p {
-		color: rgba(255, 255, 255, 0.82);
-		font-size: 1.12rem;
+	.step p {
+		font-size: 0.93rem;
 		line-height: 1.7;
-		max-width: 540px;
-		margin: 0 auto 30px;
 	}
-	.ci-band-sub {
-		margin-top: 26px;
+
+	/* CTA */
+	.cta {
+		border-radius: var(--radius-xl);
+		padding: clamp(40px, 6vw, 72px);
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 36px;
+		align-items: center;
+	}
+	@media (min-width: 900px) {
+		.cta {
+			grid-template-columns: 1.3fr 1fr;
+		}
+		.cta-actions {
+			justify-content: flex-end;
+		}
+	}
+	.cta-copy p {
+		margin-top: 16px;
+		max-width: 460px;
+		line-height: 1.7;
+	}
+	.cta-sub {
 		font-size: 0.9rem;
-		color: rgba(255, 255, 255, 0.7);
-		max-width: 520px;
-		margin-left: auto;
-		margin-right: auto;
 	}
-	.ci-band-sub a {
-		color: var(--yellow);
-		font-weight: 600;
-		text-decoration: underline;
-		text-underline-offset: 2px;
+	.cta-sub a {
+		color: #7fd9cc;
 	}
-
-	/* ===== FOOTER ===== */
-	.site-footer {
-		padding: 44px 24px;
-		border-top: 1px solid var(--line);
-		background: var(--cream);
-	}
-	.footer-inner {
-		max-width: 1180px;
-		margin: 0 auto;
+	.cta-actions {
 		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 16px;
-		text-align: center;
-	}
-	@media (min-width: 760px) {
-		.footer-inner {
-			flex-direction: row;
-			justify-content: space-between;
-			text-align: left;
-		}
-	}
-	.footer-brand .wordmark {
-		font-size: 1.2rem;
-	}
-	.footer-copy {
-		color: var(--muted);
-		font-size: 0.85rem;
-	}
-	.footer-links {
-		display: flex;
-		align-items: center;
-		gap: 22px;
 		flex-wrap: wrap;
-		justify-content: center;
-	}
-	.footer-link {
-		color: var(--muted);
-		font-size: 0.85rem;
-		text-decoration: none;
-		transition: color 0.3s;
-	}
-	.footer-link:hover {
-		color: var(--green);
-	}
-
-	/* ===== ANIMATIONS ===== */
-	@keyframes float {
-		0%, 100% { transform: translateY(0); }
-		50% { transform: translateY(-12px); }
-	}
-	@keyframes pulse {
-		0%, 100% { opacity: 1; }
-		50% { opacity: 0.45; }
-	}
-
-	/* ===== SCROLL REVEAL ===== */
-	.reveal-init {
-		opacity: 0;
-		transform: translateY(30px);
-		transition:
-			opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-			transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-		will-change: opacity, transform;
-	}
-	.reveal-in {
-		opacity: 1;
-		transform: none;
-	}
-	@media (prefers-reduced-motion: reduce) {
-		.reveal-init {
-			opacity: 1;
-			transform: none;
-			transition: none;
-		}
-		.blob,
-		.ci-core,
-		.ci-float-a,
-		.ci-float-b,
-		.ci-float-c {
-			animation: none !important;
-		}
-		.ci-links line {
-			stroke-dashoffset: 0;
-			animation: none !important;
-		}
-	}
-
-	/* ===== NAVBAR SCROLLED ===== */
-	.navbar.scrolled {
-		background: rgba(255, 255, 255, 0.97);
-		box-shadow: 0 4px 20px rgba(6, 101, 90, 0.08);
+		gap: 12px;
 	}
 </style>
-
-<script>
-	const revealTargets = [".section-head", ".ci-pillar", ".ci-step", ".ci-quote", ".ci-band-inner"];
-	const els = document.querySelectorAll(revealTargets.join(","));
-	const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-	if (!reduce) {
-		els.forEach((el) => el.classList.add("reveal-init"));
-		const io = new IntersectionObserver(
-			(entries) => {
-				entries.forEach((entry, i) => {
-					if (entry.isIntersecting) {
-						const t = entry.target as HTMLElement;
-						t.style.transitionDelay = Math.min(i * 55, 220) + "ms";
-						t.classList.add("reveal-in");
-						io.unobserve(t);
-					}
-				});
-			},
-			{ threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
-		);
-		els.forEach((el) => io.observe(el));
-	}
-
-	const navbar = document.querySelector(".navbar");
-	const onScroll = () => {
-		if (window.scrollY > 12) navbar?.classList.add("scrolled");
-		else navbar?.classList.remove("scrolled");
-	};
-	onScroll();
-	window.addEventListener("scroll", onScroll, { passive: true });
-</script>

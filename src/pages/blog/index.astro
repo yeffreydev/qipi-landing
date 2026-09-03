@@ -1,9 +1,16 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import Nav from "../../components/Nav.astro";
+import Footer from "../../components/Footer.astro";
+import WaFab from "../../components/WaFab.astro";
 import "../../styles/globals.css";
 import { posts } from "../../data/posts.js";
 
 const sorted = [...posts].sort((a, b) => (a.date < b.date ? 1 : -1));
+const [featured, ...rest] = sorted;
+
+const fmt = (d: string) =>
+	new Date(d + "T00:00:00").toLocaleDateString("es-PE", { year: "numeric", month: "short", day: "numeric" });
 
 const jsonLd = {
 	"@context": "https://schema.org",
@@ -29,194 +36,196 @@ const jsonLd = {
 	canonicalPath="/blog"
 	jsonLd={jsonLd}
 >
-	<div class="bg-blobs">
-		<div class="blob blob-1"></div>
-		<div class="blob blob-2"></div>
-		<div class="blob blob-3"></div>
-	</div>
+	<Nav current="blog" />
 
-	<nav class="navbar">
-		<div class="navbar-inner">
-			<a href="/" class="navbar-brand">
-				<img src="/aquinace.svg" alt="aquí nace" width="110" height="32" />
-			</a>
-			<a href="/" class="btn-back">← Inicio</a>
-		</div>
-	</nav>
+	<main class="page-top">
+		<div class="container">
+			<header class="blog-hero">
+				<span class="eyebrow">Blog</span>
+				<h1 class="h-display">Finanzas comunitarias para el Perú.</h1>
+				<p class="lead">
+					Todo sobre UNICAs, bancas comunales, ahorro grupal y las mejores
+					herramientas de finanzas para tu organización.
+				</p>
+			</header>
 
-	<main class="blog-main">
-		<header class="blog-hero">
-			<h1>
-				Finanzas comunitarias <span class="grad">para el Perú</span>
-			</h1>
-			<p>
-				Todo sobre UNICAs, bancas comunales, ahorro grupal y las mejores
-				herramientas de finanzas para tu organización.
-			</p>
-		</header>
-
-		<div class="blog-grid">
-			{
-				sorted.map((p) => (
-					<a href={`/blog/${p.slug}`} class="blog-card">
-						<div class="blog-card-body">
-							<div class="blog-meta">
-								<span class="blog-cat">{p.category}</span>
-								<span class="dot">·</span>
-								<span>{p.readingTime} de lectura</span>
-							</div>
-							<h2>{p.title}</h2>
-							<p>{p.description}</p>
-							<span class="blog-read">Leer artículo →</span>
+			{featured && (
+				<a href={`/blog/${featured.slug}`} class="featured card-raised reveal">
+					<div class="featured-copy">
+						<div class="meta">
+							<span class="cat">{featured.category}</span>
+							<span class="dot">·</span>
+							<time datetime={featured.date}>{fmt(featured.date)}</time>
+							<span class="dot">·</span>
+							<span>{featured.readingTime}</span>
 						</div>
+						<h2 class="h-section">{featured.title}</h2>
+						<p>{featured.description}</p>
+						<span class="btn-link">
+							Leer artículo
+							<svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M7 17 17 7M8 7h9v9" /></svg>
+						</span>
+					</div>
+					<div class="featured-art" aria-hidden="true">
+						<div class="stripes on-brand"></div>
+						<img src="/aquinace-light.svg" alt="" width="180" height="52" />
+					</div>
+				</a>
+			)}
+
+			<div class="blog-grid">
+				{rest.map((p) => (
+					<a href={`/blog/${p.slug}`} class="post card-tint reveal">
+						<div class="meta">
+							<span class="cat">{p.category}</span>
+							<span class="dot">·</span>
+							<span>{p.readingTime}</span>
+						</div>
+						<h2>{p.title}</h2>
+						<p>{p.description}</p>
+						<span class="post-foot">
+							<time datetime={p.date}>{fmt(p.date)}</time>
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M7 17 17 7M8 7h9v9" /></svg>
+						</span>
 					</a>
-				))
-			}
+				))}
+			</div>
 		</div>
 	</main>
 
-	<footer class="site-footer">
-		<div class="footer-inner">
-			<div class="footer-brand">
-				<img src="/aquinace.svg" alt="aquí nace" width="96" height="28" />
-				<span class="footer-copy">© 2026 aquí nace. Todos los derechos reservados.</span>
-			</div>
-			<div class="footer-links">
-				<a href="/blog" class="footer-link">Blog</a>
-				<a href="/privacidad" class="footer-link">Privacidad</a>
-			</div>
-		</div>
-	</footer>
+	<WaFab />
+	<Footer />
 </Layout>
 
 <style>
-	@import "../../styles/legal-shared.css";
-
-	/* Brand wordmark (match homepage) */
-	.navbar-brand .wordmark { font-size: 1.5rem; }
-	.footer-brand .wordmark { font-size: 1.2rem; }
-	.navbar-brand .wordmark .wm-a,
-	.footer-brand .wordmark .wm-a { color: var(--green-forest); }
-	.navbar-brand .wordmark .wm-n,
-	.footer-brand .wordmark .wm-n { color: var(--green-bright); }
-
-	.blog-main {
-		padding: 128px 16px 80px;
-		max-width: 1152px;
-		margin: 0 auto;
+	main {
+		padding-bottom: 104px;
 	}
 	.blog-hero {
-		text-align: center;
+		max-width: 680px;
 		margin-bottom: 56px;
 	}
 	.blog-hero h1 {
-		font-size: clamp(2rem, 5vw, 3.25rem);
-		font-weight: 800;
-		color: #10201c;
-		letter-spacing: -0.02em;
-		line-height: 1.1;
+		margin-bottom: 20px;
+	}
+	.meta {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 8px;
+		font-size: 0.8rem;
+		color: var(--muted-2);
 		margin-bottom: 16px;
 	}
-	.grad {
-		background: linear-gradient(110deg, #0a8f80, #2bbfae, #087a6d);
-		background-size: 200% auto;
-		-webkit-background-clip: text;
-		background-clip: text;
-		-webkit-text-fill-color: transparent;
-		animation: gradient-shift 6s ease infinite;
+	.cat {
+		color: var(--brand);
+		font-weight: 500;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		font-size: 0.72rem;
 	}
-	.blog-hero p {
-		color: #64748b;
-		font-size: 1.0625rem;
-		max-width: 600px;
-		margin: 0 auto;
+	.dot {
+		color: var(--line-strong);
+	}
+
+	.featured {
+		display: grid;
+		grid-template-columns: 1fr;
+		text-decoration: none;
+		overflow: hidden;
+		margin-bottom: 28px;
+		transition: transform 0.3s ease;
+	}
+	.featured:hover {
+		transform: translateY(-3px);
+	}
+	@media (min-width: 900px) {
+		.featured {
+			grid-template-columns: 1.3fr 0.9fr;
+		}
+	}
+	.featured-copy {
+		padding: clamp(32px, 5vw, 56px);
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	.featured-copy h2 {
+		margin-bottom: 16px;
+	}
+	.featured-copy p {
+		color: var(--muted);
 		line-height: 1.7;
+		margin-bottom: 26px;
+		max-width: 560px;
+	}
+	.featured-art {
+		position: relative;
+		min-height: 220px;
+		background: var(--brand);
+		display: grid;
+		place-items: center;
+		overflow: hidden;
+	}
+	.featured-art .stripes {
+		left: 25%;
+	}
+	.featured-art img {
+		position: relative;
+		width: 180px;
+		height: auto;
 	}
 
 	.blog-grid {
 		display: grid;
 		grid-template-columns: 1fr;
-		gap: 28px;
+		gap: 22px;
 	}
-	@media (min-width: 640px) {
+	@media (min-width: 680px) {
 		.blog-grid {
 			grid-template-columns: repeat(2, 1fr);
 		}
 	}
-	@media (min-width: 1024px) {
+	@media (min-width: 1000px) {
 		.blog-grid {
 			grid-template-columns: repeat(3, 1fr);
 		}
 	}
-
-	.blog-card {
+	.post {
 		display: flex;
 		flex-direction: column;
-		border-radius: 20px;
-		overflow: hidden;
-		background: #fff;
-		border: 1px solid #e2e8f0;
+		padding: 32px;
 		text-decoration: none;
-		box-shadow: 0 4px 20px rgba(5, 77, 68, 0.04);
-		transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
 	}
-	.blog-card:hover {
-		transform: translateY(-6px);
-		border-color: rgba(10, 143, 128, 0.3);
-		box-shadow: 0 26px 50px rgba(10, 143, 128, 0.13);
+	.post:hover {
+		transform: translateY(-4px);
+		box-shadow: var(--shadow-card);
 	}
-	.blog-card-body {
-		padding: 26px 24px 28px;
-		display: flex;
-		flex-direction: column;
-		flex: 1;
-	}
-	.blog-meta {
-		display: flex;
-		align-items: center;
-		gap: 8px;
-		font-size: 0.75rem;
-		color: #94a3b8;
+	.post h2 {
+		font-size: 1.3rem;
+		font-weight: 500;
+		line-height: 1.3;
+		letter-spacing: -0.02em;
 		margin-bottom: 12px;
 	}
-	.blog-cat {
-		font-weight: 700;
-		text-transform: uppercase;
-		letter-spacing: 0.05em;
-		color: #0a8f80;
-	}
-	.blog-meta .dot {
-		color: #cbd5e1;
-	}
-	.blog-card h2 {
-		font-size: 1.1rem;
-		font-weight: 700;
-		color: #10201c;
-		line-height: 1.3;
-		margin-bottom: 10px;
-	}
-	.blog-card-body p {
-		color: #64748b;
-		font-size: 0.9rem;
-		line-height: 1.6;
+	.post p {
+		color: var(--muted);
+		font-size: 0.93rem;
+		line-height: 1.65;
 		flex: 1;
-		margin-bottom: 16px;
 	}
-	.blog-read {
-		color: #0a8f80;
-		font-weight: 700;
-		font-size: 0.875rem;
+	.post-foot {
+		margin-top: 26px;
+		padding-top: 18px;
+		border-top: 1px solid var(--line-strong);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		font-size: 0.82rem;
+		color: var(--muted-2);
 	}
-
-	@keyframes gradient-shift {
-		0% {
-			background-position: 0% 50%;
-		}
-		50% {
-			background-position: 100% 50%;
-		}
-		100% {
-			background-position: 0% 50%;
-		}
+	.post-foot svg {
+		color: var(--ink);
 	}
 </style>
